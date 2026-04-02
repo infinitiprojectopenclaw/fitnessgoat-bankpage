@@ -904,8 +904,8 @@ function showPage(page, id) {
   if(page==='contact') $('nav-contact').classList.add('active');
   var mn = $('mob-nav');
   if(mn) mn.classList.remove('open');
-  if(page==='home') { renderGrid('featured-grid',[1,2,3,4]); renderGrid('popular-grid',[3,1,4,2]); }
-  if(page==='shop') renderGrid('shop-grid',[1,2,3,4]);
+  if(page==='home') { renderGrid('featured-grid',[1,2,3,4]); renderGrid('popular-grid',[5,6,7,8]); }
+  if(page==='shop') renderGrid('shop-grid',[1,2,3,4,5,6,7,8]);
   if(page==='product' && id) { curProd=getP(id); detQty=1; if(curProd) renderPD(curProd); }
   if(page==='cart') renderCart();
   if(page==='checkout') renderCheckout();
