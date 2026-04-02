@@ -2,94 +2,110 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>FITNESSGOAT - Elite Fitness Equipment</title>
-<meta name="description" content="Premium fitness gear for serious results. Resistance bands, recovery tools, and strength training equipment.">
+<title>FITNESSGOAT — Elite Fitness Equipment</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--color-primary:#ff4500;--color-dark:#1a1a1a;--color-gray:#666;--color-light-gray:#f5f5f5;--color-white:#fff;--color-success:#22c55e;--font-primary:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-body{font-family:var(--font-primary);color:var(--color-dark);line-height:1.6;background:var(--color-white)}
+:root{
+--red:#FF4500;
+--red-dk:#E03D00;
+--red-lt:#FFF4F0;
+--dk:#1a1a1a;
+--gr:#666;
+--lgr:#f5f5f5;
+--wh:#fff;
+--ok:#22c55e;
+--fnt:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+--fnt-h:'Playfair Display',Georgia,serif
+}
+body{font-family:var(--fnt);color:var(--dk);line-height:1.6;background:var(--wh)}
 .container{max-width:1200px;margin:0 auto;padding:0 20px}
-.topbar{background:var(--color-dark);color:var(--color-white);padding:10px 0;font-size:14px;text-align:center}
-header{background:var(--color-white);border-bottom:1px solid #eee;position:sticky;top:0;z-index:100}
+.topbar{background:var(--dk);color:var(--wh);padding:10px 0;font-size:14px;text-align:center}
+#site-header{background:var(--wh);border-bottom:1px solid #eee;position:sticky;top:0;z-index:100}
 .header-content{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
-.logo{font-size:24px;font-weight:700;color:var(--color-dark);cursor:pointer;text-decoration:none}
+#logo{font-size:24px;font-weight:700;color:var(--dk);cursor:pointer;font-family:var(--fnt-h)}
 nav{display:flex;gap:30px}
-nav a{color:var(--color-dark);text-decoration:none;font-weight:500;cursor:pointer;transition:color .2s}
-nav a:hover{color:var(--color-primary)}
-.cart-icon{cursor:pointer;font-size:20px;position:relative}
-.cart-count{position:absolute;top:-8px;right:-8px;background:var(--color-primary);color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+nav a{color:var(--dk);text-decoration:none;font-weight:500;cursor:pointer;transition:color .2s}
+nav a:hover{color:var(--red)}
+#cart-btn{cursor:pointer;font-size:20px;position:relative}
+#cart-count{position:absolute;top:-8px;right:-8px;background:var(--red);color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+#ham{display:none;font-size:28px;cursor:pointer}
+#mob-nav{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--dk);z-index:200;padding:60px 30px}
+#mob-nav.show{display:block}
+#mob-nav a{color:var(--wh);display:block;padding:15px 0;font-size:18px;border-bottom:1px solid #333;cursor:pointer}
+#mob-close{position:absolute;top:20px;right:20px;font-size:32px;color:var(--wh);cursor:pointer}
 .page{display:none;min-height:calc(100vh - 400px);padding:40px 0}
 .page.active{display:block}
-.hero{background:linear-gradient(135deg,#1a1a1a 0%,#333 100%);color:var(--color-white);padding:100px 0;text-align:center;margin:-40px 0 60px 0}
-.hero h1{font-size:56px;font-weight:700;margin-bottom:20px;letter-spacing:-1px}
+.hero{background:linear-gradient(135deg,#1a1a1a 0%,#333 100%);color:var(--wh);padding:100px 0;text-align:center;margin:-40px 0 60px 0}
+.hero h1{font-size:56px;font-weight:700;margin-bottom:20px;letter-spacing:-1px;font-family:var(--fnt-h)}
 .hero p{font-size:20px;margin-bottom:40px;color:#ddd}
-.btn{display:inline-block;padding:16px 40px;background:var(--color-primary);color:var(--color-white);text-decoration:none;border-radius:6px;font-weight:600;transition:all .3s;border:none;cursor:pointer;font-size:16px}
-.btn:hover{background:#e03e00;transform:translateY(-2px)}
+.btn{display:inline-block;padding:16px 40px;background:var(--red);color:var(--wh);text-decoration:none;border-radius:6px;font-weight:600;transition:all .3s;border:none;cursor:pointer;font-size:16px}
+.btn:hover{background:var(--red-dk);transform:translateY(-2px)}
 .btn:disabled{opacity:.6;cursor:not-allowed}
 @keyframes placeOrderPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.05);opacity:.9}}
 .btn.placing-order{animation:placeOrderPulse .7s ease-in-out 4;pointer-events:none}
-.section-title{text-align:center;font-size:42px;font-weight:700;margin-bottom:50px}
-.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:30px;margin-bottom:60px}
-.product-card{background:var(--color-white);border:1px solid #eee;border-radius:12px;overflow:hidden;transition:all .3s;cursor:pointer}
-.product-card:hover{box-shadow:0 10px 30px rgba(0,0,0,.1);transform:translateY(-5px)}
-.product-image{width:100%;height:280px;object-fit:cover;background:var(--color-light-gray)}
-.product-info{padding:20px}
-.product-title{font-size:18px;font-weight:600;margin-bottom:10px}
-.product-price{font-size:24px;font-weight:700;color:var(--color-primary);margin-bottom:15px}
-.breadcrumb{padding:20px 0;font-size:14px;color:var(--color-gray)}
-.breadcrumb a{color:var(--color-gray);cursor:pointer;text-decoration:none}
-.breadcrumb a:hover{color:var(--color-primary)}
-.product-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:60px}
-.product-detail-image{width:100%;border-radius:12px}
-.product-detail-price{font-size:32px;color:var(--color-primary);font-weight:700;margin:20px 0}
-.quantity-selector{display:flex;align-items:center;gap:15px;margin-bottom:20px}
-.quantity-selector button{width:40px;height:40px;border:1px solid #ddd;background:#fff;cursor:pointer;font-size:18px;border-radius:6px}
-.quantity-selector input{width:60px;height:40px;text-align:center;border:1px solid #ddd;border-radius:6px;font-size:16px}
-.product-description{line-height:1.8;color:var(--color-gray)}
-.product-description h3{color:var(--color-dark);margin-top:30px;margin-bottom:15px;font-size:20px}
-.product-description ul{margin-left:20px;margin-bottom:20px}
+.section-title{text-align:center;font-size:42px;font-weight:700;margin-bottom:50px;font-family:var(--fnt-h)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:30px;margin-bottom:60px}
+.card{background:var(--wh);border:1px solid #eee;border-radius:12px;overflow:hidden;transition:all .3s;cursor:pointer}
+.card:hover{box-shadow:0 10px 30px rgba(0,0,0,.1);transform:translateY(-5px)}
+.card-img{width:100%;height:280px;object-fit:cover;background:var(--lgr)}
+.card-info{padding:20px}
+.card-title{font-size:18px;font-weight:600;margin-bottom:10px}
+.card-price{font-size:24px;font-weight:700;color:var(--red);margin-bottom:15px}
+.card .btn{width:100%;padding:12px}
+.bc{padding:20px 0;font-size:14px;color:var(--gr)}
+.bc a{color:var(--gr);cursor:pointer;text-decoration:none}
+.bc a:hover{color:var(--red)}
+#pd-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:60px}
+#pd-main{width:100%;border-radius:12px}
+#pd-price{font-size:32px;color:var(--red);font-weight:700;margin:20px 0}
+.qty-sel{display:flex;align-items:center;gap:15px;margin-bottom:20px}
+.qty-sel button{width:40px;height:40px;border:1px solid #ddd;background:#fff;cursor:pointer;font-size:18px;border-radius:6px}
+.qty-sel input{width:60px;height:40px;text-align:center;border:1px solid #ddd;border-radius:6px;font-size:16px}
+#pd-desc{line-height:1.8;color:var(--gr)}
+#pd-desc h3{color:var(--dk);margin-top:30px;margin-bottom:15px;font-size:20px}
+#pd-desc ul{margin-left:20px;margin-bottom:20px}
 .cart-empty{text-align:center;padding:100px 20px}
 .cart-item{display:grid;grid-template-columns:100px 1fr auto auto;gap:20px;padding:20px;border:1px solid #eee;border-radius:12px;margin-bottom:20px;align-items:center}
-.cart-item-image{width:100px;height:100px;object-fit:cover;border-radius:8px}
+.cart-item-img{width:100px;height:100px;object-fit:cover;border-radius:8px}
 .cart-total{text-align:right;font-size:28px;font-weight:700;margin:30px 0}
-.checkout-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:60px}
-.checkout-section{margin-bottom:40px}
-.checkout-section h2{font-size:24px;margin-bottom:20px}
-.form-group{margin-bottom:20px}
-.form-group label{display:block;margin-bottom:8px;font-weight:500}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:16px;font-family:inherit}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.checkout-summary{background:var(--color-light-gray);padding:30px;border-radius:12px;height:fit-content}
-.summary-item{display:flex;justify-content:space-between;margin-bottom:15px}
-.summary-total{border-top:2px solid #ddd;padding-top:15px;margin-top:15px;font-size:24px;font-weight:700}
-.payment-form{background:#fff;border:1px solid #ddd;padding:20px;border-radius:8px;margin-bottom:20px}
+.co-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:60px}
+.co-sec{margin-bottom:40px}
+.co-sec h2{font-size:24px;margin-bottom:20px}
+.fg{margin-bottom:20px}
+.fg label{display:block;margin-bottom:8px;font-weight:500}
+.fg input,.fg select,.fg textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:16px;font-family:inherit}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.co-sum{background:var(--lgr);padding:30px;border-radius:12px;height:fit-content}
+.sum-item{display:flex;justify-content:space-between;margin-bottom:15px}
+.sum-tot{border-top:2px solid #ddd;padding-top:15px;margin-top:15px;font-size:24px;font-weight:700}
+.pay-form{background:#fff;border:1px solid #ddd;padding:20px;border-radius:8px;margin-bottom:20px}
 .card-logos{display:flex;gap:10px;margin-bottom:20px}
 .card-logos img{height:30px}
-.terms-checkbox{display:flex;align-items:flex-start;gap:10px;margin:20px 0}
-.terms-checkbox input{margin-top:4px;width:18px;height:18px}
-.terms-checkbox label{font-size:14px;line-height:1.6;color:var(--color-gray)}
-.checkout-note{font-size:14px;color:var(--color-gray);margin-top:20px;padding:15px;background:var(--color-light-gray);border-radius:6px}
-.contact-info{background:var(--color-light-gray);padding:30px;border-radius:12px;margin-bottom:40px}
+.tc-check{display:flex;align-items:flex-start;gap:10px;margin:20px 0}
+.tc-check input{margin-top:4px;width:18px;height:18px}
+.tc-check label{font-size:14px;line-height:1.6;color:var(--gr)}
+.co-note{font-size:14px;color:var(--gr);margin-top:20px;padding:15px;background:var(--lgr);border-radius:6px}
+.contact-info{background:var(--lgr);padding:30px;border-radius:12px;margin-bottom:40px}
 .legal-content{max-width:800px;margin:0 auto;line-height:1.8}
 .legal-content h1{font-size:36px;margin-bottom:30px}
 .legal-content h2{font-size:24px;margin-top:40px;margin-bottom:20px}
-footer{background:var(--color-dark);color:var(--color-white);padding:60px 0 30px;margin-top:100px}
+footer{background:var(--dk);color:var(--wh);padding:60px 0 30px;margin-top:100px}
 .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:60px;margin-bottom:40px}
 .footer-col h3{margin-bottom:20px}
 .footer-col a{color:#ddd;text-decoration:none;display:block;margin-bottom:12px;cursor:pointer}
-.footer-col a:hover{color:var(--color-primary)}
+.footer-col a:hover{color:var(--red)}
 .footer-bottom{text-align:center;padding-top:30px;border-top:1px solid #333;color:#999;font-size:14px}
-.toast{position:fixed;bottom:30px;right:30px;background:var(--color-success);color:#fff;padding:16px 24px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.15);transform:translateY(100px);opacity:0;transition:all .3s;z-index:1000}
-.toast.show{transform:translateY(0);opacity:1}
+#toast{position:fixed;bottom:30px;right:30px;background:var(--ok);color:#fff;padding:16px 24px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.15);transform:translateY(100px);opacity:0;transition:all .3s;z-index:1000}
+#toast.show{transform:translateY(0);opacity:1}
 @media (max-width:768px){
 .hero h1{font-size:36px}
-.product-detail-grid,.checkout-grid,.footer-grid{grid-template-columns:1fr}
+#pd-grid,.co-grid,.footer-grid{grid-template-columns:1fr}
 nav{display:none}
+#ham{display:block}
 .section-title{font-size:32px}
 }
 </style>
@@ -103,22 +119,29 @@ nav{display:none}
 </div>
 </div>
 
-<header>
+<header id="site-header">
 <div class="container">
 <div class="header-content">
-<div class="logo" id="logo-home">FITNESSGOAT</div>
+<div id="logo">FITNESSGOAT</div>
 <nav>
 <a id="nav-home">Home</a>
 <a id="nav-shop">Shop</a>
 <a id="nav-contact">Contact</a>
 </nav>
-<div class="cart-icon" id="cart-icon">
-🛒
-<span class="cart-count" id="cart-count">0</span>
-</div>
+<div id="ham">☰</div>
+<div id="cart-btn">🛒<span id="cart-count">0</span></div>
 </div>
 </div>
 </header>
+
+<div id="mob-nav">
+<div id="mob-close">×</div>
+<a id="mn-home">Home</a>
+<a id="mn-shop">Shop</a>
+<a id="mn-contact">Contact</a>
+<a id="mn-privacy">Privacy Policy</a>
+<a id="mn-terms">Terms & Conditions</a>
+</div>
 
 <div class="page active" id="page-home">
 <section class="hero">
@@ -130,28 +153,48 @@ nav{display:none}
 </section>
 <section class="container">
 <h2 class="section-title">Featured Products</h2>
-<div class="product-grid" id="grid-home"></div>
+<div class="grid" id="featured-grid"></div>
+<h2 class="section-title" style="margin-top:60px">Popular Picks</h2>
+<div class="grid" id="popular-grid"></div>
 </section>
 </div>
 
 <div class="page" id="page-shop">
 <div class="container">
-<div class="breadcrumb"><a id="bc-home-shop">Home</a> &gt; Shop</div>
+<div class="bc"><a id="bc-shop-home">Home</a> › Shop</div>
 <h1 class="section-title">FITNESSGOAT Shop</h1>
-<div class="product-grid" id="grid-shop"></div>
+<div class="grid" id="shop-grid"></div>
 </div>
 </div>
 
 <div class="page" id="page-product">
 <div class="container">
-<div class="breadcrumb" id="bc-product"></div>
-<div id="product-detail"></div>
+<div class="bc" id="pd-breadcrumb"></div>
+<div id="pd-grid">
+<div><img id="pd-main" loading="lazy"></div>
+<div>
+<h1 id="pd-name"></h1>
+<div id="pd-rating"></div>
+<div id="pd-price"></div>
+<div id="pd-pay-logos"></div>
+<div class="qty-sel">
+<button id="qty-minus">−</button>
+<input type="number" id="det-qty" value="1" min="1">
+<button id="qty-plus">+</button>
+</div>
+<button class="btn" id="pd-add-btn" style="width:100%;padding:16px">Add to Cart</button>
+<p style="margin-top:20px;color:#666">Shipping within 7 days with USPS.</p>
+</div>
+</div>
+<div id="pd-desc"></div>
+<h2 class="section-title" style="margin-top:60px">You May Also Like</h2>
+<div class="grid" id="related-grid"></div>
 </div>
 </div>
 
 <div class="page" id="page-cart">
 <div class="container">
-<div class="breadcrumb"><a id="bc-home-cart">Home</a> &gt; Cart</div>
+<div class="bc"><a id="bc-cart-home">Home</a> › Cart</div>
 <h1 class="section-title">Shopping Cart</h1>
 <div id="cart-content"></div>
 </div>
@@ -159,81 +202,88 @@ nav{display:none}
 
 <div class="page" id="page-checkout">
 <div class="container">
-<div class="breadcrumb"><a id="bc-cart-checkout">Shopping Cart</a> &gt; <strong>Checkout</strong> &gt; Order Complete</div>
+<div class="bc"><a id="bc-checkout-cart">Shopping Cart</a> › <strong>Checkout</strong> › Order Complete</div>
 <h1 class="section-title">Checkout</h1>
-<div class="checkout-grid">
+<div id="checkout-form">
+<div class="co-grid">
 <div>
-<div class="checkout-section">
+<div class="co-sec">
 <h2>Billing Details</h2>
-<div class="form-row">
-<div class="form-group"><label>First Name *</label><input type="text" id="billing-firstname" required></div>
-<div class="form-group"><label>Last Name *</label><input type="text" id="billing-lastname" required></div>
+<div class="frow">
+<div class="fg"><label>First Name *</label><input type="text" id="co-fname" required></div>
+<div class="fg"><label>Last Name *</label><input type="text" id="co-lname" required></div>
 </div>
-<div class="form-group"><label>Company Name (optional)</label><input type="text" id="billing-company"></div>
-<div class="form-group"><label>Country / Region *</label><select id="billing-country" required></select></div>
-<div class="form-group"><label>Street Address *</label><input type="text" id="billing-address" required></div>
-<div class="form-group"><label>Apartment, suite, etc. (optional)</label><input type="text" id="billing-address2"></div>
-<div class="form-row">
-<div class="form-group"><label>Town / City *</label><input type="text" id="billing-city" required></div>
-<div class="form-group"><label id="state-label">State *</label><div id="state-container"></div></div>
+<div class="fg"><label>Company Name (optional)</label><input type="text" id="co-company"></div>
+<div class="fg"><label>Country / Region *</label><select id="co-country" required></select></div>
+<div class="fg"><label>Street Address *</label><input type="text" id="co-address" required></div>
+<div class="fg"><label>Apartment, suite, etc. (optional)</label><input type="text" id="co-address2"></div>
+<div class="frow">
+<div class="fg"><label>Town / City *</label><input type="text" id="co-city" required></div>
+<div class="fg"><label id="state-label">State *</label><div id="state-field"></div></div>
 </div>
-<div class="form-row">
-<div class="form-group"><label>ZIP Code *</label><input type="text" id="billing-zip" required></div>
-<div class="form-group"><label>Phone *</label><input type="tel" id="billing-phone" required></div>
+<div class="frow">
+<div class="fg"><label>ZIP Code *</label><input type="text" id="co-zip" required></div>
+<div class="fg"><label>Phone *</label><input type="tel" id="co-phone" required></div>
 </div>
-<div class="form-group"><label>Email Address *</label><input type="email" id="billing-email" required></div>
+<div class="fg"><label>Email Address *</label><input type="email" id="co-email" required></div>
 </div>
 
-<div class="checkout-section">
+<div class="co-sec">
 <h2>Additional Information</h2>
-<div class="form-group"><label>Order Notes (optional)</label><textarea id="order-notes" rows="4"></textarea></div>
+<div class="fg"><label>Order Notes (optional)</label><textarea id="co-notes" rows="4"></textarea></div>
 </div>
 
-<div class="checkout-section">
+<div class="co-sec">
 <h2>Payment</h2>
-<div class="payment-form">
+<div class="pay-form">
 <h3>Credit / Debit Card</h3>
-<div class="card-logos">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Discover_Card_logo.svg" alt="Discover">
-</div>
-<div class="form-group"><label>Card Number</label><input type="text" placeholder="1234 1234 1234 1234"></div>
-<div class="form-row">
-<div class="form-group"><label>Expiration Date</label><input type="text" placeholder="MM / YY"></div>
-<div class="form-group"><label>Security Code</label><input type="text" placeholder="CVC"></div>
+<div id="co-pay-logos"></div>
+<div class="fg"><label>Card Number</label><input type="text" id="cc-num" placeholder="1234 1234 1234 1234"></div>
+<div class="frow">
+<div class="fg"><label>Expiration Date</label><input type="text" id="cc-exp" placeholder="MM / YY"></div>
+<div class="fg"><label>Security Code</label><input type="text" id="cc-cvc" placeholder="CVC"></div>
 </div>
 </div>
 
-<p style="font-size:14px;color:var(--color-gray);margin-bottom:20px">Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a id="link-privacy-checkout" style="color:var(--color-primary);cursor:pointer">privacy policy</a>.</p>
+<p style="font-size:14px;color:var(--gr);margin-bottom:20px">Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a id="co-priv-lnk" style="color:var(--red);cursor:pointer">privacy policy</a>.</p>
 
-<div class="terms-checkbox">
-<input type="checkbox" id="terms-accept" required>
-<label for="terms-accept">I am 18 years or older and agree to the <a id="link-terms-checkout" style="color:var(--color-primary);cursor:pointer">terms and conditions</a> and Privacy Policy explaining that by placing an order, Product delivery is free (free S&H), You will not be enrolled in any type of continuity program by ordering said option from this website. The charges will appear on your billing statement as <strong>FITNESSGOAT STORE</strong>. Delivery is via USPS and takes between 7 business days from the order processing date.</label>
+<div class="tc-check">
+<input type="checkbox" id="tc-check" required>
+<label for="tc-check">I am 18 years or older and agree to the <a id="tc-terms-lnk" style="color:var(--red);cursor:pointer">terms and conditions</a> and Privacy Policy explaining that by placing an order, Product delivery is free (free S&H), You will not be enrolled in any type of continuity program by ordering said option from this website. The charges will appear on your billing statement as <strong>FITNESSGOAT STORE</strong>. Delivery is via USPS and takes between 7 business days from the order processing date.</label>
 </div>
 
 <button class="btn" id="place-order-btn" style="width:100%;font-size:18px;padding:18px">PLACE ORDER</button>
 
-<div class="checkout-note">The charges will appear on your billing statement as <strong>FITNESSGOAT STORE</strong>. For any question concerning your order or a question concerning one of our products do not hesitate to contact our customer service by email at <strong>support@fitnessgoat-staging.com</strong> or by filling our contact form. We're open from Monday to Saturday, 9am-7pm EST Time.</div>
+<div class="co-note">The charges will appear on your billing statement as <strong>FITNESSGOAT STORE</strong>. For any question concerning your order or a question concerning one of our products do not hesitate to contact our customer service by email at <strong>support@fitnessgoat-staging.com</strong> or by filling our contact form. We're open from Monday to Saturday, 9am-7pm EST Time.</div>
 </div>
 </div>
 
 <div>
-<div class="checkout-summary">
+<div class="co-sum">
 <h2 style="margin-bottom:30px">Your Order</h2>
-<div id="checkout-summary-items"></div>
-<div class="summary-total">
-<div class="summary-item"><span>Total:</span><span id="checkout-total">$0.00</span></div>
+<div id="co-lines"></div>
+<div class="sum-tot">
+<div class="sum-item"><span>Subtotal:</span><span id="co-sub">$0.00</span></div>
+<div class="sum-item"><span>Shipping:</span><span id="co-ship">FREE</span></div>
+<div class="sum-item"><span>Total:</span><span id="co-total">$0.00</span></div>
 </div>
 </div>
 </div>
+</div>
+</div>
+
+<div id="confirm-screen" style="display:none;text-align:center;padding:100px 20px">
+<h1 style="font-size:48px;margin-bottom:30px">Thank You!</h1>
+<p style="font-size:20px;margin-bottom:20px">Your order <strong id="confirm-num"></strong> has been received.</p>
+<p style="font-size:16px;color:var(--gr);margin-bottom:40px">A confirmation email has been sent to your address.<br>Shipping within 7 days with USPS.</p>
+<button class="btn" id="confirm-shop">Continue Shopping</button>
 </div>
 </div>
 </div>
 
 <div class="page" id="page-contact">
 <div class="container">
-<div class="breadcrumb"><a id="bc-home-contact">Home</a> &gt; Contact Us</div>
+<div class="bc"><a id="bc-contact-home">Home</a> › Contact Us</div>
 <h1 class="section-title">Contact Us</h1>
 <div class="contact-info">
 <h3>FITNESSGOAT STORE LLC</h3>
@@ -242,10 +292,10 @@ nav{display:none}
 <p><strong>Email:</strong> support@fitnessgoat-staging.com</p>
 </div>
 <div style="max-width:600px;margin:0 auto">
-<div class="form-group"><label>Name *</label><input type="text" id="contact-name" required></div>
-<div class="form-group"><label>Email *</label><input type="email" id="contact-email" required></div>
-<div class="form-group"><label>Phone Number</label><input type="tel" id="contact-phone"></div>
-<div class="form-group"><label>Message *</label><textarea id="contact-message" rows="6" required></textarea></div>
+<div class="fg"><label>Name *</label><input type="text" id="contact-name" required></div>
+<div class="fg"><label>Email *</label><input type="email" id="contact-email" required></div>
+<div class="fg"><label>Phone Number</label><input type="tel" id="contact-phone"></div>
+<div class="fg"><label>Message *</label><textarea id="contact-message" rows="6" required></textarea></div>
 <button class="btn" id="contact-submit" style="width:100%">Send Message</button>
 </div>
 </div>
@@ -253,7 +303,7 @@ nav{display:none}
 
 <div class="page" id="page-privacy">
 <div class="container">
-<div class="breadcrumb"><a id="bc-home-privacy">Home</a> &gt; Privacy Policy</div>
+<div class="bc"><a id="bc-privacy-home">Home</a> › Privacy Policy</div>
 <div class="legal-content">
 <h1>Privacy Policy for FITNESSGOAT STORE LLC</h1>
 <p>Please note: The Website privacy policy changes from time to time and changes are effective upon posting.</p>
@@ -271,7 +321,7 @@ nav{display:none}
 
 <div class="page" id="page-terms">
 <div class="container">
-<div class="breadcrumb"><a id="bc-home-terms">Home</a> &gt; Terms & Conditions</div>
+<div class="bc"><a id="bc-terms-home">Home</a> › Terms & Conditions</div>
 <div class="legal-content">
 <h1>Terms & Conditions</h1>
 <h2>USER AGREEMENT</h2>
@@ -295,6 +345,8 @@ nav{display:none}
 <p>You may return any unopened product within 30 days. For refund inquiries, contact: <strong>+1 (833) 323-2668</strong></p>
 <h2>SHIPPING TERMS</h2>
 <p>Shipping within 7 days with USPS. Shipments are not sent on Saturdays, Sundays, or Holidays.</p>
+<h2>RETURN ADDRESS</h2>
+<p>Fulfillment Box USA<br>Attn: 11815 Technology Ln #300 Fishers, IN 46038<br>Email: usindiana@fulfillment-box.com</p>
 <h2>GOVERNING LAW</h2>
 <p>These Terms shall be governed by the laws of the State of Michigan. Disputes shall be subject to the courts located in Detroit, Michigan.</p>
 <h2>CONTACT INFORMATION</h2>
@@ -310,15 +362,12 @@ nav{display:none}
 <div class="footer-grid">
 <div class="footer-col">
 <h3>Quick Links</h3>
-<a id="footer-privacy">Privacy Policy</a>
-<a id="footer-terms">Terms & Conditions</a>
-<a id="footer-contact">Contact</a>
-<div style="margin-top:20px">
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" height="30" style="margin-right:10px;filter:invert(1)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" height="30" style="margin-right:10px">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" height="30" style="margin-right:10px">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" height="30">
-</div>
+<a id="fl-home">Home</a>
+<a id="fl-shop">Shop</a>
+<a id="fl-privacy">Privacy Policy</a>
+<a id="fl-terms">Terms & Conditions</a>
+<a id="fl-contact">Contact</a>
+<div id="footer-pay" style="margin-top:20px"></div>
 </div>
 <div class="footer-col">
 <h3>Contact Form</h3>
@@ -341,24 +390,27 @@ nav{display:none}
 </div>
 </footer>
 
-<div class="toast" id="toast"></div>
+<div id="toast"></div>
 
 <script>
 (function(){
 'use strict';
 
-const products=[
-{id:1,title:"TheraBand CLX Resistance Band with Loops",price:7.99,image:"https://fitnesstank.com/cdn/shop/files/THERABANDCLXResistanceBandwithLoops-yellow-1_156f1196-10fc-4213-b273-17214e643ba5.png",desc:"<h3>Benefits</h3><ul><li>Lightweight and ultra-portable resistance training</li><li>Helps improve flexibility and activate muscles</li><li>Perfect for rehab, mobility work, and safe exercise</li><li>Consecutive loop design for versatile grip options</li><li>Latex-free and powder-free material</li></ul><h3>Specifications</h3><ul><li>Length: 5 feet</li><li>Material: Latex-free, powder-free elastic</li><li>Design: Consecutive loop system</li><li>Color: Yellow (Light resistance)</li><li>Resistance: ~3 lb</li></ul><h3>Package Includes</h3><ul><li>1x TheraBand CLX Resistance Band with Loops (Yellow)</li><li>Exercise guide</li></ul><h3>Perfect For</h3><ul><li>Physical therapy patients and rehabilitation</li><li>Home workout users and beginners</li><li>Mobility and functional fitness practitioners</li><li>Strength training enthusiasts at all levels</li></ul>"},
-{id:2,title:"TheraBand Foot Roller",price:14.99,image:"https://fitnesstank.com/cdn/shop/files/Theraband_Foot_Roller_-_1.2.png",desc:"<h3>Benefits</h3><ul><li>Soothes tired, achy feet in seconds</li><li>Helps relieve plantar fascia pain and improve flexibility</li><li>Reduces tension and supports recovery</li><li>Can be chilled for cold therapy benefits</li><li>Compact and portable design</li></ul><h3>Specifications</h3><ul><li>Material: Natural rubber with hollow core</li><li>Color: Green</li><li>Design: Ridged surface for massage</li><li>Dimensions: Compact foot massage roller</li><li>Weight: Lightweight and portable</li></ul><h3>Package Includes</h3><ul><li>1x TheraBand Foot Roller (Green)</li><li>Simple stretch instructions</li></ul><h3>Perfect For</h3><ul><li>Individuals with plantar fasciitis</li><li>Runners and endurance athletes</li><li>People who stand for extended periods</li><li>Anyone experiencing foot fatigue or arch pain</li></ul>"},
-{id:3,title:"TheraBand CLX Resistance Band 2-Pack",price:24.99,image:"https://fitnesstank.com/cdn/shop/files/THERABAND_CLX_Resistance_Band_with_Loops_-_Gold_and_Silver_pack_-_1_e3f30c07-4239-41a6-9213-7fb30a13f2ca.png",desc:"<h3>Benefits</h3><ul><li>Two resistance levels for progressive training</li><li>Scale resistance and challenge your strength</li><li>Target every muscle group effectively</li><li>Full-body results anywhere you go</li><li>Latex-free, scent-free, and powder-free</li></ul><h3>Specifications</h3><ul><li>Band Length: 5 ft (1.5 m) each</li><li>Material: Latex-free synthetic rubber (powder-free)</li><li>Design: Consecutive loop resistance band</li><li>Colors: Blue (Level 5) + Black (Level 6)</li><li>Resistance: Blue ~5.8 lb, Black ~7.3 lb</li></ul><h3>Package Includes</h3><ul><li>1x Blue TheraBand CLX Band (Extra Heavy)</li><li>1x Black TheraBand CLX Band (Special Heavy)</li><li>Exercise guide</li></ul><h3>Perfect For</h3><ul><li>Athletes and fitness enthusiasts</li><li>Physical therapy and rehabilitation programs</li><li>Strength and mobility training routines</li><li>Home gym workouts and travelers</li></ul>"},
-{id:4,title:"Modvel Ankle Brace",price:29.99,image:"https://fitnesstank.com/cdn/shop/files/Frame3.png",desc:"<h3>Benefits</h3><ul><li>Lightweight compression ankle support</li><li>Comfortable for daily activities and workouts</li><li>Breathable 3D-knit fabric contours naturally</li><li>Secure and flexible fit for all-day wear</li><li>Helps with recovery and injury prevention</li></ul><h3>Specifications</h3><ul><li>Material: Breathable 3D-knit fabric</li><li>Color: Black</li><li>Design: Compression sleeve</li><li>Size: Universal fit</li><li>Type: Ankle support brace</li></ul><h3>Package Includes</h3><ul><li>1x Modvel Ankle Brace (Black)</li><li>Care instructions</li></ul><h3>Perfect For</h3><ul><li>Daily wear and workout sessions</li><li>Recovery from ankle injuries</li><li>Athletes seeking extra support</li><li>Anyone with ankle instability</li></ul>"},
-{id:5,title:"TheraBand FlexBar 2-Pack",price:39.99,image:"https://fitnesstank.com/cdn/shop/files/1000x1000PNG-TherabandFlexbar2-Pack_RedandGreen_a1286b89-8520-4336-8f83-bfa0e7c98069.png",desc:"<h3>Benefits</h3><ul><li>Two levels of resistance for progressive training</li><li>Helps relieve elbow and wrist pain</li><li>Builds forearm strength and improves grip</li><li>Perfect for rehab and performance training</li><li>Compact and portable design</li></ul><h3>Specifications</h3><ul><li>Bar Length: 12 in (30 cm) each</li><li>Material: Durable natural rubber with textured grip</li><li>Colors: Red (Light 10 lb) + Green (Medium 15 lb)</li><li>Design: FlexBar grip strengthening bars</li><li>Use: Grip strength, forearm conditioning, rehabilitation</li></ul><h3>Package Includes</h3><ul><li>1x Red FlexBar (Light resistance)</li><li>1x Green FlexBar (Medium resistance)</li><li>Exercise guide</li></ul><h3>Perfect For</h3><ul><li>Athletes improving grip and forearm strength</li><li>Physical therapy and rehabilitation patients</li><li>Tennis elbow or wrist injury recovery</li><li>Fitness enthusiasts adding grip training</li></ul>"},
-{id:6,title:"Modvel Knee Brace",price:44.99,image:"https://fitnesstank.com/cdn/shop/files/Frame2.png",desc:"<h3>Benefits</h3><ul><li>Lightweight compression knee support</li><li>Comfortable for daily activities and recovery</li><li>Breathable 3D-knit fabric for natural fit</li><li>Secure and flexible for all-day comfort</li><li>Helps with knee stability and injury prevention</li></ul><h3>Specifications</h3><ul><li>Material: Breathable 3D-knit fabric</li><li>Color: Black</li><li>Design: Compression sleeve</li><li>Size: Universal fit</li><li>Type: Knee support brace</li></ul><h3>Package Includes</h3><ul><li>1x Modvel Knee Brace (Black)</li><li>Care instructions</li></ul><h3>Perfect For</h3><ul><li>Daily wear during workouts and recovery</li><li>Knee injury rehabilitation</li><li>Athletes seeking extra knee support</li><li>Anyone with knee instability or pain</li></ul>"},
-{id:7,title:"TheraBand Latex Free Resistance Band Kit",price:49.99,image:"https://fitnesstank.com/cdn/shop/files/TherabandResistanceBands-BlackandBluepack-1.png",desc:"<h3>Benefits</h3><ul><li>Powerful resistance training without latex</li><li>Build muscle tone, balance, and flexibility</li><li>Durable, progressive resistance for everyday athletes</li><li>Replaces a rack full of weights</li><li>Compact and travel-friendly design</li></ul><h3>Specifications</h3><ul><li>Band Length: 5 ft (1.5 m) each</li><li>Band Width: 4 in (10 cm)</li><li>Material: Latex-free synthetic rubber</li><li>Colors: Blue + Black (Advanced set)</li><li>Resistance: Blue ~5.8-8.6 lb, Black ~7.3-10.2 lb</li></ul><h3>Package Includes</h3><ul><li>1x Blue Resistance Band (Extra Heavy)</li><li>1x Black Resistance Band (Special Heavy)</li><li>Exercise guide</li></ul><h3>Perfect For</h3><ul><li>Beginners starting resistance training</li><li>Athletes and fitness enthusiasts</li><li>Physical therapy and rehabilitation</li><li>Home workouts and travel training</li></ul>"},
-{id:8,title:"Total Body Band TheraBand",price:59.99,image:"https://fitnesstank.com/cdn/shop/files/TBB_x_Theraband_-_Black_2.png",desc:"<h3>Benefits</h3><ul><li>Full-body resistance training system</li><li>Secure ankle cuffs for lower-body exercises</li><li>Joint-friendly resistance for strength and mobility</li><li>Replaces bulky home gym equipment</li><li>Portable and easy to use anywhere</li></ul><h3>Specifications</h3><ul><li>Resistance Level: Light (5 lb per handle)</li><li>Design: Flat resistance band with ankle cuffs and handles</li><li>Material: Durable resistance band with comfort cuffs</li><li>Color: Gold/Light</li><li>Use: Strength training, mobility, functional fitness</li></ul><h3>Package Includes</h3><ul><li>1x Total Body Band with ankle cuffs and handles</li><li>Exercise guide</li></ul><h3>Perfect For</h3><ul><li>Home workout users and beginners</li><li>Strength training and functional fitness</li><li>Glute and lower-body training focus</li><li>Travelers seeking portable gym alternatives</li></ul>"}
+var C='https://wsrv.nl/?url=fitnesstank.com/cdn/shop/files/';
+var products=[
+{id:1,url:'https://fitnesstank.com/products/theraband-clx-resistance-band-with-loops',name:'TheraBand CLX Resistance Band with Loops',price:7.99,old:null,badge:null,bc:'',rating:4.8,rev:2487,fb:'💪',cat:'Fitness Equipment',tag:'resistance',imgs:[C+'THERABANDCLXResistanceBandwithLoops-yellow-1_156f1196-10fc-4213-b273-17214e643ba5.png'],desc:{b:['Portable full-body resistance training','Supports strength and mobility work','Easy to use at home or on the go','Lightweight and compact for storage'],s:['Material: Elastic resistance band','Format: Multi-loop band','Color: Yellow','Use: Full-body training'],i:['1x Resistance Band with Loops'],p:['Home workouts','Mobility sessions','Travel fitness','Physical therapy']}},
+{id:2,url:'https://fitnesstank.com/products/theraband-foot-roller',name:'TheraBand Foot Roller',price:14.99,old:null,badge:null,bc:'',rating:4.7,rev:1934,fb:'💪',cat:'Fitness Equipment',tag:'recovery',imgs:[C+'Theraband_Foot_Roller_-_1.2.png'],desc:{b:['Helps relieve foot tension fast','Supports post-workout recovery','Improves daily comfort and mobility','Simple tool for at-home massage'],s:['Material: Textured roller surface','Category: Recovery accessory','Use: Foot massage and mobility','Format: Hand-free rolling tool'],i:['1x Foot Roller'],p:['Post-workout recovery','Home fitness','Running recovery','Daily mobility']}},
+{id:3,url:'https://fitnesstank.com/products/theraband-clx-resistance-band-with-loops-2-pack',name:'TheraBand CLX Resistance Band with Loops 2-Pack',price:24.99,old:null,badge:null,bc:'',rating:4.8,rev:2216,fb:'💪',cat:'Fitness Equipment',tag:'strength',imgs:[C+'THERABAND_CLX_Resistance_Band_with_Loops_-_Gold_and_Silver_pack_-_1_e3f30c07-4239-41a6-9213-7fb30a13f2ca.png'],desc:{b:['Two resistance levels in one pack','Supports progressive strength training','Useful for mobility and activation','Compact setup for home workouts'],s:['Pack Size: 2 bands','Format: Loop resistance bands','Colors: Gold and Silver','Use: Strength and mobility training'],i:['2x Resistance Bands with Loops'],p:['Strength training','Home workouts','Stretch routines','Travel fitness']}},
+{id:4,url:'https://fitnesstank.com/products/modvel-ankle-brace-black',name:'Modvel Ankle Brace',price:29.99,old:null,badge:null,bc:'',rating:4.6,rev:3189,fb:'💪',cat:'Fitness Equipment',tag:'support',imgs:[C+'Frame3.png'],desc:{b:['Adds ankle support during movement','Helps improve training confidence','Supports recovery and stability','Comfortable for active daily use'],s:['Color: Black','Category: Compression support','Use: Ankle stabilization','Fit: Wearable brace design'],i:['1x Ankle Brace'],p:['Gym workouts','Walking support','Post-injury recovery','Daily activity']}},
+{id:5,url:'https://fitnesstank.com/products/theraband-flexbar-2-pack',name:'TheraBand FlexBar 2-Pack',price:39.99,old:null,badge:null,bc:'',rating:4.7,rev:1742,fb:'💪',cat:'Fitness Equipment',tag:'strength',imgs:[C+'1000x1000PNG-TherabandFlexbar2-Pack_RedandGreen_a1286b89-8520-4336-8f83-bfa0e7c98069.png'],desc:{b:['Supports grip and forearm strength','Useful for rehab and conditioning','Compact tool for upper-body work','Helps improve training control'],s:['Pack Size: 2 FlexBars','Colors: Red and Green','Use: Grip and forearm training','Category: Strength and rehab tool'],i:['2x FlexBars'],p:['Grip training','Forearm rehab','Home gym use','Physical therapy']}},
+{id:6,url:'https://fitnesstank.com/products/modvel-knee-brace-black',name:'Modvel Knee Brace',price:44.99,old:null,badge:null,bc:'',rating:4.7,rev:2964,fb:'💪',cat:'Fitness Equipment',tag:'support',imgs:[C+'Frame2.png'],desc:{b:['Provides knee support during training','Helps improve movement confidence','Useful for stability and recovery','Comfortable for repeat daily wear'],s:['Color: Black','Category: Compression knee support','Use: Knee stabilization','Fit: Wearable brace design'],i:['1x Knee Brace'],p:['Leg workouts','Walking support','Post-injury recovery','Daily activity']}},
+{id:7,url:'https://fitnesstank.com/products/total-body-band-theraband',name:'Total Body Band TheraBand',price:49.99,old:null,badge:null,bc:'',rating:4.8,rev:2864,fb:'💪',cat:'Fitness Equipment',tag:'resistance',imgs:[C+'TBB_x_Theraband_-_Black_2.png'],desc:{b:['Supports full-body resistance sessions','Helps train multiple muscle groups','Portable for home or travel workouts','Useful for total-body movement drills'],s:['Color: Black','Category: Total-body resistance band','Use: Strength and conditioning','Format: Portable training band'],i:['1x Total Body Band'],p:['Home workouts','Travel fitness','Resistance training','Warm-up sessions']}},
+{id:8,url:'https://fitnesstank.com/products/theraband-latex-free-resistance-band-kit',name:'TheraBand Latex Free Resistance Band Kit',price:59.99,old:null,badge:null,bc:'',rating:4.6,rev:1588,fb:'💪',cat:'Fitness Equipment',tag:'resistance',imgs:[C+'TherabandResistanceBands-BlackandBluepack-1.png'],desc:{b:['Supports resistance workouts without latex','Good for home training and rehab work','Compact set for flexible daily routines','Useful for upper and lower body training'],s:['Material: Latex-free band material','Colors: Black and Blue','Category: Resistance band kit','Use: Strength and mobility training'],i:['1x Resistance Band Kit'],p:['Home workouts','Physical therapy','Beginner fitness','Mobility training']}}
 ];
 
-const countries=[
+var PAY_HTML='<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" height="30" style="margin-right:10px;filter:invert(1)"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" height="30" style="margin-right:10px"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" height="30" style="margin-right:10px"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" height="30" style="margin-right:10px"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Discover_Card_logo.svg" alt="Discover" height="30">';
+
+var countries=[
 {code:'US',name:'United States',states:['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming']},
 {code:'CA',name:'Canada',states:['Alberta','British Columbia','Manitoba','New Brunswick','Newfoundland and Labrador','Nova Scotia','Ontario','Prince Edward Island','Quebec','Saskatchewan']},
 {code:'GB',name:'United Kingdom',states:null},
@@ -402,112 +454,150 @@ const countries=[
 {code:'VN',name:'Vietnam',states:null}
 ];
 
-let cart=[];
-
-function goTo(p){
-document.querySelectorAll('.page').forEach(e=>e.classList.remove('active'));
-const el=document.getElementById('page-'+p);
-if(el)el.classList.add('active');
+var cart=[],curProd=null,detQty=1;
+function $(id){return document.getElementById(id)}
+function getP(id){return products.find(function(p){return p.id===id})}
+function goTo(page,id){
+showPage(page,id);
+window.history.pushState({page:page,id:id},'','#'+page+(id?'-'+id:''));
 window.scrollTo(0,0);
-window.history.pushState({page:p},'','#'+p);
-if(p==='shop')renderGrid('grid-shop',products);
-else if(p==='home')renderGrid('grid-home',products.slice(0,4));
-else if(p==='cart')renderCart();
-else if(p==='checkout')renderCheckout();
 }
-
-function renderGrid(cid,items){
-const el=document.getElementById(cid);
+function showPage(page,id){
+var pages=document.querySelectorAll('.page');
+pages.forEach(function(p){p.classList.remove('active')});
+var el=$('page-'+page);
+if(el)el.classList.add('active');
+if(page==='home'){
+renderGrid('featured-grid',[1,2,3,4]);
+renderGrid('popular-grid',[5,6,7,8]);
+}
+if(page==='shop')renderGrid('shop-grid',[1,2,3,4,5,6,7,8]);
+if(page==='product'&&id){
+curProd=getP(id);detQty=1;
+if(curProd)renderPD(curProd);
+}
+if(page==='cart')renderCart();
+if(page==='checkout')renderCheckout();
+}
+function renderGrid(cid,ids){
+var el=$(cid);
 if(!el)return;
-el.innerHTML=items.map(p=>`<div class="product-card" onclick="showProduct(${p.id})"><img src="${p.image}" alt="${p.title}" class="product-image" loading="lazy"><div class="product-info"><div class="product-title">${p.title}</div><div class="product-price">$${p.price.toFixed(2)} USD</div><button class="btn" onclick="event.stopPropagation();addCart(${p.id})">Add to Cart</button></div></div>`).join('');
-}
-
-function showProduct(id){
-const p=products.find(x=>x.id===id);
+el.innerHTML='';
+ids.forEach(function(id){
+var p=getP(id);
 if(!p)return;
-const bc=document.getElementById('bc-product');
-if(bc)bc.innerHTML=`<a onclick="goTo('home')">Home</a> &gt; <a onclick="goTo('shop')">Shop</a> &gt; ${p.title}`;
-const pd=document.getElementById('product-detail');
-if(pd)pd.innerHTML=`<div class="product-detail-grid"><div><img src="${p.image}" class="product-detail-image" loading="lazy"></div><div><h1>${p.title}</h1><div class="product-detail-price">$${p.price.toFixed(2)} USD</div><div class="quantity-selector"><button onclick="changeQty(-1)">−</button><input type="number" id="pdqty" value="1" min="1"><button onclick="changeQty(1)">+</button></div><button class="btn" onclick="addCartDetail(${id})" style="width:100%;padding:16px">Add to Cart</button><p style="margin-top:20px;color:#666">Shipping within 7 days with USPS.</p></div></div><div class="product-description">${p.desc}</div>`;
-goTo('product');
+var card=document.createElement('div');
+card.className='card';
+card.onclick=function(){goTo('product',p.id)};
+card.innerHTML='<img src="'+p.imgs[0]+'" class="card-img" loading="lazy"><div class="card-info"><div class="card-title">'+p.name+'</div><div class="card-price">$'+p.price.toFixed(2)+' USD</div></div>';
+var btn=document.createElement('button');
+btn.className='btn';
+btn.textContent='Add to Cart';
+btn.onclick=function(e){e.stopPropagation();addCart(p.id);};
+card.querySelector('.card-info').appendChild(btn);
+el.appendChild(card);
+});
 }
-
-function changeQty(d){
-const inp=document.getElementById('pdqty');
-if(inp){
-const v=parseInt(inp.value)+d;
-if(v>=1)inp.value=v;
+function renderPD(p){
+var bc=$('pd-breadcrumb');
+if(bc)bc.innerHTML='<a id="bc-pd-home">Home</a> › <a id="bc-pd-shop">Shop</a> › '+p.name;
+wire();
+var nm=$('pd-name');
+if(nm)nm.textContent=p.name;
+var pr=$('pd-price');
+if(pr)pr.textContent='$'+p.price.toFixed(2)+' USD';
+var rt=$('pd-rating');
+if(rt)rt.innerHTML='⭐ '+p.rating+' ('+p.rev+' reviews)';
+var img=$('pd-main');
+if(img)img.src=p.imgs[0];
+var pay=$('pd-pay-logos');
+if(pay)pay.innerHTML=PAY_HTML;
+var desc=$('pd-desc');
+if(desc)desc.innerHTML='<h3>'+p.fb+' Benefits</h3><ul>'+p.desc.b.map(function(i){return'<li>'+i+'</li>'}).join('')+'</ul><h3>Specifications</h3><ul>'+p.desc.s.map(function(i){return'<li>'+i+'</li>'}).join('')+'</ul><h3>Package Includes</h3><ul>'+p.desc.i.map(function(i){return'<li>'+i+'</li>'}).join('')+'</ul><h3>Perfect For</h3><ul>'+p.desc.p.map(function(i){return'<li>'+i+'</li>'}).join('')+'</ul>';
+var qtyInp=$('det-qty');
+if(qtyInp)qtyInp.value=detQty;
+renderGrid('related-grid',[1,2,3,4,5,6,7,8].filter(function(i){return i!==p.id}).slice(0,4));
 }
-}
-
 function addCart(id){
-const p=products.find(x=>x.id===id);
-if(p){
-cart.push({...p});
-updateCart();
+var p=getP(id);
+if(!p)return;
+cart.push(p);
+updateCartCount();
 toast('Product added to cart!');
 }
+function addCartDetail(){
+if(!curProd)return;
+for(var i=0;i<detQty;i++)addCart(curProd.id);
 }
-
-function addCartDetail(id){
-const inp=document.getElementById('pdqty');
-const qty=inp?parseInt(inp.value):1;
-for(let i=0;i<qty;i++)addCart(id);
-}
-
-function updateCart(){
-const el=document.getElementById('cart-count');
+function updateCartCount(){
+var el=$('cart-count');
 if(el)el.textContent=cart.length;
 }
-
 function renderCart(){
-const el=document.getElementById('cart-content');
+var el=$('cart-content');
 if(!el)return;
 if(cart.length===0){
-el.innerHTML='<div class="cart-empty"><h2>Your cart is currently empty.</h2><button class="btn" onclick="goTo(\'shop\')">Return to shop</button></div>';
+el.innerHTML='<div class="cart-empty"><h2>Your cart is currently empty.</h2><button class="btn" id="cart-shop-btn">Return to shop</button></div>';
+var btn=$('cart-shop-btn');
+if(btn)btn.onclick=function(){goTo('shop')};
 return;
 }
-const grouped=cart.reduce((a,i)=>{
-const e=a.find(x=>x.id===i.id);
+var grouped=cart.reduce(function(a,p){
+var e=a.find(function(x){return x.id===p.id});
 if(e)e.qty++;
-else a.push({...i,qty:1});
+else a.push({id:p.id,name:p.name,price:p.price,imgs:p.imgs,qty:1});
 return a;
 },[]);
-const items=grouped.map(i=>`<div class="cart-item"><img src="${i.image}" class="cart-item-image" loading="lazy"><div><h3>${i.title}</h3><p>Quantity: ${i.qty}</p></div><div class="product-price">$${(i.price*i.qty).toFixed(2)}</div><button onclick="removeCart(${i.id})" style="border:none;background:none;cursor:pointer;font-size:20px">🗑️</button></div>`).join('');
-const total=cart.reduce((s,i)=>s+i.price,0);
-el.innerHTML=`${items}<div class="cart-total">Total: $${total.toFixed(2)} USD</div><div style="text-align:right"><button class="btn" onclick="goTo('checkout')" style="padding:16px 40px;font-size:18px">Proceed to Checkout</button></div>`;
+var html='';
+grouped.forEach(function(i){
+html+='<div class="cart-item"><img src="'+i.imgs[0]+'" class="cart-item-img" loading="lazy"><div><h3>'+i.name+'</h3><p>Quantity: '+i.qty+'</p></div><div class="card-price">$'+(i.price*i.qty).toFixed(2)+'</div><button id="rm-'+i.id+'" style="border:none;background:none;cursor:pointer;font-size:20px">🗑️</button></div>';
+});
+var total=cart.reduce(function(s,p){return s+p.price},0);
+html+='<div class="cart-total">Total: $'+total.toFixed(2)+' USD</div><div style="text-align:right"><button class="btn" id="cart-checkout-btn" style="padding:16px 40px;font-size:18px">Proceed to Checkout</button></div>';
+el.innerHTML=html;
+var ckBtn=$('cart-checkout-btn');
+if(ckBtn)ckBtn.onclick=function(){goTo('checkout')};
+grouped.forEach(function(i){
+var rmBtn=$('rm-'+i.id);
+if(rmBtn)rmBtn.onclick=function(){removeCart(i.id)};
+});
 }
-
 function removeCart(id){
-const idx=cart.findIndex(i=>i.id===id);
+var idx=cart.findIndex(function(p){return p.id===id});
 if(idx>-1){
 cart.splice(idx,1);
-updateCart();
+updateCartCount();
 renderCart();
 toast('Item removed');
 }
 }
-
 function renderCheckout(){
-const grouped=cart.reduce((a,i)=>{
-const e=a.find(x=>x.id===i.id);
+var grouped=cart.reduce(function(a,p){
+var e=a.find(function(x){return x.id===p.id});
 if(e)e.qty++;
-else a.push({...i,qty:1});
+else a.push({id:p.id,name:p.name,price:p.price,imgs:p.imgs,qty:1});
 return a;
 },[]);
-const items=grouped.map(i=>`<div class="summary-item"><span>${i.title} × ${i.qty}</span><span>$${(i.price*i.qty).toFixed(2)}</span></div>`).join('');
-const total=cart.reduce((s,i)=>s+i.price,0);
-const si=document.getElementById('checkout-summary-items');
-const ct=document.getElementById('checkout-total');
-if(si)si.innerHTML=items;
-if(ct)ct.textContent='$'+total.toFixed(2)+' USD';
+var html='';
+grouped.forEach(function(i){
+html+='<div class="sum-item"><img src="'+i.imgs[0]+'" style="width:44px;height:44px;object-fit:cover;border-radius:4px;margin-right:10px"><span>'+i.name+' × '+i.qty+'</span><span>$'+(i.price*i.qty).toFixed(2)+'</span></div>';
+});
+var lines=$('co-lines');
+if(lines)lines.innerHTML=html;
+var total=cart.reduce(function(s,p){return s+p.price},0);
+var sub=$('co-sub');
+var tot=$('co-total');
+if(sub)sub.textContent='$'+total.toFixed(2)+' USD';
+if(tot)tot.textContent='$'+total.toFixed(2)+' USD';
+var payLogos=$('co-pay-logos');
+if(payLogos)payLogos.innerHTML=PAY_HTML;
 }
-
 function initCountries(){
-const sel=document.getElementById('billing-country');
+var sel=$('co-country');
 if(!sel)return;
-countries.forEach(c=>{
-const opt=document.createElement('option');
+sel.innerHTML='';
+countries.forEach(function(c){
+var opt=document.createElement('option');
 opt.value=c.code;
 opt.textContent=c.name;
 if(c.code==='US')opt.selected=true;
@@ -516,139 +606,207 @@ sel.appendChild(opt);
 sel.addEventListener('change',handleCountry);
 handleCountry();
 }
-
 function placeOrder(){
-const terms=document.getElementById('terms-accept').checked;
-if(!terms){
+var tc=$('tc-check');
+if(!tc||!tc.checked){
 alert('You must accept the terms and conditions.');
 return;
 }
-const fn=document.getElementById('billing-firstname').value;
-const ln=document.getElementById('billing-lastname').value;
-const em=document.getElementById('billing-email').value;
-if(!fn||!ln||!em){
+var fn=$('co-fname');
+var ln=$('co-lname');
+var em=$('co-email');
+if(!fn||!fn.value||!ln||!ln.value||!em||!em.value){
 alert('Please fill in all required fields.');
 return;
 }
-const btn=document.getElementById('place-order-btn');
+var btn=$('place-order-btn');
 if(btn){
 btn.disabled=true;
 btn.classList.add('placing-order');
 btn.textContent='PROCESSING...';
 }
-setTimeout(()=>{
+setTimeout(function(){
+var num='#FG'+Math.floor(100000+Math.random()*900000);
+var confirmNum=$('confirm-num');
+if(confirmNum)confirmNum.textContent=num;
+var form=$('checkout-form');
+var confirm=$('confirm-screen');
+if(form)form.style.display='none';
+if(confirm)confirm.style.display='block';
 cart=[];
-updateCart();
-alert('Thank you. Your order has been received.\\n\\nA confirmation has been sent to '+em+'.\\n\\nShipping within 7 days with USPS.');
+updateCartCount();
 if(btn){
 btn.disabled=false;
 btn.classList.remove('placing-order');
 btn.textContent='PLACE ORDER';
 }
-goTo('home');
 },2800);
 }
-
 function submitContact(){
-const n=document.getElementById('contact-name').value;
-const e=document.getElementById('contact-email').value;
-const m=document.getElementById('contact-message').value;
-if(!n||!e||!m){
+var n=$('contact-name');
+var e=$('contact-email');
+var m=$('contact-message');
+if(!n||!n.value||!e||!e.value||!m||!m.value){
 alert('Please fill in all required fields.');
 return;
 }
 toast('Message sent successfully!');
-document.getElementById('contact-name').value='';
-document.getElementById('contact-email').value='';
-document.getElementById('contact-phone').value='';
-document.getElementById('contact-message').value='';
+n.value='';
+e.value='';
+var p=$('contact-phone');
+if(p)p.value='';
+m.value='';
 }
-
 function toast(msg){
-const t=document.getElementById('toast');
+var t=$('toast');
 if(t){
 t.textContent=msg;
 t.classList.add('show');
-setTimeout(()=>t.classList.remove('show'),3000);
+setTimeout(function(){t.classList.remove('show')},3000);
 }
 }
-
 function wire(){
-document.getElementById('logo-home').onclick=()=>goTo('home');
-document.getElementById('nav-home').onclick=()=>goTo('home');
-document.getElementById('nav-shop').onclick=()=>goTo('shop');
-document.getElementById('nav-contact').onclick=()=>goTo('contact');
-document.getElementById('cart-icon').onclick=()=>goTo('cart');
-document.getElementById('hero-shop').onclick=()=>goTo('shop');
-document.getElementById('bc-home-shop').onclick=()=>goTo('home');
-document.getElementById('bc-home-cart').onclick=()=>goTo('home');
-document.getElementById('bc-cart-checkout').onclick=()=>goTo('cart');
-document.getElementById('bc-home-contact').onclick=()=>goTo('home');
-document.getElementById('bc-home-privacy').onclick=()=>goTo('home');
-document.getElementById('bc-home-terms').onclick=()=>goTo('home');
-document.getElementById('link-privacy-checkout').onclick=()=>goTo('privacy');
-document.getElementById('link-terms-checkout').onclick=()=>goTo('terms');
-document.getElementById('place-order-btn').onclick=placeOrder;
-document.getElementById('contact-submit').onclick=submitContact;
-document.getElementById('footer-privacy').onclick=()=>goTo('privacy');
-document.getElementById('footer-terms').onclick=()=>goTo('terms');
-document.getElementById('footer-contact').onclick=()=>goTo('contact');
-document.getElementById('footer-send').onclick=()=>{
-toast('Message sent successfully!');
-document.getElementById('footer-email').value='';
-document.getElementById('footer-message').value='';
+var logo=$('logo');
+if(logo)logo.onclick=function(){goTo('home')};
+var navHome=$('nav-home');
+if(navHome)navHome.onclick=function(){goTo('home')};
+var navShop=$('nav-shop');
+if(navShop)navShop.onclick=function(){goTo('shop')};
+var navContact=$('nav-contact');
+if(navContact)navContact.onclick=function(){goTo('contact')};
+var cartBtn=$('cart-btn');
+if(cartBtn)cartBtn.onclick=function(){goTo('cart')};
+var heroShop=$('hero-shop');
+if(heroShop)heroShop.onclick=function(){goTo('shop')};
+var ham=$('ham');
+var mobNav=$('mob-nav');
+var mobClose=$('mob-close');
+if(ham&&mobNav)ham.onclick=function(){mobNav.classList.add('show')};
+if(mobClose&&mobNav)mobClose.onclick=function(){mobNav.classList.remove('show')};
+var mnHome=$('mn-home');
+if(mnHome&&mobNav)mnHome.onclick=function(){mobNav.classList.remove('show');goTo('home')};
+var mnShop=$('mn-shop');
+if(mnShop&&mobNav)mnShop.onclick=function(){mobNav.classList.remove('show');goTo('shop')};
+var mnContact=$('mn-contact');
+if(mnContact&&mobNav)mnContact.onclick=function(){mobNav.classList.remove('show');goTo('contact')};
+var mnPrivacy=$('mn-privacy');
+if(mnPrivacy&&mobNav)mnPrivacy.onclick=function(){mobNav.classList.remove('show');goTo('privacy')};
+var mnTerms=$('mn-terms');
+if(mnTerms&&mobNav)mnTerms.onclick=function(){mobNav.classList.remove('show');goTo('terms')};
+var bcShopHome=$('bc-shop-home');
+if(bcShopHome)bcShopHome.onclick=function(){goTo('home')};
+var bcCartHome=$('bc-cart-home');
+if(bcCartHome)bcCartHome.onclick=function(){goTo('home')};
+var bcCheckoutCart=$('bc-checkout-cart');
+if(bcCheckoutCart)bcCheckoutCart.onclick=function(){goTo('cart')};
+var bcContactHome=$('bc-contact-home');
+if(bcContactHome)bcContactHome.onclick=function(){goTo('home')};
+var bcPrivacyHome=$('bc-privacy-home');
+if(bcPrivacyHome)bcPrivacyHome.onclick=function(){goTo('home')};
+var bcTermsHome=$('bc-terms-home');
+if(bcTermsHome)bcTermsHome.onclick=function(){goTo('home')};
+var bcPdHome=$('bc-pd-home');
+if(bcPdHome)bcPdHome.onclick=function(){goTo('home')};
+var bcPdShop=$('bc-pd-shop');
+if(bcPdShop)bcPdShop.onclick=function(){goTo('shop')};
+var coPrivLnk=$('co-priv-lnk');
+if(coPrivLnk)coPrivLnk.onclick=function(){goTo('privacy')};
+var tcTermsLnk=$('tc-terms-lnk');
+if(tcTermsLnk)tcTermsLnk.onclick=function(){goTo('terms')};
+var placeBtn=$('place-order-btn');
+if(placeBtn)placeBtn.onclick=placeOrder;
+var confirmShop=$('confirm-shop');
+if(confirmShop)confirmShop.onclick=function(){
+var form=$('checkout-form');
+var confirm=$('confirm-screen');
+if(form)form.style.display='block';
+if(confirm)confirm.style.display='none';
+goTo('shop');
 };
+var contactSubmit=$('contact-submit');
+if(contactSubmit)contactSubmit.onclick=submitContact;
+var flHome=$('fl-home');
+if(flHome)flHome.onclick=function(){goTo('home')};
+var flShop=$('fl-shop');
+if(flShop)flShop.onclick=function(){goTo('shop')};
+var flPrivacy=$('fl-privacy');
+if(flPrivacy)flPrivacy.onclick=function(){goTo('privacy')};
+var flTerms=$('fl-terms');
+if(flTerms)flTerms.onclick=function(){goTo('terms')};
+var flContact=$('fl-contact');
+if(flContact)flContact.onclick=function(){goTo('contact')};
+var footerSend=$('footer-send');
+if(footerSend)footerSend.onclick=function(){
+toast('Message sent successfully!');
+var fe=$('footer-email');
+var fm=$('footer-message');
+if(fe)fe.value='';
+if(fm)fm.value='';
+};
+var qtyMinus=$('qty-minus');
+if(qtyMinus)qtyMinus.onclick=function(){
+if(detQty>1){
+detQty--;
+var qtyInp=$('det-qty');
+if(qtyInp)qtyInp.value=detQty;
 }
-
-window.showProduct=showProduct;
-window.addCart=addCart;
-window.addCartDetail=addCartDetail;
-window.removeCart=removeCart;
-window.changeQty=changeQty;
-window.goTo=goTo;
-
-renderGrid('grid-home',products.slice(0,4));
-updateCart();
+};
+var qtyPlus=$('qty-plus');
+if(qtyPlus)qtyPlus.onclick=function(){
+detQty++;
+var qtyInp=$('det-qty');
+if(qtyInp)qtyInp.value=detQty;
+};
+var pdAddBtn=$('pd-add-btn');
+if(pdAddBtn)pdAddBtn.onclick=addCartDetail;
+var footerPay=$('footer-pay');
+if(footerPay)footerPay.innerHTML=PAY_HTML;
+}
+updateCartCount();
 initCountries();
 wire();
 window.history.replaceState({page:'home'},'','#home');
 })();
 
 function handleCountry(){
-const code=document.getElementById('billing-country').value;
-const country=countries.find(c=>c.code===code);
-const cont=document.getElementById('state-container');
-const lbl=document.getElementById('state-label');
+var sel=document.getElementById('co-country');
+if(!sel)return;
+var code=sel.value;
+var country=countries.find(function(c){return c.code===code});
+var cont=document.getElementById('state-field');
+var lbl=document.getElementById('state-label');
 if(!country||!cont||!lbl)return;
 if(country.states){
 lbl.textContent=code==='US'?'State *':'Province/State *';
-const sel=document.createElement('select');
-sel.id='billing-state';
-sel.required=true;
-sel.style.cssText='width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:16px';
-country.states.forEach(s=>{
-const opt=document.createElement('option');
+var stateSel=document.createElement('select');
+stateSel.id='co-state';
+stateSel.required=true;
+stateSel.style.cssText='width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:16px';
+country.states.forEach(function(s){
+var opt=document.createElement('option');
 opt.value=s;
 opt.textContent=s;
 if(code==='US'&&s==='New Mexico')opt.selected=true;
-sel.appendChild(opt);
+stateSel.appendChild(opt);
 });
 cont.innerHTML='';
-cont.appendChild(sel);
+cont.appendChild(stateSel);
 }else{
 lbl.textContent='State/Province';
-const inp=document.createElement('input');
+var inp=document.createElement('input');
 inp.type='text';
-inp.id='billing-state';
+inp.id='co-state';
 inp.style.cssText='width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:16px';
 cont.innerHTML='';
 cont.appendChild(inp);
 }
 }
 
-window.addEventListener('popstate',e=>{
-const page=e.state&&e.state.page?e.state.page:'home';
-goTo(page);
+window.addEventListener('popstate',function(e){
+var page=e.state&&e.state.page?e.state.page:'home';
+var id=e.state&&e.state.id?e.state.id:null;
+showPage(page,id);
+window.scrollTo(0,0);
 });
 </script>
 
