@@ -4,23 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>FITNESSGOAT — Elite Fitness Equipment</title>
+<title>FITNESSGOAT &mdash; Elite Fitness Equipment</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
---red:#FF4500;
---red-dk:#E03D00;
---red-lt:#FFF4F0;
---dk:#1a1a1a;
---gr:#666;
---lgr:#f5f5f5;
---wh:#fff;
---ok:#22c55e;
---fnt:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
---fnt-h:'Playfair Display',Georgia,serif
-}
+:root{--red:#FF4500;--red-dk:#E03D00;--red-lt:#FFF4F0;--dk:#1a1a1a;--gr:#666;--lgr:#f5f5f5;--wh:#fff;--ok:#22c55e;--fnt:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--fnt-h:'Playfair Display',Georgia,serif}
 body{font-family:var(--fnt);color:var(--dk);line-height:1.6;background:var(--wh)}
 .container{max-width:1200px;margin:0 auto;padding:0 20px}
 .topbar{background:var(--dk);color:var(--wh);padding:10px 0;font-size:14px;text-align:center}
@@ -93,6 +82,7 @@ nav a:hover{color:var(--red)}
 .legal-content{max-width:800px;margin:0 auto;line-height:1.8}
 .legal-content h1{font-size:36px;margin-bottom:30px}
 .legal-content h2{font-size:24px;margin-top:40px;margin-bottom:20px}
+.legal-content p{margin-bottom:15px}
 footer{background:var(--dk);color:var(--wh);padding:60px 0 30px;margin-top:100px}
 .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:60px;margin-bottom:40px}
 .footer-col h3{margin-bottom:20px}
@@ -101,714 +91,262 @@ footer{background:var(--dk);color:var(--wh);padding:60px 0 30px;margin-top:100px
 .footer-bottom{text-align:center;padding-top:30px;border-top:1px solid #333;color:#999;font-size:14px}
 #toast{position:fixed;bottom:30px;right:30px;background:var(--ok);color:#fff;padding:16px 24px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.15);transform:translateY(100px);opacity:0;transition:all .3s;z-index:1000}
 #toast.show{transform:translateY(0);opacity:1}
-@media (max-width:768px){
-.hero h1{font-size:36px}
-#pd-grid,.co-grid,.footer-grid{grid-template-columns:1fr}
-nav{display:none}
-#ham{display:block}
-.section-title{font-size:32px}
-}
+@media(max-width:768px){.hero h1{font-size:36px}#pd-grid,.co-grid,.footer-grid{grid-template-columns:1fr}nav{display:none}#ham{display:block}.section-title{font-size:32px}}
 </style>
 </head>
 <body>
 
-<div class="topbar">
-<div class="container">
-<span>📞 +1 (833) 323-2668</span>
-<span style="margin-left:20px">✉️ support@fitnessgoat-staging.com</span>
-</div>
-</div>
+<div class="topbar"><div class="container"><span>📞 +1 (833) 323-2668</span><span style="margin-left:20px">✉️ support@fitnessgoat-staging.com</span></div></div>
 
-<header id="site-header">
-<div class="container">
-<div class="header-content">
-<div id="logo">FITNESSGOAT</div>
-<nav>
-<a id="nav-home">Home</a>
-<a id="nav-shop">Shop</a>
-<a id="nav-contact">Contact</a>
-</nav>
-<div id="ham">☰</div>
-<div id="cart-btn">🛒<span id="cart-count">0</span></div>
-</div>
-</div>
-</header>
+<header id="site-header"><div class="container"><div class="header-content"><div id="logo">FITNESSGOAT</div><nav><a id="nav-home">Home</a><a id="nav-shop">Shop</a><a id="nav-contact">Contact</a></nav><div id="ham">☰</div><div id="cart-btn">🛒<span id="cart-count">0</span></div></div></div></header>
 
-<div id="mob-nav">
-<div id="mob-close">×</div>
-<a id="mn-home">Home</a>
-<a id="mn-shop">Shop</a>
-<a id="mn-contact">Contact</a>
-<a id="mn-privacy">Privacy Policy</a>
-<a id="mn-terms">Terms & Conditions</a>
-</div>
+<div id="mob-nav"><div id="mob-close">×</div><a id="mn-home">Home</a><a id="mn-shop">Shop</a><a id="mn-contact">Contact</a><a id="mn-privacy">Privacy Policy</a><a id="mn-terms">Terms & Conditions</a></div>
 
+<!-- HOME -->
 <div class="page active" id="page-home">
-<section class="hero">
-<div class="container">
-<h1>TRAIN SMARTER. BUILD STRONGER.</h1>
-<p>Elite fitness gear for serious results.</p>
-<button class="btn" id="hero-shop">SHOP NOW</button>
-</div>
-</section>
-<section class="container">
-<h2 class="section-title">Featured Products</h2>
-<div class="grid" id="featured-grid"></div>
-<h2 class="section-title" style="margin-top:60px">Popular Picks</h2>
-<div class="grid" id="popular-grid"></div>
-</section>
+<section class="hero"><div class="container"><h1>TRAIN SMARTER. BUILD STRONGER.</h1><p>Elite fitness gear for serious results.</p><button class="btn" id="hero-shop">SHOP NOW</button></div></section>
+<section class="container"><h2 class="section-title">Featured Products</h2><div class="grid" id="featured-grid"></div><h2 class="section-title" style="margin-top:60px">Popular Picks</h2><div class="grid" id="popular-grid"></div></section>
 </div>
 
-<div class="page" id="page-shop">
-<div class="container">
-<div class="bc"><a id="bc-shop-home">Home</a> › Shop</div>
-<h1 class="section-title">FITNESSGOAT Shop</h1>
-<div class="grid" id="shop-grid"></div>
-</div>
-</div>
+<!-- SHOP -->
+<div class="page" id="page-shop"><div class="container"><div class="bc"><a id="bc-shop-home">Home</a> › Shop</div><h1 class="section-title">FITNESSGOAT Shop</h1><div class="grid" id="shop-grid"></div></div></div>
 
-<div class="page" id="page-product">
-<div class="container">
-<div class="bc" id="pd-breadcrumb"></div>
-<div id="pd-grid">
-<div><img id="pd-main" loading="lazy"></div>
-<div>
-<h1 id="pd-name"></h1>
-<div id="pd-rating"></div>
-<div id="pd-price"></div>
-<div id="pd-pay-logos"></div>
-<div class="qty-sel">
-<button id="qty-minus">−</button>
-<input type="number" id="det-qty" value="1" min="1">
-<button id="qty-plus">+</button>
-</div>
-<button class="btn" id="pd-add-btn" style="width:100%;padding:16px">Add to Cart</button>
-<p style="margin-top:20px;color:#666">Shipping within 7 days with USPS.</p>
-</div>
-</div>
-<div id="pd-desc"></div>
-<h2 class="section-title" style="margin-top:60px">You May Also Like</h2>
-<div class="grid" id="related-grid"></div>
-</div>
-</div>
+<!-- PRODUCT -->
+<div class="page" id="page-product"><div class="container"><div class="bc" id="pd-breadcrumb"></div><div id="pd-grid"><div><img id="pd-main" loading="lazy"></div><div><h1 id="pd-name"></h1><div id="pd-rating"></div><div id="pd-price"></div><div id="pd-pay-logos"></div><div class="qty-sel"><button id="qty-minus">−</button><input type="number" id="det-qty" value="1" min="1"><button id="qty-plus">+</button></div><button class="btn" id="pd-add-btn" style="width:100%;padding:16px">Add to Cart</button><p style="margin-top:20px;color:#666">Shipping within 7 days with USPS.</p></div></div><div id="pd-desc"></div><h2 class="section-title" style="margin-top:60px">You May Also Like</h2><div class="grid" id="related-grid"></div></div></div>
 
-<div class="page" id="page-cart">
-<div class="container">
-<div class="bc"><a id="bc-cart-home">Home</a> › Cart</div>
-<h1 class="section-title">Shopping Cart</h1>
-<div id="cart-content"></div>
-</div>
-</div>
+<!-- CART -->
+<div class="page" id="page-cart"><div class="container"><div class="bc"><a id="bc-cart-home">Home</a> › Cart</div><h1 class="section-title">Shopping Cart</h1><div id="cart-content"></div></div></div>
 
-<div class="page" id="page-checkout">
-<div class="container">
+<!-- CHECKOUT -->
+<div class="page" id="page-checkout"><div class="container">
 <div class="bc"><a id="bc-checkout-cart">Shopping Cart</a> › <strong>Checkout</strong> › Order Complete</div>
 <h1 class="section-title">Checkout</h1>
-<div id="checkout-form">
-<div class="co-grid">
-<div>
-<div class="co-sec">
-<h2>Billing Details</h2>
-<div class="frow">
-<div class="fg"><label>First Name *</label><input type="text" id="co-fname" required></div>
-<div class="fg"><label>Last Name *</label><input type="text" id="co-lname" required></div>
-</div>
+<div id="checkout-form"><div class="co-grid"><div>
+<div class="co-sec"><h2>Billing Details</h2>
+<div class="frow"><div class="fg"><label>First Name *</label><input type="text" id="co-fname" required></div><div class="fg"><label>Last Name *</label><input type="text" id="co-lname" required></div></div>
 <div class="fg"><label>Company Name (optional)</label><input type="text" id="co-company"></div>
 <div class="fg"><label>Country / Region *</label><select id="co-country" required></select></div>
 <div class="fg"><label>Street Address *</label><input type="text" id="co-address" required></div>
 <div class="fg"><label>Apartment, suite, etc. (optional)</label><input type="text" id="co-address2"></div>
-<div class="frow">
-<div class="fg"><label>Town / City *</label><input type="text" id="co-city" required></div>
-<div class="fg"><label id="state-label">State *</label><div id="state-field"></div></div>
-</div>
-<div class="frow">
-<div class="fg"><label>ZIP Code *</label><input type="text" id="co-zip" required></div>
-<div class="fg"><label>Phone *</label><input type="tel" id="co-phone" required></div>
-</div>
+<div class="frow"><div class="fg"><label>Town / City *</label><input type="text" id="co-city" required></div><div class="fg"><label id="state-label">State *</label><div id="state-field"></div></div></div>
+<div class="frow"><div class="fg"><label>ZIP Code *</label><input type="text" id="co-zip" required></div><div class="fg"><label>Phone *</label><input type="tel" id="co-phone" required></div></div>
 <div class="fg"><label>Email Address *</label><input type="email" id="co-email" required></div>
 </div>
-
-<div class="co-sec">
-<h2>Additional Information</h2>
-<div class="fg"><label>Order Notes (optional)</label><textarea id="co-notes" rows="4"></textarea></div>
-</div>
-
-<div class="co-sec">
-<h2>Payment</h2>
-<div class="pay-form">
-<h3>Credit / Debit Card</h3>
-<div id="co-pay-logos"></div>
-<div class="fg"><label>Card Number</label><input type="text" id="cc-num" placeholder="1234 1234 1234 1234"></div>
-<div class="frow">
-<div class="fg"><label>Expiration Date</label><input type="text" id="cc-exp" placeholder="MM / YY"></div>
-<div class="fg"><label>Security Code</label><input type="text" id="cc-cvc" placeholder="CVC"></div>
-</div>
-</div>
-
+<div class="co-sec"><h2>Additional Information</h2><div class="fg"><label>Order Notes (optional)</label><textarea id="co-notes" rows="4"></textarea></div></div>
+<div class="co-sec"><h2>Payment</h2>
+<div class="pay-form"><h3>Credit / Debit Card</h3><div id="co-pay-logos"></div><div class="fg"><label>Card Number</label><input type="text" id="cc-num" placeholder="1234 1234 1234 1234"></div><div class="frow"><div class="fg"><label>Expiration Date</label><input type="text" id="cc-exp" placeholder="MM / YY"></div><div class="fg"><label>Security Code</label><input type="text" id="cc-cvc" placeholder="CVC"></div></div></div>
 <p style="font-size:14px;color:var(--gr);margin-bottom:20px">Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a id="co-priv-lnk" style="color:var(--red);cursor:pointer">privacy policy</a>.</p>
-
-<div class="tc-check">
-<input type="checkbox" id="tc-check" required>
-<label for="tc-check">I am 18 years or older and agree to the <a id="tc-terms-lnk" style="color:var(--red);cursor:pointer">terms and conditions</a> and Privacy Policy explaining that by placing an order, Product delivery is free (free S&H), You will not be enrolled in any type of continuity program by ordering said option from this website. The charges will appear on your billing statement as <strong>FITNESSGOAT STORE</strong>. Delivery is via USPS and takes between 7 business days from the order processing date.</label>
-</div>
-
+<div class="tc-check"><input type="checkbox" id="tc-check" required><label for="tc-check">I am 18 years or older and agree to the <a id="tc-terms-lnk" style="color:var(--red);cursor:pointer">terms and conditions</a> and Privacy Policy explaining that by placing an order, Product delivery is free (free S&amp;H), You will not be enrolled in any type of continuity program by ordering said option from this website. The charges will appear on your billing statement as <strong>FITNESSGOAT STORE</strong>. Delivery is via USPS and takes between 7 business days from the order processing date.</label></div>
 <button class="btn" id="place-order-btn" style="width:100%;font-size:18px;padding:18px">PLACE ORDER</button>
-
 <div class="co-note">The charges will appear on your billing statement as <strong>FITNESSGOAT STORE</strong>. For any question concerning your order or a question concerning one of our products do not hesitate to contact our customer service by email at <strong>support@fitnessgoat-staging.com</strong> or by filling our contact form. We're open from Monday to Saturday, 9am-7pm EST Time.</div>
-</div>
-</div>
+</div></div>
+<div><div class="co-sum"><h2 style="margin-bottom:30px">Your Order</h2><div id="co-lines"></div><div class="sum-tot"><div class="sum-item"><span>Subtotal:</span><span id="co-sub">$0.00</span></div><div class="sum-item"><span>Shipping:</span><span id="co-ship">FREE</span></div><div class="sum-item"><span>Total:</span><span id="co-total">$0.00</span></div></div></div></div>
+</div></div>
+<div id="confirm-screen" style="display:none;text-align:center;padding:100px 20px"><h1 style="font-size:48px;margin-bottom:30px">Thank You!</h1><p style="font-size:20px;margin-bottom:20px">Your order <strong id="confirm-num"></strong> has been received.</p><p style="font-size:16px;color:var(--gr);margin-bottom:40px">A confirmation email has been sent to your address.<br>Shipping within 7 days with USPS.</p><button class="btn" id="confirm-shop">Continue Shopping</button></div>
+</div></div>
 
-<div>
-<div class="co-sum">
-<h2 style="margin-bottom:30px">Your Order</h2>
-<div id="co-lines"></div>
-<div class="sum-tot">
-<div class="sum-item"><span>Subtotal:</span><span id="co-sub">$0.00</span></div>
-<div class="sum-item"><span>Shipping:</span><span id="co-ship">FREE</span></div>
-<div class="sum-item"><span>Total:</span><span id="co-total">$0.00</span></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div id="confirm-screen" style="display:none;text-align:center;padding:100px 20px">
-<h1 style="font-size:48px;margin-bottom:30px">Thank You!</h1>
-<p style="font-size:20px;margin-bottom:20px">Your order <strong id="confirm-num"></strong> has been received.</p>
-<p style="font-size:16px;color:var(--gr);margin-bottom:40px">A confirmation email has been sent to your address.<br>Shipping within 7 days with USPS.</p>
-<button class="btn" id="confirm-shop">Continue Shopping</button>
-</div>
-</div>
-</div>
-
-<div class="page" id="page-contact">
-<div class="container">
+<!-- CONTACT -->
+<div class="page" id="page-contact"><div class="container">
 <div class="bc"><a id="bc-contact-home">Home</a> › Contact Us</div>
 <h1 class="section-title">Contact Us</h1>
-<div class="contact-info">
-<h3>FITNESSGOAT STORE LLC</h3>
-<p><strong>Address:</strong> 1209 MOUNTAIN ROAD PL NE STE N, ALBUQUERQUE, NM 87110</p>
-<p><strong>Phone:</strong> +1 (833) 323-2668</p>
-<p><strong>Email:</strong> support@fitnessgoat-staging.com</p>
-</div>
-<div style="max-width:600px;margin:0 auto">
-<div class="fg"><label>Name *</label><input type="text" id="contact-name" required></div>
-<div class="fg"><label>Email *</label><input type="email" id="contact-email" required></div>
-<div class="fg"><label>Phone Number</label><input type="tel" id="contact-phone"></div>
-<div class="fg"><label>Message *</label><textarea id="contact-message" rows="6" required></textarea></div>
-<button class="btn" id="contact-submit" style="width:100%">Send Message</button>
-</div>
-</div>
-</div>
+<div class="contact-info"><h3>FITNESSGOAT STORE LLC</h3><p><strong>Address:</strong> 1209 MOUNTAIN ROAD PL NE STE N, ALBUQUERQUE, NM 87110</p><p><strong>Phone:</strong> +1 (833) 323-2668</p><p><strong>Email:</strong> support@fitnessgoat-staging.com</p></div>
+<div style="max-width:600px;margin:0 auto"><div class="fg"><label>Name *</label><input type="text" id="contact-name" required></div><div class="fg"><label>Email *</label><input type="email" id="contact-email" required></div><div class="fg"><label>Phone Number</label><input type="tel" id="contact-phone"></div><div class="fg"><label>Message *</label><textarea id="contact-message" rows="6" required></textarea></div><button class="btn" id="contact-submit" style="width:100%">Send Message</button></div>
+</div></div>
 
-<div class="page" id="page-privacy">
-<div class="container">
+<!-- PRIVACY POLICY — TEMPLATE COMPLET MASTER SKILL 3 -->
+<div class="page" id="page-privacy"><div class="container">
 <div class="bc"><a id="bc-privacy-home">Home</a> › Privacy Policy</div>
 <div class="legal-content">
 <h1>Privacy Policy for FITNESSGOAT STORE LLC</h1>
-<p>Please note: The Website privacy policy changes from time to time and changes are effective upon posting.</p>
-<h2>COLLECTION OF INFORMATION</h2>
-<p>The Website collects information from individuals by various methods, including surveys and order forms.</p>
-<h2>USE OF INDIVIDUAL INFORMATION</h2>
-<p>The company may use individual information for any legally permissible purpose. We do not sell or share any of our customer's information.</p>
-<h2>CONTACT INFORMATION</h2>
-<p><strong>Address:</strong> 1209 MOUNTAIN ROAD PL NE STE N, ALBUQUERQUE, NM 87110</p>
-<p><strong>Phone:</strong> +1 (833) 323-2668</p>
-<p><strong>Email:</strong> support@fitnessgoat-staging.com</p>
-</div>
-</div>
-</div>
+<p>(referred to hereafter as "the Website")</p>
+<p>Please note: The Website privacy policy changes from time to time and changes are effective upon posting. Please check back frequently for updates as it is your sole responsibility to be aware of changes. The Website does not provide notices of changes in any manner other than by posting the changes at this web site.</p>
+<p>If you do not agree with the terms of this privacy policy please do not provide any information to the Website or use any of the services or products offered or provided on any of the websites referred to in this privacy policy.</p>
+<p>The information collection, use, and dissemination practices of the Website:</p>
+<p>This policy applies to the Website's collection, use, storage and disclosure of information by the Website on its (a) websites, including all its divisions, subsidiaries and related companies (collectively, "the Websites"), (b) on various third party websites, and (c) to the Website's other information collection, including the purchase of customer lists from third parties. The Website is not responsible for the information collection or privacy practices of third web sites or applications.</p>
 
-<div class="page" id="page-terms">
-<div class="container">
-<div class="bc"><a id="bc-terms-home">Home</a> › Terms & Conditions</div>
+<h2>COLLECTION OF INFORMATION</h2>
+<h3>1.1 SURVEY INFORMATION</h3>
+<p>The Website collects information from individuals by various methods, including, but not limited to, when an individual voluntarily completes a survey, order form, or a registration page either online or offline, or by means of online or offline surveys, order forms, or registration pages operated by third parties (collectively, a "Survey"). In the Surveys, the Website or a third party (a "Third Party") may ask an individual to provide various information to the Website, which may include his or her name, email address, street address, zip code, telephone numbers (including cell phone numbers and carriers), birth date, gender, salary range, education and marital status, occupation, social security number, employment information, personal and online interests, and such other information as may be requested from time to time (together, "Survey Information"). The Website may also collect information concerning an individual from another source and uses that information in combination with information provided from this web site. Completing the Surveys is completely voluntary, and individuals are under no obligation to provide survey information to the Website or Third Party, but an individual may receive incentives from the Website or a Third Party in exchange for providing Survey Information to the Website.</p>
+
+<h3>1.2 OTHER INFORMATION</h3>
+<p>Other occasions when the Website obtains information from individuals include (1) when an individual is making a claim for a prize or seeking to redeem an incentive offered by the Website or by a third party, (2) when an individual requests assistance through the Website's customer service department, and (3) when an individual voluntarily subscribes to a service or newsletter on the Website (together, "Other Information").</p>
+
+<h3>1.3 COOKIES, WEB BEACONS, AND OTHER INFO COLLECTED USING TECHNOLOGY</h3>
+<p>The Website currently uses cookie and web beacon technology to associate certain Internet-related information about an individual with information about the individual in our database. Additionally, the Website may use other new and evolving sources of information in the future (together, "Technology Information").</p>
+<p><strong>(A) COOKIES</strong> — A cookie is a small amount of data stored on the hard drive of the individual's computer that allows the Website to identify the individual with his or her corresponding data that resides in the Website's database. Individuals who use the Websites need to accept cookies in order to use all of the features and functionality of the Websites.</p>
+<p><strong>(B) WEB BEACONS</strong> — A web beacon is programming code that can be used to display an image on a web page, but can also be used to transfer an individual's unique user identification (often in the form of a cookie) to a database and associate the individual with previously acquired information about an individual in a database. This allows the Website to track certain web sites an individual visits online. Web beacons are used to determine products or services an individual may be interested in, and to track online behavioral habits for marketing purposes.</p>
+<p><strong>(C) NEW TECHNOLOGY</strong> — The use of technology on the Internet, including cookies and web beacons, is rapidly evolving, as is the Website's use of new and evolving technology. As a result, the Website strongly encourages individuals to revisit this policy for any updates regarding its use of technology.</p>
+
+<h3>1.4 OUTSIDE INFORMATION</h3>
+<p>The Website may receive information about individuals from third parties or from other sources of information outside of the Website including information located in public databases ("Outside Information").</p>
+
+<h3>1.5 INDIVIDUAL INFORMATION</h3>
+<p>As used herein, Individual Information means Survey Information, Third Party List Information, Other Information, Technology Information, and Outside Information, and any other information the Website gathers or receives about individuals.</p>
+
+<h3>1.6 NO INFORMATION COLLECTED FROM CHILDREN</h3>
+<p>The Website will never knowingly collect any personal information about children under the age of 13. If the Website obtains actual knowledge that it has collected personal information about a child under the age of 13, that information will be immediately deleted from our database. Because it does not collect such information, the Website has no such information to use or to disclose to third parties. The Website has designed this policy in order to comply with the Children's Online Privacy Protection Act ("COPPA").</p>
+
+<h3>1.7 CREDIT CARD INFORMATION</h3>
+<p>The Website may in certain cases collect credit card numbers and related information, such as the expiration date of the card ("Credit Card Information") when an individual places an order from the Website. When the Credit Card Information is submitted to the Website, such information is encrypted and is protected with SSL encryption software. The Website will use the Credit Card Information for purposes of processing and completing the purchase transaction, and the Credit Card Information will be disclosed to third parties only as necessary to complete the purchase transaction.</p>
+
+<h2>USE OF INDIVIDUAL INFORMATION</h2>
+<h3>2.1 DISCRETION TO USE INFORMATION</h3>
+<p>The company may use individual information for any legally permissible purpose at company's sole discretion. We do not sell or share any of our customer's information.</p>
+<h3>2.2 EMAIL</h3>
+<p>The Website uses Individual Information to provide promotional offers by email to individuals. The Website may maintain separate email lists for different purposes. If email recipients wish to end their email subscription from a particular list, they need to follow the instructions at the end of each email message to unsubscribe from the particular list.</p>
+<h3>2.3 TARGETED ADVERTISING</h3>
+<p>The Website uses Individual Information to target advertising to an individual. The Website may, at its discretion, target advertising by using email, direct mail, cell phones, and other means of communication to provide promotional offers.</p>
+<h3>2.4 USE OF TECHNOLOGY INFORMATION</h3>
+<p>The Website uses Technology Information (1) to match a person's Survey Information to other categories of Individual Information to make and improve profiles of individuals, (2) to track a person's online browsing habits on the Internet, (3) to determine which areas of the Website's web sites are most frequently visited.</p>
+<h3>2.5 PROFILES OF INDIVIDUALS</h3>
+<p>The Website uses Individual Information to make a profile of an individual. A profile can be created by combining Survey Information and Third Party List Information with other sources of Individual Information such as information obtained from public databases.</p>
+<h3>2.6 STORAGE OF INDIVIDUAL INFORMATION</h3>
+<p>The Website stores the Individual Information in a database on the Website's computers. Our computers have security measures (such as a firewall) in place to protect against the loss, misuse, and alteration of the information under the Website's control.</p>
+
+<h2>DISSEMINATION OF INDIVIDUAL INFORMATION</h2>
+<h3>3.1 ORDER FULFILLMENT</h3>
+<p>The Website will transfer Individual Information to third parties when necessary to provide a product or service that a person orders from such third party while using the Website or when responding to offers provided by the Website.</p>
+<h3>3.2 LEGAL PROCESS</h3>
+<p>The Website may disclose Individual Information to respond to subpoenas, court orders, and other legal processes.</p>
+<h3>3.3 SUMMARY DATA</h3>
+<p>We do not sell or share any of our customer's information.</p>
+<h3>3.4 ACCESS</h3>
+<p>Individuals have access to their Individual Information collected to provide an opportunity for an individual to correct, amend, or delete such information. Access can be obtained by contacting customer service using the information at the bottom of this document.</p>
+
+<h2>PRIVACY PRACTICES OF THIRD PARTIES</h2>
+<h3>4.1 ADVERTISER COOKIES AND WEB BEACONS</h3>
+<p>Advertising agencies, advertising networks, and other companies who place advertisements on the Websites and on the Internet generally may use their own cookies, web beacons, and other technology to collect information about individuals. The Website does not control Advertisers' use of such technology.</p>
+<h3>4.2 LINKS</h3>
+<p>The Websites and email messages sometimes contain hypertext links to the web sites of third parties. The Website is not responsible for the privacy practices or the content of such other web sites.</p>
+
+<h2>UNSUBSCRIBE PROCEDURES</h2>
+<p>If you wish to discontinue receiving email messages from the Website please inform us by contacting customer service using the information at the bottom of this document.</p>
+<p>We reserve the right to add Individual Information to multiple lists maintained by the Website.</p>
+<p>For more information about protecting your privacy, you may wish to visit: www.ftc.gov</p>
+
+<h2>COMPANY ADDRESS</h2>
+<p>FITNESSGOAT STORE LLC<br>1209 MOUNTAIN ROAD PL NE STE N, ALBUQUERQUE, NM 87110<br>Support Telephone Number: +1 (833) 323-2668<br>Support Email Address: support@fitnessgoat-staging.com</p>
+</div>
+</div></div>
+
+<!-- TERMS OF SALE — TEMPLATE COMPLET MASTER SKILL 3 -->
+<div class="page" id="page-terms"><div class="container">
+<div class="bc"><a id="bc-terms-home">Home</a> › Terms &amp; Conditions</div>
 <div class="legal-content">
-<h1>Terms & Conditions</h1>
+<h1>Terms &amp; Conditions</h1>
+
 <h2>USER AGREEMENT</h2>
-<p>You must read and agree to these Terms and Conditions before ordering from FITNESSGOAT STORE LLC.</p>
+<p>You must read and agree to these Terms and Conditions before ordering from FITNESSGOAT STORE LLC. By placing an order for FITNESSGOAT STORE LLC products, You agree to be bound by the following Terms and Conditions:</p>
+
+<h2>ATTENTION</h2>
+<p>This is a binding agreement between You, the person or entity agreeing to the terms contained in this document ("I", "You", "Your" or "Customer"), and FITNESSGOAT STORE LLC, the owner and administrator of this Website and all content and functionality contained herein ("Our", "Us", or "Company") (collectively, the "Parties" or "We"). These terms and conditions, as well as any additional terms, conditions and covenants referenced in or made available by hyperlink in this document (collectively, these "Terms", "Terms of Use" or this "Agreement"), govern Your use of and access to this Website and any and all of its sub-pages (collectively, the "Website").</p>
+
 <h2>AVAILABLE PRODUCTS</h2>
 <ul>
-<li>TheraBand CLX Resistance Band with Loops  $7.99</li>
-<li>TheraBand Foot Roller  $14.99</li>
-<li>TheraBand CLX Resistance Band 2-Pack  $24.99</li>
-<li>Modvel Ankle Brace  $29.99</li>
-<li>TheraBand FlexBar 2-Pack  $39.99</li>
-<li>Modvel Knee Brace  $44.99</li>
-<li>TheraBand Latex Free Resistance Band Kit  $49.99</li>
-<li>Total Body Band TheraBand  $59.99</li>
+<li>TheraBand CLX Resistance Band with Loops — $7.99</li>
+<li>TheraBand Foot Roller — $14.99</li>
+<li>TheraBand CLX Resistance Band with Loops 2-Pack — $24.99</li>
+<li>Modvel Ankle Brace — $29.99</li>
+<li>TheraBand FlexBar 2-Pack — $39.99</li>
+<li>Modvel Knee Brace — $44.99</li>
+<li>Total Body Band TheraBand — $49.99</li>
+<li>TheraBand Latex Free Resistance Band Kit — $59.99</li>
 </ul>
-<h2>SHIPPING</h2>
-<p>Free shipping on all orders.</p>
-<h2>CREDIT CARD DESCRIPTOR</h2>
-<p>The charges will appear on your billing statement as <strong>FITNESSGOAT STORE</strong>.</p>
-<h2>REFUND POLICY</h2>
-<p>You may return any unopened product within 30 days. For refund inquiries, contact: <strong>+1 (833) 323-2668</strong></p>
-<h2>SHIPPING TERMS</h2>
-<p>Shipping within 7 days with USPS. Shipments are not sent on Saturdays, Sundays, or Holidays.</p>
-<h2>RETURN ADDRESS</h2>
-<p>Fulfillment Box USA<br>Attn: 11815 Technology Ln #300 Fishers, IN 46038<br>Email: usindiana@fulfillment-box.com</p>
-<h2>GOVERNING LAW</h2>
-<p>These Terms shall be governed by the laws of the State of Michigan. Disputes shall be subject to the courts located in Detroit, Michigan.</p>
-<h2>CONTACT INFORMATION</h2>
-<p><strong>Address:</strong> 1209 MOUNTAIN ROAD PL NE STE N, ALBUQUERQUE, NM 87110</p>
-<p><strong>Email:</strong> support@fitnessgoat-staging.com</p>
-<p><strong>Phone:</strong> +1 (833) 323-2668</p>
-</div>
-</div>
-</div>
+<p>Terms: One-time purchase. You will receive an order confirmation by email after each purchase.</p>
 
-<footer>
-<div class="container">
+<h2>SHIPPING</h2>
+<p>We ship all our products via USPS. Delivery times are 7 to 10 business days from the order processing date. You will receive a tracking number by email once your order has been shipped.</p>
+
+<h2>ACCEPTANCE OF TERMS OF USE</h2>
+<p>By using, visiting, or browsing the Website, as well as placing an order with FITNESSGOAT STORE LLC through the Website, You accept, without limitation or qualification, these Terms of Use and agree, without limitation, to the terms of Our Privacy Statement. If You do not agree to be bound by these Terms of Use and Privacy Statement, You should exit the Website immediately. By accessing, using or ordering products through the Website, You affirm that You have read this Agreement and understand, agree, and consent to all Terms contained herein.</p>
+<p>These Terms of Use constitute the entire agreement between FITNESSGOAT STORE LLC and You, and supersede all prior or contemporaneous agreements, representations, warranties, and understandings with respect to the Website, the content, products, or services provided by or through the Website, and the subject matter of these Terms of Use. This Agreement is intended to be governed by the Electronic Signatures in Global and National Commerce Act. You manifest Your agreement to the Terms in this document by any act demonstrating Your assent thereto, including clicking any button containing the words "I Agree"; "Place My Order"; "Submit" or similar syntax, or by merely accessing the Website, whether You have read these terms or not.</p>
+
+<h2>CREDIT CARD DESCRIPTOR</h2>
+<p>By ordering products from us, you authorize us to charge your credit card accordingly (once). This authorization will be automatically removed once the order is completed and your CC information will need to be re-entered for future orders. Please note that the descriptor (or subject line) that appears on your credit card registration will appear as <strong>FITNESSGOAT STORE</strong>. If you have any questions regarding your credit card statement, you should call our customer service department.</p>
+
+<h2>DELIVERY COST</h2>
+<p>Deliveries are free worldwide (free S&amp;H). Shipments are tracked, and the tracking number is sent by email to each order as soon as it is shipped. Shipping within 7 days with USPS.</p>
+
+<h2>REFUND POLICY</h2>
+<p>We refund all cases of fraud and unauthorized transactions, including shipping and handling charges. Call +1 (833) 323-2668 to obtain a refund. Additional refunds are issued at the discretion of the company. Customers are restricted to receiving a single refund per product ordered. Repetitive refunds are not permitted unless the product, as delivered to you, is defective. We reserve the right to refuse a refund to any customer who repeatedly requests refunds or who, in our judgment, requests refunds in bad faith. In order to process your refund, you must supply us with your name and delivery address. If you provide us with insufficient or incorrect information your refund will be delayed. We will credit any returned opened or unopened product if the received package is post marked within 30 days of the order received date and included with a RMA number obtained from customer service. Refunds will be issued to customer credit card within 3 business days. No returns are credited after 30 days of the received date. Any merchandise must be returned at the customer's expense and must have an RMA number marked on it. No returns are credited if they are not accompanied by an RMA number.</p>
+
+<h2>RETURN POLICY</h2>
+<p>To obtain your refund, contact customer service by phone and obtain an RMA (Return Merchandise Authorization) number to place on your package. Write this number on the outside of the shipping package, and send the product, whether opened or unopened, back to our fulfillment center at the address listed below within 30 days from receipt of the order. In order for your refund to be processed, the product must arrive at our fulfillment facility within 30 days from receipt of the order. You pay for return shipping. This fee will be deducted from the issued refund. Once our fulfillment center has received the package and relayed the correct information to us, you will be issued a refund. Your refund will be credited back to your bank account and may take up to 10 business days to show on your statement, depending on the processing speed of the bank.</p>
+<p><strong>Return Address:</strong><br>Fulfillment Box USA<br>Attn: 11815 Technology Ln #300 Fishers, IN 46038<br>Email: usindiana@fulfillment-box.com</p>
+
+<h2>SHIPPING TERMS</h2>
+<p>If you ordered the One Time Supply, you will be shipped the amount of the product you ordered. Shipping within 7 days with USPS. Please be advised that shipments are not sent on Saturdays, Sundays, or any Holidays. FITNESSGOAT STORE LLC does not guarantee specific arrival dates or times. FITNESSGOAT STORE LLC does not refund or credit delivery or processing charges for any shipments via USPS.</p>
+<p>Contacting Customer Care / Billing: You may contact our customer care department by using our toll-free phone number. Toll Free Customer Care phone: +1 (833) 323-2668</p>
+
+<h2>LIMITATION OF LIABILITY AND DISCLAIMER OF WARRANTY</h2>
+<p>THE MATERIALS AND PRODUCTS CONTAINED AND OFFERED ON THE WEBSITE ARE PROVIDED "AS IS" AND WITHOUT WARRANTIES OF ANY KIND EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMISSIBLE PURSUANT TO APPLICABLE LAW, FITNESSGOAT STORE LLC DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR OTHER VIOLATIONS OF RIGHTS. IN NO EVENT SHALL FITNESSGOAT STORE LLC OR ITS OFFICERS, DIRECTORS, SHAREHOLDERS, EMPLOYEES, INDEPENDENT CONTRACTORS, TELECOMMUNICATIONS PROVIDERS, AND AGENTS BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL, EXEMPLARY, CONSEQUENTIAL, OR PUNITIVE DAMAGES, UNDER ANY CAUSE OF ACTION WHATSOEVER INCLUDING, BUT NOT LIMITED TO, CONTRACT, TORT, STRICT LIABILITY, WARRANTY, OR OTHERWISE, FOR ANY CLAIM, CAUSE OF ACTION, FEE, EXPENSE, LIABILITY, DAMAGE, LOSS, OR INJURY, ARISING FROM OR IN CONNECTION WITH THIS AGREEMENT OR THE USE OF THE WEBSITE, EVEN IF FITNESSGOAT STORE LLC HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN THE EVENT THAT FITNESSGOAT STORE LLC IS FOUND LIABLE FOR ANY DAMAGES, FITNESSGOAT STORE LLC'S TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT PAID BY THE CUSTOMER FOR THE PRODUCTS GIVING RISE TO THE CLAIM.</p>
+<p>FITNESSGOAT STORE LLC MAKES NO REPRESENTATIONS OR WARRANTIES THAT THE MATERIALS, INFORMATION, OR CONTENT ON THIS WEBSITE WILL BE TIMELY, SECURE, ERROR-FREE, OR UNINTERRUPTED, OR THAT DEFECTS WILL BE CORRECTED.</p>
+
+<h2>MODIFICATIONS TO THE TERMS OF USE</h2>
+<p>FITNESSGOAT STORE LLC reserves the right to change or update these Terms of Use at any time. Any changes or updates will be effective immediately upon posting to the Website. Your continued use of the Website following the posting of changes or updates constitutes Your acceptance of such changes or updates.</p>
+
+<h2>GOVERNING LAW</h2>
+<p>These Terms of Use shall be governed by and construed in accordance with the laws of the State of Michigan, without regard to its conflict of law principles. Any disputes arising out of or related to these Terms of Use or Your use of the Website shall be subject to the exclusive jurisdiction of the state and federal courts located in Detroit, Michigan.</p>
+
+<h2>SEVERABILITY</h2>
+<p>If any provision of these Terms of Use is found to be invalid, illegal, or unenforceable, the remaining provisions shall remain in full force and effect.</p>
+
+<h2>CONTACT INFORMATION</h2>
+<p>For any questions or concerns regarding these Terms of Use, please contact FITNESSGOAT STORE LLC Customer Service at:</p>
+<p>Address: 1209 MOUNTAIN ROAD PL NE STE N, ALBUQUERQUE, NM 87110<br>Email: support@fitnessgoat-staging.com<br>Phone: +1 (833) 323-2668</p>
+<p>Thank you for shopping with FITNESSGOAT STORE LLC</p>
+</div>
+</div></div>
+
+<!-- FOOTER -->
+<footer><div class="container">
 <div class="footer-grid">
-<div class="footer-col">
-<h3>Quick Links</h3>
-<a id="fl-home">Home</a>
-<a id="fl-shop">Shop</a>
-<a id="fl-privacy">Privacy Policy</a>
-<a id="fl-terms">Terms & Conditions</a>
-<a id="fl-contact">Contact</a>
-<div id="footer-pay" style="margin-top:20px"></div>
+<div class="footer-col"><h3>Quick Links</h3><a id="fl-home">Home</a><a id="fl-shop">Shop</a><a id="fl-privacy">Privacy Policy</a><a id="fl-terms">Terms & Conditions</a><a id="fl-contact">Contact</a><div id="footer-pay" style="margin-top:20px"></div></div>
+<div class="footer-col"><h3>Contact Form</h3><input type="email" placeholder="Email" id="footer-email" style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #444;background:#2a2a2a;color:#fff;border-radius:4px"><textarea placeholder="Message" id="footer-message" rows="3" style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #444;background:#2a2a2a;color:#fff;border-radius:4px"></textarea><button class="btn" id="footer-send" style="width:100%">Send</button></div>
+<div class="footer-col"><h3>Contact Info</h3><p><strong>FITNESSGOAT STORE LLC</strong></p><p>+1 (833) 323-2668</p><p>support@fitnessgoat-staging.com</p><p>1209 MOUNTAIN ROAD PL NE STE N<br>ALBUQUERQUE, NM 87110</p><p style="margin-top:15px">Shipping within 7 days with USPS.</p></div>
 </div>
-<div class="footer-col">
-<h3>Contact Form</h3>
-<input type="email" placeholder="Email" id="footer-email" style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #444;background:#2a2a2a;color:#fff;border-radius:4px">
-<textarea placeholder="Message" id="footer-message" rows="3" style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #444;background:#2a2a2a;color:#fff;border-radius:4px"></textarea>
-<button class="btn" id="footer-send" style="width:100%">Send</button>
-</div>
-<div class="footer-col">
-<h3>Contact Info</h3>
-<p><strong>FITNESSGOAT STORE LLC</strong></p>
-<p>+1 (833) 323-2668</p>
-<p>support@fitnessgoat-staging.com</p>
-<p>1209 MOUNTAIN ROAD PL NE STE N<br>ALBUQUERQUE, NM 87110</p>
-<p style="margin-top:15px">Shipping within 7 days with USPS.</p>
-</div>
-</div>
-<div class="footer-bottom">
-<p>Edited By FITNESSGOAT STORE LLC</p>
-</div>
-</div>
-</footer>
+<div class="footer-bottom"><p>Edited By FITNESSGOAT STORE LLC</p></div>
+</div></footer>
 
 <div id="toast"></div>
 
 <script>
-(function(){
-'use strict';
-
+(function(){'use strict';
 var C='https://wsrv.nl/?url=fitnesstank.com/cdn/shop/files/';
 var products=[
-{id:1,url:'https://fitnesstank.com/products/theraband-clx-resistance-band-with-loops',name:'TheraBand CLX Resistance Band with Loops',price:7.99,old:null,badge:null,bc:'',rating:4.8,rev:2487,fb:'💪',cat:'Fitness Equipment',tag:'resistance',imgs:[C+'THERABANDCLXResistanceBandwithLoops-yellow-1_156f1196-10fc-4213-b273-17214e643ba5.png'],desc:{b:['Portable full-body resistance training','Supports strength and mobility work','Easy to use at home or on the go','Lightweight and compact for storage'],s:['Material: Elastic resistance band','Format: Multi-loop band','Color: Yellow','Use: Full-body training'],i:['1x Resistance Band with Loops'],p:['Home workouts','Mobility sessions','Travel fitness','Physical therapy']}},
-{id:2,url:'https://fitnesstank.com/products/theraband-foot-roller',name:'TheraBand Foot Roller',price:14.99,old:null,badge:null,bc:'',rating:4.7,rev:1934,fb:'💪',cat:'Fitness Equipment',tag:'recovery',imgs:[C+'Theraband_Foot_Roller_-_1.2.png'],desc:{b:['Helps relieve foot tension fast','Supports post-workout recovery','Improves daily comfort and mobility','Simple tool for at-home massage'],s:['Material: Textured roller surface','Category: Recovery accessory','Use: Foot massage and mobility','Format: Hand-free rolling tool'],i:['1x Foot Roller'],p:['Post-workout recovery','Home fitness','Running recovery','Daily mobility']}},
-{id:3,url:'https://fitnesstank.com/products/theraband-clx-resistance-band-with-loops-2-pack',name:'TheraBand CLX Resistance Band with Loops 2-Pack',price:24.99,old:null,badge:null,bc:'',rating:4.8,rev:2216,fb:'💪',cat:'Fitness Equipment',tag:'strength',imgs:[C+'THERABAND_CLX_Resistance_Band_with_Loops_-_Gold_and_Silver_pack_-_1_e3f30c07-4239-41a6-9213-7fb30a13f2ca.png'],desc:{b:['Two resistance levels in one pack','Supports progressive strength training','Useful for mobility and activation','Compact setup for home workouts'],s:['Pack Size: 2 bands','Format: Loop resistance bands','Colors: Gold and Silver','Use: Strength and mobility training'],i:['2x Resistance Bands with Loops'],p:['Strength training','Home workouts','Stretch routines','Travel fitness']}},
-{id:4,url:'https://fitnesstank.com/products/modvel-ankle-brace-black',name:'Modvel Ankle Brace',price:29.99,old:null,badge:null,bc:'',rating:4.6,rev:3189,fb:'💪',cat:'Fitness Equipment',tag:'support',imgs:[C+'Frame3.png'],desc:{b:['Adds ankle support during movement','Helps improve training confidence','Supports recovery and stability','Comfortable for active daily use'],s:['Color: Black','Category: Compression support','Use: Ankle stabilization','Fit: Wearable brace design'],i:['1x Ankle Brace'],p:['Gym workouts','Walking support','Post-injury recovery','Daily activity']}},
-{id:5,url:'https://fitnesstank.com/products/theraband-flexbar-2-pack',name:'TheraBand FlexBar 2-Pack',price:39.99,old:null,badge:null,bc:'',rating:4.7,rev:1742,fb:'💪',cat:'Fitness Equipment',tag:'strength',imgs:[C+'1000x1000PNG-TherabandFlexbar2-Pack_RedandGreen_a1286b89-8520-4336-8f83-bfa0e7c98069.png'],desc:{b:['Supports grip and forearm strength','Useful for rehab and conditioning','Compact tool for upper-body work','Helps improve training control'],s:['Pack Size: 2 FlexBars','Colors: Red and Green','Use: Grip and forearm training','Category: Strength and rehab tool'],i:['2x FlexBars'],p:['Grip training','Forearm rehab','Home gym use','Physical therapy']}},
-{id:6,url:'https://fitnesstank.com/products/modvel-knee-brace-black',name:'Modvel Knee Brace',price:44.99,old:null,badge:null,bc:'',rating:4.7,rev:2964,fb:'💪',cat:'Fitness Equipment',tag:'support',imgs:[C+'Frame2.png'],desc:{b:['Provides knee support during training','Helps improve movement confidence','Useful for stability and recovery','Comfortable for repeat daily wear'],s:['Color: Black','Category: Compression knee support','Use: Knee stabilization','Fit: Wearable brace design'],i:['1x Knee Brace'],p:['Leg workouts','Walking support','Post-injury recovery','Daily activity']}},
-{id:7,url:'https://fitnesstank.com/products/total-body-band-theraband',name:'Total Body Band TheraBand',price:49.99,old:null,badge:null,bc:'',rating:4.8,rev:2864,fb:'💪',cat:'Fitness Equipment',tag:'resistance',imgs:[C+'TBB_x_Theraband_-_Black_2.png'],desc:{b:['Supports full-body resistance sessions','Helps train multiple muscle groups','Portable for home or travel workouts','Useful for total-body movement drills'],s:['Color: Black','Category: Total-body resistance band','Use: Strength and conditioning','Format: Portable training band'],i:['1x Total Body Band'],p:['Home workouts','Travel fitness','Resistance training','Warm-up sessions']}},
-{id:8,url:'https://fitnesstank.com/products/theraband-latex-free-resistance-band-kit',name:'TheraBand Latex Free Resistance Band Kit',price:59.99,old:null,badge:null,bc:'',rating:4.6,rev:1588,fb:'💪',cat:'Fitness Equipment',tag:'resistance',imgs:[C+'TherabandResistanceBands-BlackandBluepack-1.png'],desc:{b:['Supports resistance workouts without latex','Good for home training and rehab work','Compact set for flexible daily routines','Useful for upper and lower body training'],s:['Material: Latex-free band material','Colors: Black and Blue','Category: Resistance band kit','Use: Strength and mobility training'],i:['1x Resistance Band Kit'],p:['Home workouts','Physical therapy','Beginner fitness','Mobility training']}}
+{id:1,url:'https://fitnesstank.com/products/theraband-clx-resistance-band-with-loops',name:'TheraBand CLX Resistance Band with Loops',price:7.99,old:null,badge:null,bc:'',rating:4.8,rev:2487,fb:'\u{1F4AA}',cat:'Fitness Equipment',tag:'resistance',imgs:[C+'THERABANDCLXResistanceBandwithLoops-yellow-1_156f1196-10fc-4213-b273-17214e643ba5.png'],desc:{b:['Portable full-body resistance training','Supports strength and mobility work','Easy to use at home or on the go','Lightweight and compact for storage'],s:['Material: Elastic resistance band','Format: Multi-loop band','Color: Yellow','Use: Full-body training'],i:['1x Resistance Band with Loops'],p:['Home workouts','Mobility sessions','Travel fitness','Physical therapy']}},
+{id:2,url:'https://fitnesstank.com/products/theraband-foot-roller',name:'TheraBand Foot Roller',price:14.99,old:null,badge:null,bc:'',rating:4.7,rev:1934,fb:'\u{1F4AA}',cat:'Fitness Equipment',tag:'recovery',imgs:[C+'Theraband_Foot_Roller_-_1.2.png'],desc:{b:['Helps relieve foot tension fast','Supports post-workout recovery','Improves daily comfort and mobility','Simple tool for at-home massage'],s:['Material: Textured roller surface','Category: Recovery accessory','Use: Foot massage and mobility','Format: Hand-free rolling tool'],i:['1x Foot Roller'],p:['Post-workout recovery','Home fitness','Running recovery','Daily mobility']}},
+{id:3,url:'https://fitnesstank.com/products/theraband-clx-resistance-band-with-loops-2-pack',name:'TheraBand CLX Resistance Band with Loops 2-Pack',price:24.99,old:null,badge:null,bc:'',rating:4.8,rev:2216,fb:'\u{1F4AA}',cat:'Fitness Equipment',tag:'strength',imgs:[C+'THERABAND_CLX_Resistance_Band_with_Loops_-_Gold_and_Silver_pack_-_1_e3f30c07-4239-41a6-9213-7fb30a13f2ca.png'],desc:{b:['Two resistance levels in one pack','Supports progressive strength training','Useful for mobility and activation','Compact setup for home workouts'],s:['Pack Size: 2 bands','Format: Loop resistance bands','Colors: Gold and Silver','Use: Strength and mobility training'],i:['2x Resistance Bands with Loops'],p:['Strength training','Home workouts','Stretch routines','Travel fitness']}},
+{id:4,url:'https://fitnesstank.com/products/modvel-ankle-brace-black',name:'Modvel Ankle Brace',price:29.99,old:null,badge:null,bc:'',rating:4.6,rev:3189,fb:'\u{1F4AA}',cat:'Fitness Equipment',tag:'support',imgs:[C+'Frame3.png'],desc:{b:['Adds ankle support during movement','Helps improve training confidence','Supports recovery and stability','Comfortable for active daily use'],s:['Color: Black','Category: Compression support','Use: Ankle stabilization','Fit: Wearable brace design'],i:['1x Ankle Brace'],p:['Gym workouts','Walking support','Post-injury recovery','Daily activity']}},
+{id:5,url:'https://fitnesstank.com/products/theraband-flexbar-2-pack',name:'TheraBand FlexBar 2-Pack',price:39.99,old:null,badge:null,bc:'',rating:4.7,rev:1742,fb:'\u{1F4AA}',cat:'Fitness Equipment',tag:'strength',imgs:[C+'1000x1000PNG-TherabandFlexbar2-Pack_RedandGreen_a1286b89-8520-4336-8f83-bfa0e7c98069.png'],desc:{b:['Supports grip and forearm strength','Useful for rehab and conditioning','Compact tool for upper-body work','Helps improve training control'],s:['Pack Size: 2 FlexBars','Colors: Red and Green','Use: Grip and forearm training','Category: Strength and rehab tool'],i:['2x FlexBars'],p:['Grip training','Forearm rehab','Home gym use','Physical therapy']}},
+{id:6,url:'https://fitnesstank.com/products/modvel-knee-brace-black',name:'Modvel Knee Brace',price:44.99,old:null,badge:null,bc:'',rating:4.7,rev:2964,fb:'\u{1F4AA}',cat:'Fitness Equipment',tag:'support',imgs:[C+'Frame2.png'],desc:{b:['Provides knee support during training','Helps improve movement confidence','Useful for stability and recovery','Comfortable for repeat daily wear'],s:['Color: Black','Category: Compression knee support','Use: Knee stabilization','Fit: Wearable brace design'],i:['1x Knee Brace'],p:['Leg workouts','Walking support','Post-injury recovery','Daily activity']}},
+{id:7,url:'https://fitnesstank.com/products/total-body-band-theraband',name:'Total Body Band TheraBand',price:49.99,old:null,badge:null,bc:'',rating:4.8,rev:2864,fb:'\u{1F4AA}',cat:'Fitness Equipment',tag:'resistance',imgs:[C+'TBB_x_Theraband_-_Black_2.png'],desc:{b:['Supports full-body resistance sessions','Helps train multiple muscle groups','Portable for home or travel workouts','Useful for total-body movement drills'],s:['Color: Black','Category: Total-body resistance band','Use: Strength and conditioning','Format: Portable training band'],i:['1x Total Body Band'],p:['Home workouts','Travel fitness','Resistance training','Warm-up sessions']}},
+{id:8,url:'https://fitnesstank.com/products/theraband-latex-free-resistance-band-kit',name:'TheraBand Latex Free Resistance Band Kit',price:59.99,old:null,badge:null,bc:'',rating:4.6,rev:1588,fb:'\u{1F4AA}',cat:'Fitness Equipment',tag:'resistance',imgs:[C+'TherabandResistanceBands-BlackandBluepack-1.png'],desc:{b:['Supports resistance workouts without latex','Good for home training and rehab work','Compact set for flexible daily routines','Useful for upper and lower body training'],s:['Material: Latex-free band material','Colors: Black and Blue','Category: Resistance band kit','Use: Strength and mobility training'],i:['1x Resistance Band Kit'],p:['Home workouts','Physical therapy','Beginner fitness','Mobility training']}}
 ];
-
 var PAY_HTML='<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" height="30" style="margin-right:10px;filter:invert(1)"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" height="30" style="margin-right:10px"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" height="30" style="margin-right:10px"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" height="30" style="margin-right:10px"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Discover_Card_logo.svg" alt="Discover" height="30">';
-
-var countries=[
-{code:'US',name:'United States',states:['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming']},
-{code:'CA',name:'Canada',states:['Alberta','British Columbia','Manitoba','New Brunswick','Newfoundland and Labrador','Nova Scotia','Ontario','Prince Edward Island','Quebec','Saskatchewan']},
-{code:'GB',name:'United Kingdom',states:null},
-{code:'AU',name:'Australia',states:['New South Wales','Queensland','South Australia','Tasmania','Victoria','Western Australia']},
-{code:'FR',name:'France',states:null},
-{code:'DE',name:'Germany',states:null},
-{code:'IT',name:'Italy',states:null},
-{code:'ES',name:'Spain',states:null},
-{code:'NL',name:'Netherlands',states:null},
-{code:'BE',name:'Belgium',states:null},
-{code:'CH',name:'Switzerland',states:null},
-{code:'AT',name:'Austria',states:null},
-{code:'DK',name:'Denmark',states:null},
-{code:'SE',name:'Sweden',states:null},
-{code:'NO',name:'Norway',states:null},
-{code:'FI',name:'Finland',states:null},
-{code:'PL',name:'Poland',states:null},
-{code:'CZ',name:'Czech Republic',states:null},
-{code:'PT',name:'Portugal',states:null},
-{code:'GR',name:'Greece',states:null},
-{code:'IE',name:'Ireland',states:null},
-{code:'NZ',name:'New Zealand',states:null},
-{code:'JP',name:'Japan',states:null},
-{code:'KR',name:'South Korea',states:null},
-{code:'SG',name:'Singapore',states:null},
-{code:'HK',name:'Hong Kong',states:null},
-{code:'IN',name:'India',states:null},
-{code:'BR',name:'Brazil',states:null},
-{code:'MX',name:'Mexico',states:null},
-{code:'AR',name:'Argentina',states:null},
-{code:'CL',name:'Chile',states:null},
-{code:'ZA',name:'South Africa',states:null},
-{code:'AE',name:'United Arab Emirates',states:null},
-{code:'SA',name:'Saudi Arabia',states:null},
-{code:'IL',name:'Israel',states:null},
-{code:'TR',name:'Turkey',states:null},
-{code:'TH',name:'Thailand',states:null},
-{code:'MY',name:'Malaysia',states:null},
-{code:'ID',name:'Indonesia',states:null},
-{code:'PH',name:'Philippines',states:null},
-{code:'VN',name:'Vietnam',states:null}
-];
-
+var countries=[{code:'US',name:'United States',states:['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming']},{code:'CA',name:'Canada',states:['Alberta','British Columbia','Manitoba','New Brunswick','Newfoundland and Labrador','Nova Scotia','Ontario','Prince Edward Island','Quebec','Saskatchewan']},{code:'GB',name:'United Kingdom',states:null},{code:'AU',name:'Australia',states:['New South Wales','Queensland','South Australia','Tasmania','Victoria','Western Australia']},{code:'FR',name:'France',states:null},{code:'DE',name:'Germany',states:null},{code:'IT',name:'Italy',states:null},{code:'ES',name:'Spain',states:null},{code:'NL',name:'Netherlands',states:null},{code:'BE',name:'Belgium',states:null},{code:'CH',name:'Switzerland',states:null},{code:'AT',name:'Austria',states:null},{code:'DK',name:'Denmark',states:null},{code:'SE',name:'Sweden',states:null},{code:'NO',name:'Norway',states:null},{code:'FI',name:'Finland',states:null},{code:'PL',name:'Poland',states:null},{code:'CZ',name:'Czech Republic',states:null},{code:'PT',name:'Portugal',states:null},{code:'GR',name:'Greece',states:null},{code:'IE',name:'Ireland',states:null},{code:'NZ',name:'New Zealand',states:null},{code:'JP',name:'Japan',states:null},{code:'KR',name:'South Korea',states:null},{code:'SG',name:'Singapore',states:null},{code:'HK',name:'Hong Kong',states:null},{code:'IN',name:'India',states:null},{code:'BR',name:'Brazil',states:null},{code:'MX',name:'Mexico',states:null},{code:'AR',name:'Argentina',states:null},{code:'CL',name:'Chile',states:null},{code:'ZA',name:'South Africa',states:null},{code:'AE',name:'United Arab Emirates',states:null},{code:'SA',name:'Saudi Arabia',states:null},{code:'IL',name:'Israel',states:null},{code:'TR',name:'Turkey',states:null},{code:'TH',name:'Thailand',states:null},{code:'MY',name:'Malaysia',states:null},{code:'ID',name:'Indonesia',states:null},{code:'PH',name:'Philippines',states:null},{code:'VN',name:'Vietnam',states:null}];
 var cart=[],curProd=null,detQty=1;
 function $(id){return document.getElementById(id)}
 function getP(id){return products.find(function(p){return p.id===id})}
-function goTo(page,id){
-showPage(page,id);
-window.history.pushState({page:page,id:id},'','#'+page+(id?'-'+id:''));
-window.scrollTo(0,0);
-}
-function showPage(page,id){
-var pages=document.querySelectorAll('.page');
-pages.forEach(function(p){p.classList.remove('active')});
-var el=$('page-'+page);
-if(el)el.classList.add('active');
-if(page==='home'){
-renderGrid('featured-grid',[1,2,3,4]);
-renderGrid('popular-grid',[5,6,7,8]);
-}
-if(page==='shop')renderGrid('shop-grid',[1,2,3,4,5,6,7,8]);
-if(page==='product'&&id){
-curProd=getP(id);detQty=1;
-if(curProd)renderPD(curProd);
-}
-if(page==='cart')renderCart();
-if(page==='checkout')renderCheckout();
-}
-function renderGrid(cid,ids){
-var el=$(cid);
-if(!el)return;
-el.innerHTML='';
-ids.forEach(function(id){
-var p=getP(id);
-if(!p)return;
-var card=document.createElement('div');
-card.className='card';
-card.onclick=function(){goTo('product',p.id)};
-card.innerHTML='<img src="'+p.imgs[0]+'" class="card-img" loading="lazy"><div class="card-info"><div class="card-title">'+p.name+'</div><div class="card-price">$'+p.price.toFixed(2)+' USD</div></div>';
-var btn=document.createElement('button');
-btn.className='btn';
-btn.textContent='Add to Cart';
-btn.onclick=function(e){e.stopPropagation();addCart(p.id);};
-card.querySelector('.card-info').appendChild(btn);
-el.appendChild(card);
-});
-}
-function renderPD(p){
-var bc=$('pd-breadcrumb');
-if(bc)bc.innerHTML='<a id="bc-pd-home">Home</a> › <a id="bc-pd-shop">Shop</a> › '+p.name;
-wire();
-var nm=$('pd-name');
-if(nm)nm.textContent=p.name;
-var pr=$('pd-price');
-if(pr)pr.textContent='$'+p.price.toFixed(2)+' USD';
-var rt=$('pd-rating');
-if(rt)rt.innerHTML='⭐ '+p.rating+' ('+p.rev+' reviews)';
-var img=$('pd-main');
-if(img)img.src=p.imgs[0];
-var pay=$('pd-pay-logos');
-if(pay)pay.innerHTML=PAY_HTML;
-var desc=$('pd-desc');
-if(desc)desc.innerHTML='<h3>'+p.fb+' Benefits</h3><ul>'+p.desc.b.map(function(i){return'<li>'+i+'</li>'}).join('')+'</ul><h3>Specifications</h3><ul>'+p.desc.s.map(function(i){return'<li>'+i+'</li>'}).join('')+'</ul><h3>Package Includes</h3><ul>'+p.desc.i.map(function(i){return'<li>'+i+'</li>'}).join('')+'</ul><h3>Perfect For</h3><ul>'+p.desc.p.map(function(i){return'<li>'+i+'</li>'}).join('')+'</ul>';
-var qtyInp=$('det-qty');
-if(qtyInp)qtyInp.value=detQty;
-renderGrid('related-grid',[1,2,3,4,5,6,7,8].filter(function(i){return i!==p.id}).slice(0,4));
-}
-function addCart(id){
-var p=getP(id);
-if(!p)return;
-cart.push(p);
-updateCartCount();
-toast('Product added to cart!');
-}
-function addCartDetail(){
-if(!curProd)return;
-for(var i=0;i<detQty;i++)addCart(curProd.id);
-}
-function updateCartCount(){
-var el=$('cart-count');
-if(el)el.textContent=cart.length;
-}
-function renderCart(){
-var el=$('cart-content');
-if(!el)return;
-if(cart.length===0){
-el.innerHTML='<div class="cart-empty"><h2>Your cart is currently empty.</h2><button class="btn" id="cart-shop-btn">Return to shop</button></div>';
-var btn=$('cart-shop-btn');
-if(btn)btn.onclick=function(){goTo('shop')};
-return;
-}
-var grouped=cart.reduce(function(a,p){
-var e=a.find(function(x){return x.id===p.id});
-if(e)e.qty++;
-else a.push({id:p.id,name:p.name,price:p.price,imgs:p.imgs,qty:1});
-return a;
-},[]);
-var html='';
-grouped.forEach(function(i){
-html+='<div class="cart-item"><img src="'+i.imgs[0]+'" class="cart-item-img" loading="lazy"><div><h3>'+i.name+'</h3><p>Quantity: '+i.qty+'</p></div><div class="card-price">$'+(i.price*i.qty).toFixed(2)+'</div><button id="rm-'+i.id+'" style="border:none;background:none;cursor:pointer;font-size:20px">🗑️</button></div>';
-});
-var total=cart.reduce(function(s,p){return s+p.price},0);
-html+='<div class="cart-total">Total: $'+total.toFixed(2)+' USD</div><div style="text-align:right"><button class="btn" id="cart-checkout-btn" style="padding:16px 40px;font-size:18px">Proceed to Checkout</button></div>';
-el.innerHTML=html;
-var ckBtn=$('cart-checkout-btn');
-if(ckBtn)ckBtn.onclick=function(){goTo('checkout')};
-grouped.forEach(function(i){
-var rmBtn=$('rm-'+i.id);
-if(rmBtn)rmBtn.onclick=function(){removeCart(i.id)};
-});
-}
-function removeCart(id){
-var idx=cart.findIndex(function(p){return p.id===id});
-if(idx>-1){
-cart.splice(idx,1);
-updateCartCount();
-renderCart();
-toast('Item removed');
-}
-}
-function renderCheckout(){
-var grouped=cart.reduce(function(a,p){
-var e=a.find(function(x){return x.id===p.id});
-if(e)e.qty++;
-else a.push({id:p.id,name:p.name,price:p.price,imgs:p.imgs,qty:1});
-return a;
-},[]);
-var html='';
-grouped.forEach(function(i){
-html+='<div class="sum-item"><img src="'+i.imgs[0]+'" style="width:44px;height:44px;object-fit:cover;border-radius:4px;margin-right:10px"><span>'+i.name+' × '+i.qty+'</span><span>$'+(i.price*i.qty).toFixed(2)+'</span></div>';
-});
-var lines=$('co-lines');
-if(lines)lines.innerHTML=html;
-var total=cart.reduce(function(s,p){return s+p.price},0);
-var sub=$('co-sub');
-var tot=$('co-total');
-if(sub)sub.textContent='$'+total.toFixed(2)+' USD';
-if(tot)tot.textContent='$'+total.toFixed(2)+' USD';
-var payLogos=$('co-pay-logos');
-if(payLogos)payLogos.innerHTML=PAY_HTML;
-}
-function initCountries(){
-var sel=$('co-country');
-if(!sel)return;
-sel.innerHTML='';
-countries.forEach(function(c){
-var opt=document.createElement('option');
-opt.value=c.code;
-opt.textContent=c.name;
-if(c.code==='US')opt.selected=true;
-sel.appendChild(opt);
-});
-sel.addEventListener('change',handleCountry);
-handleCountry();
-}
-function placeOrder(){
-var tc=$('tc-check');
-if(!tc||!tc.checked){
-alert('You must accept the terms and conditions.');
-return;
-}
-var fn=$('co-fname');
-var ln=$('co-lname');
-var em=$('co-email');
-if(!fn||!fn.value||!ln||!ln.value||!em||!em.value){
-alert('Please fill in all required fields.');
-return;
-}
-var btn=$('place-order-btn');
-if(btn){
-btn.disabled=true;
-btn.classList.add('placing-order');
-btn.textContent='PROCESSING...';
-}
-setTimeout(function(){
-var num='#FG'+Math.floor(100000+Math.random()*900000);
-var confirmNum=$('confirm-num');
-if(confirmNum)confirmNum.textContent=num;
-var form=$('checkout-form');
-var confirm=$('confirm-screen');
-if(form)form.style.display='none';
-if(confirm)confirm.style.display='block';
-cart=[];
-updateCartCount();
-if(btn){
-btn.disabled=false;
-btn.classList.remove('placing-order');
-btn.textContent='PLACE ORDER';
-}
-},2800);
-}
-function submitContact(){
-var n=$('contact-name');
-var e=$('contact-email');
-var m=$('contact-message');
-if(!n||!n.value||!e||!e.value||!m||!m.value){
-alert('Please fill in all required fields.');
-return;
-}
-toast('Message sent successfully!');
-n.value='';
-e.value='';
-var p=$('contact-phone');
-if(p)p.value='';
-m.value='';
-}
-function toast(msg){
-var t=$('toast');
-if(t){
-t.textContent=msg;
-t.classList.add('show');
-setTimeout(function(){t.classList.remove('show')},3000);
-}
-}
-function wire(){
-var logo=$('logo');
-if(logo)logo.onclick=function(){goTo('home')};
-var navHome=$('nav-home');
-if(navHome)navHome.onclick=function(){goTo('home')};
-var navShop=$('nav-shop');
-if(navShop)navShop.onclick=function(){goTo('shop')};
-var navContact=$('nav-contact');
-if(navContact)navContact.onclick=function(){goTo('contact')};
-var cartBtn=$('cart-btn');
-if(cartBtn)cartBtn.onclick=function(){goTo('cart')};
-var heroShop=$('hero-shop');
-if(heroShop)heroShop.onclick=function(){goTo('shop')};
-var ham=$('ham');
-var mobNav=$('mob-nav');
-var mobClose=$('mob-close');
-if(ham&&mobNav)ham.onclick=function(){mobNav.classList.add('show')};
-if(mobClose&&mobNav)mobClose.onclick=function(){mobNav.classList.remove('show')};
-var mnHome=$('mn-home');
-if(mnHome&&mobNav)mnHome.onclick=function(){mobNav.classList.remove('show');goTo('home')};
-var mnShop=$('mn-shop');
-if(mnShop&&mobNav)mnShop.onclick=function(){mobNav.classList.remove('show');goTo('shop')};
-var mnContact=$('mn-contact');
-if(mnContact&&mobNav)mnContact.onclick=function(){mobNav.classList.remove('show');goTo('contact')};
-var mnPrivacy=$('mn-privacy');
-if(mnPrivacy&&mobNav)mnPrivacy.onclick=function(){mobNav.classList.remove('show');goTo('privacy')};
-var mnTerms=$('mn-terms');
-if(mnTerms&&mobNav)mnTerms.onclick=function(){mobNav.classList.remove('show');goTo('terms')};
-var bcShopHome=$('bc-shop-home');
-if(bcShopHome)bcShopHome.onclick=function(){goTo('home')};
-var bcCartHome=$('bc-cart-home');
-if(bcCartHome)bcCartHome.onclick=function(){goTo('home')};
-var bcCheckoutCart=$('bc-checkout-cart');
-if(bcCheckoutCart)bcCheckoutCart.onclick=function(){goTo('cart')};
-var bcContactHome=$('bc-contact-home');
-if(bcContactHome)bcContactHome.onclick=function(){goTo('home')};
-var bcPrivacyHome=$('bc-privacy-home');
-if(bcPrivacyHome)bcPrivacyHome.onclick=function(){goTo('home')};
-var bcTermsHome=$('bc-terms-home');
-if(bcTermsHome)bcTermsHome.onclick=function(){goTo('home')};
-var bcPdHome=$('bc-pd-home');
-if(bcPdHome)bcPdHome.onclick=function(){goTo('home')};
-var bcPdShop=$('bc-pd-shop');
-if(bcPdShop)bcPdShop.onclick=function(){goTo('shop')};
-var coPrivLnk=$('co-priv-lnk');
-if(coPrivLnk)coPrivLnk.onclick=function(){goTo('privacy')};
-var tcTermsLnk=$('tc-terms-lnk');
-if(tcTermsLnk)tcTermsLnk.onclick=function(){goTo('terms')};
-var placeBtn=$('place-order-btn');
-if(placeBtn)placeBtn.onclick=placeOrder;
-var confirmShop=$('confirm-shop');
-if(confirmShop)confirmShop.onclick=function(){
-var form=$('checkout-form');
-var confirm=$('confirm-screen');
-if(form)form.style.display='block';
-if(confirm)confirm.style.display='none';
-goTo('shop');
-};
-var contactSubmit=$('contact-submit');
-if(contactSubmit)contactSubmit.onclick=submitContact;
-var flHome=$('fl-home');
-if(flHome)flHome.onclick=function(){goTo('home')};
-var flShop=$('fl-shop');
-if(flShop)flShop.onclick=function(){goTo('shop')};
-var flPrivacy=$('fl-privacy');
-if(flPrivacy)flPrivacy.onclick=function(){goTo('privacy')};
-var flTerms=$('fl-terms');
-if(flTerms)flTerms.onclick=function(){goTo('terms')};
-var flContact=$('fl-contact');
-if(flContact)flContact.onclick=function(){goTo('contact')};
-var footerSend=$('footer-send');
-if(footerSend)footerSend.onclick=function(){
-toast('Message sent successfully!');
-var fe=$('footer-email');
-var fm=$('footer-message');
-if(fe)fe.value='';
-if(fm)fm.value='';
-};
-var qtyMinus=$('qty-minus');
-if(qtyMinus)qtyMinus.onclick=function(){
-if(detQty>1){
-detQty--;
-var qtyInp=$('det-qty');
-if(qtyInp)qtyInp.value=detQty;
-}
-};
-var qtyPlus=$('qty-plus');
-if(qtyPlus)qtyPlus.onclick=function(){
-detQty++;
-var qtyInp=$('det-qty');
-if(qtyInp)qtyInp.value=detQty;
-};
-var pdAddBtn=$('pd-add-btn');
-if(pdAddBtn)pdAddBtn.onclick=addCartDetail;
-var footerPay=$('footer-pay');
-if(footerPay)footerPay.innerHTML=PAY_HTML;
-}
-updateCartCount();
-initCountries();
-wire();
-window.history.replaceState({page:'home'},'','#home');
+function goTo(page,id){showPage(page,id);window.history.pushState({page:page,id:id},'','#'+page+(id?'-'+id:''));window.scrollTo(0,0)}
+function showPage(page,id){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});var el=$('page-'+page);if(el)el.classList.add('active');if(page==='home'){renderGrid('featured-grid',[1,2,3,4]);renderGrid('popular-grid',[5,6,7,8])}if(page==='shop')renderGrid('shop-grid',[1,2,3,4,5,6,7,8]);if(page==='product'&&id){curProd=getP(id);detQty=1;if(curProd)renderPD(curProd)}if(page==='cart')renderCart();if(page==='checkout')renderCheckout()}
+function renderGrid(cid,ids){var el=$(cid);if(!el)return;el.innerHTML='';ids.forEach(function(id){var p=getP(id);if(!p)return;var card=document.createElement('div');card.className='card';card.onclick=function(){goTo('product',p.id)};card.innerHTML='<img src="'+p.imgs[0]+'" class="card-img" loading="lazy"><div class="card-info"><div class="card-title">'+p.name+'</div><div class="card-price">$'+p.price.toFixed(2)+' USD</div></div>';var btn=document.createElement('button');btn.className='btn';btn.textContent='Add to Cart';btn.onclick=function(e){e.stopPropagation();addCart(p.id)};card.querySelector('.card-info').appendChild(btn);el.appendChild(card)})}
+function renderPD(p){var bc=$('pd-breadcrumb');if(bc)bc.innerHTML='<a id="bc-pd-home">Home</a> \u203A <a id="bc-pd-shop">Shop</a> \u203A '+p.name;wire();var nm=$('pd-name');if(nm)nm.textContent=p.name;var pr=$('pd-price');if(pr)pr.textContent='$'+p.price.toFixed(2)+' USD';var rt=$('pd-rating');if(rt)rt.innerHTML='\u2B50 '+p.rating+' ('+p.rev+' reviews)';var img=$('pd-main');if(img)img.src=p.imgs[0];var pay=$('pd-pay-logos');if(pay)pay.innerHTML=PAY_HTML;var desc=$('pd-desc');if(desc)desc.innerHTML='<h3>'+p.fb+' Benefits</h3><ul>'+p.desc.b.map(function(i){return'<li>'+i+'</li>'}).join('')+'</ul><h3>Specifications</h3><ul>'+p.desc.s.map(function(i){return'<li>'+i+'</li>'}).join('')+'</ul><h3>Package Includes</h3><ul>'+p.desc.i.map(function(i){return'<li>'+i+'</li>'}).join('')+'</ul><h3>Perfect For</h3><ul>'+p.desc.p.map(function(i){return'<li>'+i+'</li>'}).join('')+'</ul>';var qtyInp=$('det-qty');if(qtyInp)qtyInp.value=detQty;renderGrid('related-grid',[1,2,3,4,5,6,7,8].filter(function(i){return i!==p.id}).slice(0,4))}
+function addCart(id){var p=getP(id);if(!p)return;cart.push(p);updateCartCount();toast('Product added to cart!')}
+function addCartDetail(){if(!curProd)return;for(var i=0;i<detQty;i++)addCart(curProd.id)}
+function updateCartCount(){var el=$('cart-count');if(el)el.textContent=cart.length}
+function renderCart(){var el=$('cart-content');if(!el)return;if(cart.length===0){el.innerHTML='<div class="cart-empty"><h2>Your cart is currently empty.</h2><button class="btn" id="cart-shop-btn">Return to shop</button></div>';var btn=$('cart-shop-btn');if(btn)btn.onclick=function(){goTo('shop')};return}var grouped=cart.reduce(function(a,p){var e=a.find(function(x){return x.id===p.id});if(e)e.qty++;else a.push({id:p.id,name:p.name,price:p.price,imgs:p.imgs,qty:1});return a},[]);var html='';grouped.forEach(function(i){html+='<div class="cart-item"><img src="'+i.imgs[0]+'" class="cart-item-img" loading="lazy"><div><h3>'+i.name+'</h3><p>Quantity: '+i.qty+'</p></div><div class="card-price">$'+(i.price*i.qty).toFixed(2)+'</div><button id="rm-'+i.id+'" style="border:none;background:none;cursor:pointer;font-size:20px">\u{1F5D1}\uFE0F</button></div>'});var total=cart.reduce(function(s,p){return s+p.price},0);html+='<div class="cart-total">Total: $'+total.toFixed(2)+' USD</div><div style="text-align:right"><button class="btn" id="cart-checkout-btn" style="padding:16px 40px;font-size:18px">Proceed to Checkout</button></div>';el.innerHTML=html;var ckBtn=$('cart-checkout-btn');if(ckBtn)ckBtn.onclick=function(){goTo('checkout')};grouped.forEach(function(i){var rmBtn=$('rm-'+i.id);if(rmBtn)rmBtn.onclick=function(){removeCart(i.id)}})}
+function removeCart(id){var idx=cart.findIndex(function(p){return p.id===id});if(idx>-1){cart.splice(idx,1);updateCartCount();renderCart();toast('Item removed')}}
+function renderCheckout(){var grouped=cart.reduce(function(a,p){var e=a.find(function(x){return x.id===p.id});if(e)e.qty++;else a.push({id:p.id,name:p.name,price:p.price,imgs:p.imgs,qty:1});return a},[]);var html='';grouped.forEach(function(i){html+='<div class="sum-item"><img src="'+i.imgs[0]+'" style="width:44px;height:44px;object-fit:cover;border-radius:4px;margin-right:10px"><span>'+i.name+' \u00D7 '+i.qty+'</span><span>$'+(i.price*i.qty).toFixed(2)+'</span></div>'});var lines=$('co-lines');if(lines)lines.innerHTML=html;var total=cart.reduce(function(s,p){return s+p.price},0);var sub=$('co-sub');var tot=$('co-total');if(sub)sub.textContent='$'+total.toFixed(2)+' USD';if(tot)tot.textContent='$'+total.toFixed(2)+' USD';var payLogos=$('co-pay-logos');if(payLogos)payLogos.innerHTML=PAY_HTML}
+function initCountries(){var sel=$('co-country');if(!sel)return;sel.innerHTML='';countries.forEach(function(c){var opt=document.createElement('option');opt.value=c.code;opt.textContent=c.name;if(c.code==='US')opt.selected=true;sel.appendChild(opt)});sel.addEventListener('change',handleCountry);handleCountry()}
+function placeOrder(){var tc=$('tc-check');if(!tc||!tc.checked){alert('You must accept the terms and conditions.');return}var fn=$('co-fname');var ln=$('co-lname');var em=$('co-email');if(!fn||!fn.value||!ln||!ln.value||!em||!em.value){alert('Please fill in all required fields.');return}var btn=$('place-order-btn');if(btn){btn.disabled=true;btn.classList.add('placing-order');btn.textContent='PROCESSING...'}setTimeout(function(){var num='#FG'+Math.floor(100000+Math.random()*900000);var confirmNum=$('confirm-num');if(confirmNum)confirmNum.textContent=num;var form=$('checkout-form');var confirm=$('confirm-screen');if(form)form.style.display='none';if(confirm)confirm.style.display='block';cart=[];updateCartCount();if(btn){btn.disabled=false;btn.classList.remove('placing-order');btn.textContent='PLACE ORDER'}},2800)}
+function submitContact(){var n=$('contact-name');var e=$('contact-email');var m=$('contact-message');if(!n||!n.value||!e||!e.value||!m||!m.value){alert('Please fill in all required fields.');return}toast('Message sent successfully!');n.value='';e.value='';var p=$('contact-phone');if(p)p.value='';m.value=''}
+function toast(msg){var t=$('toast');if(t){t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},3000)}}
+function wire(){var logo=$('logo');if(logo)logo.onclick=function(){goTo('home')};var navHome=$('nav-home');if(navHome)navHome.onclick=function(){goTo('home')};var navShop=$('nav-shop');if(navShop)navShop.onclick=function(){goTo('shop')};var navContact=$('nav-contact');if(navContact)navContact.onclick=function(){goTo('contact')};var cartBtn=$('cart-btn');if(cartBtn)cartBtn.onclick=function(){goTo('cart')};var heroShop=$('hero-shop');if(heroShop)heroShop.onclick=function(){goTo('shop')};var ham=$('ham');var mobNav=$('mob-nav');var mobClose=$('mob-close');if(ham&&mobNav)ham.onclick=function(){mobNav.classList.add('show')};if(mobClose&&mobNav)mobClose.onclick=function(){mobNav.classList.remove('show')};var mnHome=$('mn-home');if(mnHome&&mobNav)mnHome.onclick=function(){mobNav.classList.remove('show');goTo('home')};var mnShop=$('mn-shop');if(mnShop&&mobNav)mnShop.onclick=function(){mobNav.classList.remove('show');goTo('shop')};var mnContact=$('mn-contact');if(mnContact&&mobNav)mnContact.onclick=function(){mobNav.classList.remove('show');goTo('contact')};var mnPrivacy=$('mn-privacy');if(mnPrivacy&&mobNav)mnPrivacy.onclick=function(){mobNav.classList.remove('show');goTo('privacy')};var mnTerms=$('mn-terms');if(mnTerms&&mobNav)mnTerms.onclick=function(){mobNav.classList.remove('show');goTo('terms')};var bcShopHome=$('bc-shop-home');if(bcShopHome)bcShopHome.onclick=function(){goTo('home')};var bcCartHome=$('bc-cart-home');if(bcCartHome)bcCartHome.onclick=function(){goTo('home')};var bcCheckoutCart=$('bc-checkout-cart');if(bcCheckoutCart)bcCheckoutCart.onclick=function(){goTo('cart')};var bcContactHome=$('bc-contact-home');if(bcContactHome)bcContactHome.onclick=function(){goTo('home')};var bcPrivacyHome=$('bc-privacy-home');if(bcPrivacyHome)bcPrivacyHome.onclick=function(){goTo('home')};var bcTermsHome=$('bc-terms-home');if(bcTermsHome)bcTermsHome.onclick=function(){goTo('home')};var bcPdHome=$('bc-pd-home');if(bcPdHome)bcPdHome.onclick=function(){goTo('home')};var bcPdShop=$('bc-pd-shop');if(bcPdShop)bcPdShop.onclick=function(){goTo('shop')};var coPrivLnk=$('co-priv-lnk');if(coPrivLnk)coPrivLnk.onclick=function(){goTo('privacy')};var tcTermsLnk=$('tc-terms-lnk');if(tcTermsLnk)tcTermsLnk.onclick=function(){goTo('terms')};var placeBtn=$('place-order-btn');if(placeBtn)placeBtn.onclick=placeOrder;var confirmShop=$('confirm-shop');if(confirmShop)confirmShop.onclick=function(){var form=$('checkout-form');var confirm=$('confirm-screen');if(form)form.style.display='block';if(confirm)confirm.style.display='none';goTo('shop')};var contactSubmit=$('contact-submit');if(contactSubmit)contactSubmit.onclick=submitContact;var flHome=$('fl-home');if(flHome)flHome.onclick=function(){goTo('home')};var flShop=$('fl-shop');if(flShop)flShop.onclick=function(){goTo('shop')};var flPrivacy=$('fl-privacy');if(flPrivacy)flPrivacy.onclick=function(){goTo('privacy')};var flTerms=$('fl-terms');if(flTerms)flTerms.onclick=function(){goTo('terms')};var flContact=$('fl-contact');if(flContact)flContact.onclick=function(){goTo('contact')};var footerSend=$('footer-send');if(footerSend)footerSend.onclick=function(){toast('Message sent successfully!');var fe=$('footer-email');var fm=$('footer-message');if(fe)fe.value='';if(fm)fm.value=''};var qtyMinus=$('qty-minus');if(qtyMinus)qtyMinus.onclick=function(){if(detQty>1){detQty--;var qtyInp=$('det-qty');if(qtyInp)qtyInp.value=detQty}};var qtyPlus=$('qty-plus');if(qtyPlus)qtyPlus.onclick=function(){detQty++;var qtyInp=$('det-qty');if(qtyInp)qtyInp.value=detQty};var pdAddBtn=$('pd-add-btn');if(pdAddBtn)pdAddBtn.onclick=addCartDetail;var footerPay=$('footer-pay');if(footerPay)footerPay.innerHTML=PAY_HTML}
+updateCartCount();initCountries();wire();window.history.replaceState({page:'home'},'','#home');
 })();
-
-function handleCountry(){
-var sel=document.getElementById('co-country');
-if(!sel)return;
-var code=sel.value;
-var country=countries.find(function(c){return c.code===code});
-var cont=document.getElementById('state-field');
-var lbl=document.getElementById('state-label');
-if(!country||!cont||!lbl)return;
-if(country.states){
-lbl.textContent=code==='US'?'State *':'Province/State *';
-var stateSel=document.createElement('select');
-stateSel.id='co-state';
-stateSel.required=true;
-stateSel.style.cssText='width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:16px';
-country.states.forEach(function(s){
-var opt=document.createElement('option');
-opt.value=s;
-opt.textContent=s;
-if(code==='US'&&s==='New Mexico')opt.selected=true;
-stateSel.appendChild(opt);
-});
-cont.innerHTML='';
-cont.appendChild(stateSel);
-}else{
-lbl.textContent='State/Province';
-var inp=document.createElement('input');
-inp.type='text';
-inp.id='co-state';
-inp.style.cssText='width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:16px';
-cont.innerHTML='';
-cont.appendChild(inp);
-}
-}
-
-window.addEventListener('popstate',function(e){
-var page=e.state&&e.state.page?e.state.page:'home';
-var id=e.state&&e.state.id?e.state.id:null;
-showPage(page,id);
-window.scrollTo(0,0);
-});
+function handleCountry(){var sel=document.getElementById('co-country');if(!sel)return;var code=sel.value;var country=countries.find(function(c){return c.code===code});var cont=document.getElementById('state-field');var lbl=document.getElementById('state-label');if(!country||!cont||!lbl)return;if(country.states){lbl.textContent=code==='US'?'State *':'Province/State *';var stateSel=document.createElement('select');stateSel.id='co-state';stateSel.required=true;stateSel.style.cssText='width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:16px';country.states.forEach(function(s){var opt=document.createElement('option');opt.value=s;opt.textContent=s;if(code==='US'&&s==='New Mexico')opt.selected=true;stateSel.appendChild(opt)});cont.innerHTML='';cont.appendChild(stateSel)}else{lbl.textContent='State/Province';var inp=document.createElement('input');inp.type='text';inp.id='co-state';inp.style.cssText='width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:16px';cont.innerHTML='';cont.appendChild(inp)}}
+window.addEventListener('popstate',function(e){var page=e.state&&e.state.page?e.state.page:'home';var id=e.state&&e.state.id?e.state.id:null;showPage(page,id);window.scrollTo(0,0)});
 </script>
-
 </body>
 </html>
