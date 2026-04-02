@@ -10,11 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
   --color-primary: #ff4500;
@@ -39,7 +35,6 @@ body {
   padding: 0 20px;
 }
 
-/* Topbar */
 .topbar {
   background: var(--color-dark);
   color: var(--color-white);
@@ -48,13 +43,6 @@ body {
   text-align: center;
 }
 
-.topbar a {
-  color: var(--color-white);
-  text-decoration: none;
-  margin: 0 15px;
-}
-
-/* Header */
 header {
   background: var(--color-white);
   border-bottom: 1px solid #eee;
@@ -75,7 +63,7 @@ header {
   font-weight: 700;
   color: var(--color-dark);
   text-decoration: none;
-  letter-spacing: -0.5px;
+  cursor: pointer;
 }
 
 nav {
@@ -87,7 +75,7 @@ nav a {
   color: var(--color-dark);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s;
+  cursor: pointer;
 }
 
 nav a:hover {
@@ -116,29 +104,28 @@ nav a:hover {
   font-weight: 600;
 }
 
-/* Pages */
 .page {
   display: none;
   min-height: calc(100vh - 400px);
+  padding: 40px 0;
 }
 
 .page.active {
   display: block;
 }
 
-/* Hero */
 .hero {
   background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
   color: var(--color-white);
   padding: 100px 0;
   text-align: center;
+  margin: -40px 0 60px 0;
 }
 
 .hero h1 {
   font-size: 56px;
   font-weight: 700;
   margin-bottom: 20px;
-  letter-spacing: -1px;
 }
 
 .hero p {
@@ -166,24 +153,19 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-.btn-secondary {
-  background: transparent;
-  border: 2px solid var(--color-white);
-}
-
-.btn-secondary:hover {
-  background: var(--color-white);
-  color: var(--color-dark);
-}
-
 .btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-/* Product Grid */
-.product-section {
-  padding: 80px 0;
+@keyframes placeOrderPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+.btn.placing-order {
+  animation: placeOrderPulse 0.7s ease-in-out 4;
+  pointer-events: none;
 }
 
 .section-title {
@@ -191,7 +173,6 @@ nav a:hover {
   font-size: 42px;
   font-weight: 700;
   margin-bottom: 50px;
-  color: var(--color-dark);
 }
 
 .product-grid {
@@ -230,7 +211,6 @@ nav a:hover {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 10px;
-  color: var(--color-dark);
 }
 
 .product-price {
@@ -240,15 +220,20 @@ nav a:hover {
   margin-bottom: 15px;
 }
 
-.product-card .btn {
-  width: 100%;
-  padding: 12px;
-  text-align: center;
+.breadcrumb {
+  padding: 20px 0;
+  font-size: 14px;
+  color: var(--color-gray);
 }
 
-/* Product Detail */
-.product-detail {
-  padding: 60px 0;
+.breadcrumb a {
+  color: var(--color-gray);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-primary);
 }
 
 .product-detail-grid {
@@ -263,16 +248,11 @@ nav a:hover {
   border-radius: 12px;
 }
 
-.product-detail-info h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
 .product-detail-price {
   font-size: 32px;
   color: var(--color-primary);
   font-weight: 700;
-  margin-bottom: 30px;
+  margin: 20px 0;
 }
 
 .quantity-selector {
@@ -302,7 +282,6 @@ nav a:hover {
 }
 
 .product-description {
-  margin-top: 40px;
   line-height: 1.8;
   color: var(--color-gray);
 }
@@ -319,23 +298,9 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-.product-description li {
-  margin-bottom: 8px;
-}
-
-/* Cart */
 .cart-empty {
   text-align: center;
   padding: 100px 20px;
-}
-
-.cart-empty h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-.cart-items {
-  margin: 40px 0;
 }
 
 .cart-item {
@@ -356,17 +321,6 @@ nav a:hover {
   border-radius: 8px;
 }
 
-.cart-item-info h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.cart-item-price {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
 .cart-total {
   text-align: right;
   font-size: 28px;
@@ -374,12 +328,10 @@ nav a:hover {
   margin: 30px 0;
 }
 
-/* Checkout */
 .checkout-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 60px;
-  margin: 40px 0;
 }
 
 .checkout-section {
@@ -399,7 +351,6 @@ nav a:hover {
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
-  color: var(--color-dark);
 }
 
 .form-group input,
@@ -430,7 +381,6 @@ nav a:hover {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
-  font-size: 16px;
 }
 
 .summary-total {
@@ -442,7 +392,7 @@ nav a:hover {
 }
 
 .payment-form {
-  background: var(--color-white);
+  background: white;
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8px;
@@ -487,18 +437,6 @@ nav a:hover {
   border-radius: 6px;
 }
 
-/* Place Order Animation */
-@keyframes placeOrderPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.9; }
-}
-
-.btn.placing-order {
-  animation: placeOrderPulse 0.7s ease-in-out 4;
-  pointer-events: none;
-}
-
-/* Contact Form */
 .contact-info {
   background: var(--color-light-gray);
   padding: 30px;
@@ -506,18 +444,9 @@ nav a:hover {
   margin-bottom: 40px;
 }
 
-.contact-info h3 {
-  margin-bottom: 20px;
-}
-
-.contact-info p {
-  margin-bottom: 10px;
-}
-
-/* Legal Pages */
 .legal-content {
   max-width: 800px;
-  margin: 60px auto;
+  margin: 0 auto;
   line-height: 1.8;
 }
 
@@ -532,16 +461,6 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-.legal-content p {
-  margin-bottom: 20px;
-}
-
-.legal-content ul {
-  margin-left: 30px;
-  margin-bottom: 20px;
-}
-
-/* Footer */
 footer {
   background: var(--color-dark);
   color: var(--color-white);
@@ -558,7 +477,6 @@ footer {
 
 .footer-col h3 {
   margin-bottom: 20px;
-  font-size: 18px;
 }
 
 .footer-col a {
@@ -566,7 +484,7 @@ footer {
   text-decoration: none;
   display: block;
   margin-bottom: 12px;
-  transition: color 0.2s;
+  cursor: pointer;
 }
 
 .footer-col a:hover {
@@ -581,7 +499,6 @@ footer {
   font-size: 14px;
 }
 
-/* Toast */
 .toast {
   position: fixed;
   bottom: 30px;
@@ -595,7 +512,6 @@ footer {
   opacity: 0;
   transition: all 0.3s;
   z-index: 1000;
-  font-weight: 500;
 }
 
 .toast.show {
@@ -603,56 +519,18 @@ footer {
   opacity: 1;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 36px;
-  }
-  
+  .hero h1 { font-size: 36px; }
   .product-detail-grid,
   .checkout-grid,
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  nav {
-    display: none;
-  }
-  
-  .cart-item {
-    grid-template-columns: 80px 1fr;
-    gap: 15px;
-  }
-  
-  .cart-item-image {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .section-title {
-    font-size: 32px;
-  }
-}
-
-.breadcrumb {
-  padding: 20px 0;
-  font-size: 14px;
-  color: var(--color-gray);
-}
-
-.breadcrumb a {
-  color: var(--color-gray);
-  text-decoration: none;
-}
-
-.breadcrumb a:hover {
-  color: var(--color-primary);
+  .footer-grid { grid-template-columns: 1fr; }
+  nav { display: none; }
+  .section-title { font-size: 32px; }
 }
 </style>
 </head>
 <body>
 
-<!-- Topbar -->
 <div class="topbar">
   <div class="container">
     <span>📞 +1 (833) 323-2668</span>
@@ -660,17 +538,16 @@ footer {
   </div>
 </div>
 
-<!-- Header -->
 <header>
   <div class="container">
     <div class="header-content">
-      <a href="#" class="logo" data-navigate="home">FITNESSGOAT</a>
+      <div class="logo" id="logo-home">FITNESSGOAT</div>
       <nav>
-        <a href="#" data-navigate="home">Home</a>
-        <a href="#" data-navigate="shop">Shop</a>
-        <a href="#" data-navigate="contact">Contact</a>
+        <a id="nav-home">Home</a>
+        <a id="nav-shop">Shop</a>
+        <a id="nav-contact">Contact</a>
       </nav>
-      <div class="cart-icon" data-navigate="cart">
+      <div class="cart-icon" id="cart-icon">
         🛒
         <span class="cart-count" id="cart-count">0</span>
       </div>
@@ -678,59 +555,51 @@ footer {
   </div>
 </header>
 
-<!-- HOME PAGE -->
 <div class="page active" id="page-home">
   <section class="hero">
     <div class="container">
       <h1>TRAIN SMARTER. BUILD STRONGER.</h1>
       <p>Elite fitness gear for serious results.</p>
-      <a href="#" data-navigate="shop" class="btn">SHOP NOW</a>
+      <button class="btn" id="hero-shop">SHOP NOW</button>
     </div>
   </section>
-
-  <section class="product-section">
-    <div class="container">
-      <h2 class="section-title">Featured Products</h2>
-      <div class="product-grid" id="featured-products"></div>
-    </div>
+  <section class="container">
+    <h2 class="section-title">Featured Products</h2>
+    <div class="product-grid" id="grid-home"></div>
   </section>
 </div>
 
-<!-- SHOP PAGE -->
 <div class="page" id="page-shop">
   <div class="container">
     <div class="breadcrumb">
-      <a href="#" data-navigate="home">Home</a> &gt; Shop
+      <a id="bc-home-shop">Home</a> &gt; Shop
     </div>
     <h1 class="section-title">FITNESSGOAT Shop</h1>
-    <div class="product-grid" id="shop-products"></div>
+    <div class="product-grid" id="grid-shop"></div>
   </div>
 </div>
 
-<!-- PRODUCT DETAIL PAGE -->
 <div class="page" id="page-product">
   <div class="container">
-    <div class="breadcrumb" id="product-breadcrumb"></div>
-    <div class="product-detail" id="product-detail-content"></div>
+    <div class="breadcrumb" id="bc-product"></div>
+    <div id="product-detail"></div>
   </div>
 </div>
 
-<!-- CART PAGE -->
 <div class="page" id="page-cart">
   <div class="container">
     <div class="breadcrumb">
-      <a href="#" data-navigate="home">Home</a> &gt; Cart
+      <a id="bc-home-cart">Home</a> &gt; Cart
     </div>
     <h1 class="section-title">Shopping Cart</h1>
     <div id="cart-content"></div>
   </div>
 </div>
 
-<!-- CHECKOUT PAGE -->
 <div class="page" id="page-checkout">
   <div class="container">
     <div class="breadcrumb">
-      <a href="#" data-navigate="cart">Shopping Cart</a> &gt; <strong>Checkout</strong> &gt; Order Complete
+      <a id="bc-cart-checkout">Shopping Cart</a> &gt; <strong>Checkout</strong> &gt; Order Complete
     </div>
     <h1 class="section-title">Checkout</h1>
     <div class="checkout-grid">
@@ -793,7 +662,7 @@ footer {
           <h2>Additional Information</h2>
           <div class="form-group">
             <label>Order Notes (optional)</label>
-            <textarea id="order-notes" rows="4" placeholder="Notes about your order, e.g. special delivery instructions"></textarea>
+            <textarea id="order-notes" rows="4"></textarea>
           </div>
         </div>
 
@@ -802,9 +671,9 @@ footer {
           <div class="payment-form">
             <h3>Credit / Debit Card</h3>
             <div class="card-logos">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" height="30">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" height="30">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Discover_Card_logo.svg" alt="Discover" height="30">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Discover_Card_logo.svg" alt="Discover">
             </div>
             <div class="form-group">
               <label>Card Number</label>
@@ -823,13 +692,13 @@ footer {
           </div>
 
           <p style="font-size: 14px; color: var(--color-gray); margin-bottom: 20px;">
-            Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="#" data-navigate="privacy" style="color: var(--color-primary);">privacy policy</a>.
+            Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a id="link-privacy-checkout" style="color: var(--color-primary); cursor: pointer;">privacy policy</a>.
           </p>
 
           <div class="terms-checkbox">
             <input type="checkbox" id="terms-accept" required>
             <label for="terms-accept">
-              I am 18 years or older and agree to the <a href="#" data-navigate="terms" style="color: var(--color-primary);">terms and conditions</a> and Privacy Policy explaining that by placing an order, Product delivery is free (free S&H), You will not be enrolled in any type of continuity program by ordering said option from this website. The charges will appear on your billing statement as <strong>FITNESSGOAT STORE</strong>. Delivery is via USPS and takes between 7 business days from the order processing date.
+              I am 18 years or older and agree to the <a id="link-terms-checkout" style="color: var(--color-primary); cursor: pointer;">terms and conditions</a> and Privacy Policy explaining that by placing an order, Product delivery is free (free S&H), You will not be enrolled in any type of continuity program by ordering said option from this website. The charges will appear on your billing statement as <strong>FITNESSGOAT STORE</strong>. Delivery is via USPS and takes between 7 business days from the order processing date.
             </label>
           </div>
 
@@ -857,11 +726,10 @@ footer {
   </div>
 </div>
 
-<!-- CONTACT PAGE -->
 <div class="page" id="page-contact">
   <div class="container">
     <div class="breadcrumb">
-      <a href="#" data-navigate="home">Home</a> &gt; Contact Us
+      <a id="bc-home-contact">Home</a> &gt; Contact Us
     </div>
     <h1 class="section-title">Contact Us</h1>
     
@@ -889,60 +757,41 @@ footer {
         <label>Message *</label>
         <textarea id="contact-message" rows="6" required></textarea>
       </div>
-      <button class="btn" id="contact-submit-btn" style="width: 100%;">Send Message</button>
+      <button class="btn" id="contact-submit" style="width: 100%;">Send Message</button>
     </div>
   </div>
 </div>
 
-<!-- PRIVACY POLICY PAGE -->
 <div class="page" id="page-privacy">
   <div class="container">
     <div class="breadcrumb">
-      <a href="#" data-navigate="home">Home</a> &gt; Privacy Policy
+      <a id="bc-home-privacy">Home</a> &gt; Privacy Policy
     </div>
     <div class="legal-content">
       <h1>Privacy Policy for FITNESSGOAT STORE LLC</h1>
-      
-      <p>Please note: The Website privacy policy changes from time to time and changes are effective upon posting. Please check back frequently for updates as it is your sole responsibility to be aware of changes. The Website does not provide notices of changes in any manner other than by posting the changes at this web site.</p>
-
-      <p>If you do not agree with the terms of this privacy policy please do not provide any information to the Website or use any of the services or products offered or provided on any of the websites referred to in this privacy policy.</p>
-
+      <p>Please note: The Website privacy policy changes from time to time and changes are effective upon posting.</p>
       <h2>COLLECTION OF INFORMATION</h2>
-      
-      <h3>1.1 SURVEY INFORMATION</h3>
-      <p>The Website collects information from individuals by various methods, including, but not limited to, when an individual voluntarily completes a survey, order form, or a registration page either online or offline, or by means of online or offline surveys, order forms, or registration pages operated by third parties. In the Surveys, the Website or a third party may ask an individual to provide various information to the Website, which may include his or her name, email address, street address, zip code, telephone numbers (including cell phone numbers and carriers), birth date, gender, salary range, education and marital status, occupation, social security number, employment information, personal and online interests, and such other information as may be requested from time to time. Completing the Surveys is completely voluntary, and individuals are under no obligation to provide survey information to the Website or Third Party.</p>
-
+      <p>The Website collects information from individuals by various methods, including surveys and order forms.</p>
       <h2>USE OF INDIVIDUAL INFORMATION</h2>
-      
-      <h3>2.1 DISCRETION TO USE INFORMATION</h3>
-      <p>The company may use individual information for any legally permissible purpose at company's sole discretion. We do not sell or share any of our customer's information.</p>
-
-      <h3>2.2 EMAIL</h3>
-      <p>The Website uses Individual Information to provide promotional offers by email to individuals. The Website may maintain separate email lists for different purposes. If email recipients wish to end their email subscription from a particular list, they need to follow the instructions at the end of each email message to unsubscribe from the particular list.</p>
-
+      <p>The company may use individual information for any legally permissible purpose. We do not sell or share any of our customer's information.</p>
       <h2>CONTACT INFORMATION</h2>
-      <p>For any questions or concerns regarding this policy, please contact FITNESSGOAT STORE LLC Customer Service at:</p>
       <p><strong>Address:</strong> 1209 MOUNTAIN ROAD PL NE STE N, ALBUQUERQUE, NM 87110</p>
-      <p><strong>Support Telephone Number:</strong> +1 (833) 323-2668</p>
-      <p><strong>Support Email Address:</strong> support@fitnessgoat-staging.com</p>
+      <p><strong>Phone:</strong> +1 (833) 323-2668</p>
+      <p><strong>Email:</strong> support@fitnessgoat-staging.com</p>
     </div>
   </div>
 </div>
 
-<!-- TERMS OF SALE PAGE -->
 <div class="page" id="page-terms">
   <div class="container">
     <div class="breadcrumb">
-      <a href="#" data-navigate="home">Home</a> &gt; Terms & Conditions
+      <a id="bc-home-terms">Home</a> &gt; Terms & Conditions
     </div>
     <div class="legal-content">
       <h1>Terms & Conditions</h1>
-      
       <h2>USER AGREEMENT</h2>
-      <p>You must read and agree to these Terms and Conditions before ordering from FITNESSGOAT STORE LLC. By placing an order for FITNESSGOAT STORE LLC products, You agree to be bound by the following Terms and Conditions:</p>
-
+      <p>You must read and agree to these Terms and Conditions before ordering from FITNESSGOAT STORE LLC.</p>
       <h2>AVAILABLE PRODUCTS</h2>
-      <p>The following products are available for purchase:</p>
       <ul>
         <li>TheraBand CLX Resistance Band with Loops  $7.99</li>
         <li>TheraBand Foot Roller  $14.99</li>
@@ -953,57 +802,32 @@ footer {
         <li>TheraBand Latex Free Resistance Band Kit  $49.99</li>
         <li>Total Body Band TheraBand  $59.99</li>
       </ul>
-
       <h2>SHIPPING</h2>
       <p>Free shipping on all orders.</p>
-
-      <h2>ACCEPTANCE OF TERMS OF USE</h2>
-      <p>By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.</p>
-
       <h2>CREDIT CARD DESCRIPTOR</h2>
       <p>The charges will appear on your billing statement as <strong>FITNESSGOAT STORE</strong>.</p>
-
-      <h2>DELIVERY COST</h2>
-      <p>Shipping is FREE on all orders.</p>
-
       <h2>REFUND POLICY</h2>
-      <p>If for any reason you are not completely satisfied with your purchase, you may return any unopened product within 30 days from receipt of the order. Your refund will be credited back to your bank account and may take up to 10 business days to show on your statement.</p>
-
-      <p><strong>Return Address:</strong><br>
-      Fulfillment Box USA<br>
-      Attn: 11815 Technology Ln #300 Fishers, IN 46038<br>
-      Email: usindiana@fulfillment-box.com</p>
-
-      <p>For refund inquiries, contact: <strong>+1 (833) 323-2668</strong></p>
-
+      <p>You may return any unopened product within 30 days. For refund inquiries, contact: <strong>+1 (833) 323-2668</strong></p>
       <h2>SHIPPING TERMS</h2>
-      <p>Shipping within 7 days with USPS. Please be advised that shipments are not sent on Saturdays, Sundays, or any Holidays.</p>
-
-      <h2>LIMITATION OF LIABILITY AND DISCLAIMER OF WARRANTY</h2>
-      <p>THE MATERIALS AND PRODUCTS CONTAINED AND OFFERED ON THE WEBSITE ARE PROVIDED "AS IS" AND WITHOUT WARRANTIES OF ANY KIND EITHER EXPRESS OR IMPLIED.</p>
-
+      <p>Shipping within 7 days with USPS. Shipments are not sent on Saturdays, Sundays, or Holidays.</p>
       <h2>GOVERNING LAW</h2>
-      <p>These Terms of Use shall be governed by and construed in accordance with the laws of the State of Michigan. Any disputes shall be subject to the exclusive jurisdiction of the state and federal courts located in Detroit, Michigan.</p>
-
+      <p>These Terms shall be governed by the laws of the State of Michigan. Disputes shall be subject to the courts located in Detroit, Michigan.</p>
       <h2>CONTACT INFORMATION</h2>
       <p><strong>Address:</strong> 1209 MOUNTAIN ROAD PL NE STE N, ALBUQUERQUE, NM 87110</p>
       <p><strong>Email:</strong> support@fitnessgoat-staging.com</p>
       <p><strong>Phone:</strong> +1 (833) 323-2668</p>
-      
-      <p style="margin-top: 40px;">Thank you for shopping with FITNESSGOAT STORE LLC</p>
     </div>
   </div>
 </div>
 
-<!-- Footer -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
         <h3>Quick Links</h3>
-        <a href="#" data-navigate="privacy">Privacy Policy</a>
-        <a href="#" data-navigate="terms">Terms & Conditions</a>
-        <a href="#" data-navigate="contact">Contact</a>
+        <a id="footer-privacy">Privacy Policy</a>
+        <a id="footer-terms">Terms & Conditions</a>
+        <a id="footer-contact">Contact</a>
         <div style="margin-top: 20px;">
           <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" height="30" style="margin-right: 10px; filter: invert(1);">
           <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" height="30" style="margin-right: 10px;">
@@ -1014,11 +838,9 @@ footer {
       
       <div class="footer-col">
         <h3>Contact Form</h3>
-        <form id="footer-contact-form" style="margin-top: 20px;">
-          <input type="email" placeholder="Email" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #444; background: #2a2a2a; color: white; border-radius: 4px;">
-          <textarea placeholder="Message" rows="3" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #444; background: #2a2a2a; color: white; border-radius: 4px;"></textarea>
-          <button type="submit" class="btn" style="width: 100%; padding: 10px;">Send</button>
-        </form>
+        <input type="email" placeholder="Email" id="footer-email" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #444; background: #2a2a2a; color: white; border-radius: 4px;">
+        <textarea placeholder="Message" id="footer-message" rows="3" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #444; background: #2a2a2a; color: white; border-radius: 4px;"></textarea>
+        <button class="btn" id="footer-send" style="width: 100%;">Send</button>
       </div>
       
       <div class="footer-col">
@@ -1037,405 +859,278 @@ footer {
   </div>
 </footer>
 
-<!-- Toast Notification -->
 <div class="toast" id="toast"></div>
 
 <script>
 (function() {
   'use strict';
   
-  // Product Data with HTTPS image URLs
+  // Products with placeholder images (using a reliable CDN)
   const products = [
-    {
-      id: 1,
-      title: "TheraBand CLX Resistance Band with Loops",
-      price: 7.99,
-      image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5qZThvEKaShbGrr6MAj0CaKF/user-3nJpcV0TSj7K31svTTR64Ccs/img-UyzTUnGqUGV3i5w8YyXQn1fb.png?st=2026-04-02T04%3A15%3A25Z&se=2026-04-02T06%3A15%3A25Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=38e27a3b-6174-4d3e-90ac-d7d9ad49543f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-04-01T21%3A09%3A56Z&ske=2026-04-02T21%3A09%3A56Z&sks=b&skv=2026-02-06&sig=T/6SGW7NJyXzqAqFIBmh4ICXmerknpHk5nNyZOlq%2BCM%3D",
-      description: `<h3>Benefits</h3><ul><li>Lightweight and ultra-portable resistance training</li><li>Helps improve flexibility and activate muscles</li><li>Perfect for rehab, mobility work, and safe exercise</li><li>Consecutive loop design for versatile grip options</li><li>Latex-free and powder-free material</li></ul><h3>Specifications</h3><ul><li>Length: 5 feet</li><li>Material: Latex-free, powder-free elastic</li><li>Design: Consecutive loop system</li><li>Color: Yellow (Light resistance)</li><li>Resistance: ~3 lb</li></ul><h3>Package Includes</h3><ul><li>1x TheraBand CLX Resistance Band with Loops (Yellow)</li><li>Exercise guide</li></ul><h3>Perfect For</h3><ul><li>Physical therapy patients and rehabilitation</li><li>Home workout users and beginners</li><li>Mobility and functional fitness practitioners</li><li>Strength training enthusiasts at all levels</li></ul>`
-    },
-    {
-      id: 2,
-      title: "TheraBand Foot Roller",
-      price: 14.99,
-      image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5qZThvEKaShbGrr6MAj0CaKF/user-3nJpcV0TSj7K31svTTR64Ccs/img-SMJkp7ZZUS5QbQdl07RQIJIq.png?st=2026-04-02T04%3A15%3A48Z&se=2026-04-02T06%3A15%3A48Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=ae240de5-197c-4e03-af8e-c66aed9a4539&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-04-01T07%3A07%3A30Z&ske=2026-04-02T07%3A07%3A30Z&sks=b&skv=2026-02-06&sig=VqIsWKj8WuTauJ4YLBphJ%2BiF8/Rgf5x685HM1BgmUHc%3D",
-      description: `<h3>Benefits</h3><ul><li>Soothes tired, achy feet in seconds</li><li>Helps relieve plantar fascia pain and improve flexibility</li><li>Reduces tension and supports recovery</li><li>Can be chilled for cold therapy benefits</li><li>Compact and portable design</li></ul><h3>Specifications</h3><ul><li>Material: Natural rubber with hollow core</li><li>Color: Green</li><li>Design: Ridged surface for massage</li><li>Dimensions: Compact foot massage roller</li><li>Weight: Lightweight and portable</li></ul><h3>Package Includes</h3><ul><li>1x TheraBand Foot Roller (Green)</li><li>Simple stretch instructions</li></ul><h3>Perfect For</h3><ul><li>Individuals with plantar fasciitis</li><li>Runners and endurance athletes</li><li>People who stand for extended periods</li><li>Anyone experiencing foot fatigue or arch pain</li></ul>`
-    },
-    {
-      id: 3,
-      title: "TheraBand CLX Resistance Band 2-Pack",
-      price: 24.99,
-      image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5qZThvEKaShbGrr6MAj0CaKF/user-3nJpcV0TSj7K31svTTR64Ccs/img-D1plJnFbAiCTLA2l89I0fRIt.png?st=2026-04-02T04%3A16%3A09Z&se=2026-04-02T06%3A16%3A09Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=c6569cb0-0faa-463d-9694-97df3dc1dfb1&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-04-01T09%3A11%3A07Z&ske=2026-04-02T09%3A11%3A07Z&sks=b&skv=2026-02-06&sig=3eEthsYVTwidzuZ3R7YGYQVNMnCZ01eu3sDuo/fykwY%3D",
-      description: `<h3>Benefits</h3><ul><li>Two resistance levels for progressive training</li><li>Scale resistance and challenge your strength</li><li>Target every muscle group effectively</li><li>Full-body results anywhere you go</li><li>Latex-free, scent-free, and powder-free</li></ul><h3>Specifications</h3><ul><li>Band Length: 5 ft (1.5 m) each</li><li>Material: Latex-free synthetic rubber (powder-free)</li><li>Design: Consecutive loop resistance band</li><li>Colors: Blue (Level 5) + Black (Level 6)</li><li>Resistance: Blue ~5.8 lb, Black ~7.3 lb</li></ul><h3>Package Includes</h3><ul><li>1x Blue TheraBand CLX Band (Extra Heavy)</li><li>1x Black TheraBand CLX Band (Special Heavy)</li><li>Exercise guide</li></ul><h3>Perfect For</h3><ul><li>Athletes and fitness enthusiasts</li><li>Physical therapy and rehabilitation programs</li><li>Strength and mobility training routines</li><li>Home gym workouts and travelers</li></ul>`
-    },
-    {
-      id: 4,
-      title: "Modvel Ankle Brace",
-      price: 29.99,
-      image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5qZThvEKaShbGrr6MAj0CaKF/user-3nJpcV0TSj7K31svTTR64Ccs/img-qm51UvVyRKtnbEJbRzGa9PuX.png?st=2026-04-02T04%3A16%3A30Z&se=2026-04-02T06%3A16%3A30Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=0e2a3d55-e963-40c9-9c89-2a1aa28cb3ac&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-04-02T02%3A01%3A53Z&ske=2026-04-03T02%3A01%3A53Z&sks=b&skv=2026-02-06&sig=0Mps61CUYRJl2WywTtDXr%2BzZMHubKGDb5Q%2BWvzqQNqk%3D",
-      description: `<h3>Benefits</h3><ul><li>Lightweight compression ankle support</li><li>Comfortable for daily activities and workouts</li><li>Breathable 3D-knit fabric contours naturally</li><li>Secure and flexible fit for all-day wear</li><li>Helps with recovery and injury prevention</li></ul><h3>Specifications</h3><ul><li>Material: Breathable 3D-knit fabric</li><li>Color: Black</li><li>Design: Compression sleeve</li><li>Size: Universal fit</li><li>Type: Ankle support brace</li></ul><h3>Package Includes</h3><ul><li>1x Modvel Ankle Brace (Black)</li><li>Care instructions</li></ul><h3>Perfect For</h3><ul><li>Daily wear and workout sessions</li><li>Recovery from ankle injuries</li><li>Athletes seeking extra support</li><li>Anyone with ankle instability</li></ul>`
-    },
-    {
-      id: 5,
-      title: "TheraBand FlexBar 2-Pack",
-      price: 39.99,
-      image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5qZThvEKaShbGrr6MAj0CaKF/user-3nJpcV0TSj7K31svTTR64Ccs/img-kp6PK78Gc6eDxemyJfEsCXR7.png?st=2026-04-02T04%3A16%3A57Z&se=2026-04-02T06%3A16%3A57Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=0e2a3d55-e963-40c9-9c89-2a1aa28cb3ac&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-04-01T07%3A16%3A32Z&ske=2026-04-02T07%3A16%3A32Z&sks=b&skv=2026-02-06&sig=AmJ2%2B0b7cwODdOyiaC5EgyNzr2I9O8dYDZT8v3oZy9o%3D",
-      description: `<h3>Benefits</h3><ul><li>Two levels of resistance for progressive training</li><li>Helps relieve elbow and wrist pain</li><li>Builds forearm strength and improves grip</li><li>Perfect for rehab and performance training</li><li>Compact and portable design</li></ul><h3>Specifications</h3><ul><li>Bar Length: 12 in (30 cm) each</li><li>Material: Durable natural rubber with textured grip</li><li>Colors: Red (Light 10 lb) + Green (Medium 15 lb)</li><li>Design: FlexBar grip strengthening bars</li><li>Use: Grip strength, forearm conditioning, rehabilitation</li></ul><h3>Package Includes</h3><ul><li>1x Red FlexBar (Light resistance)</li><li>1x Green FlexBar (Medium resistance)</li><li>Exercise guide</li></ul><h3>Perfect For</h3><ul><li>Athletes improving grip and forearm strength</li><li>Physical therapy and rehabilitation patients</li><li>Tennis elbow or wrist injury recovery</li><li>Fitness enthusiasts adding grip training</li></ul>`
-    },
-    {
-      id: 6,
-      title: "Modvel Knee Brace",
-      price: 44.99,
-      image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5qZThvEKaShbGrr6MAj0CaKF/user-3nJpcV0TSj7K31svTTR64Ccs/img-LRCcuz01hZ0PGQ6VSZQYeBIH.png?st=2026-04-02T04%3A17%3A32Z&se=2026-04-02T06%3A17%3A32Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=0e2a3d55-e963-40c9-9c89-2a1aa28cb3ac&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-04-01T05%3A48%3A15Z&ske=2026-04-02T05%3A48%3A15Z&sks=b&skv=2026-02-06&sig=7kk1SV8NLB6DOuyo1h0wj/4Adk4MnUF49nPX/fj9gx8%3D",
-      description: `<h3>Benefits</h3><ul><li>Lightweight compression knee support</li><li>Comfortable for daily activities and recovery</li><li>Breathable 3D-knit fabric for natural fit</li><li>Secure and flexible for all-day comfort</li><li>Helps with knee stability and injury prevention</li></ul><h3>Specifications</h3><ul><li>Material: Breathable 3D-knit fabric</li><li>Color: Black</li><li>Design: Compression sleeve</li><li>Size: Universal fit</li><li>Type: Knee support brace</li></ul><h3>Package Includes</h3><ul><li>1x Modvel Knee Brace (Black)</li><li>Care instructions</li></ul><h3>Perfect For</h3><ul><li>Daily wear during workouts and recovery</li><li>Knee injury rehabilitation</li><li>Athletes seeking extra knee support</li><li>Anyone with knee instability or pain</li></ul>`
-    },
-    {
-      id: 7,
-      title: "TheraBand Latex Free Resistance Band Kit",
-      price: 49.99,
-      image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5qZThvEKaShbGrr6MAj0CaKF/user-3nJpcV0TSj7K31svTTR64Ccs/img-RxCOdaY6KjSbh28jAb85utzU.png?st=2026-04-02T04%3A17%3A56Z&se=2026-04-02T06%3A17%3A56Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=b2c0e1c0-cf97-4e19-8986-8073905d5723&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-04-01T11%3A25%3A06Z&ske=2026-04-02T11%3A25%3A06Z&sks=b&skv=2026-02-06&sig=MkV8WTXR9rLrLRxytzVJ%2BKaBdV9j2R5v%2B5hS7AF6XUk%3D",
-      description: `<h3>Benefits</h3><ul><li>Powerful resistance training without latex</li><li>Build muscle tone, balance, and flexibility</li><li>Durable, progressive resistance for everyday athletes</li><li>Replaces a rack full of weights</li><li>Compact and travel-friendly design</li></ul><h3>Specifications</h3><ul><li>Band Length: 5 ft (1.5 m) each</li><li>Band Width: 4 in (10 cm)</li><li>Material: Latex-free synthetic rubber</li><li>Colors: Blue + Black (Advanced set)</li><li>Resistance: Blue ~5.8-8.6 lb, Black ~7.3-10.2 lb</li></ul><h3>Package Includes</h3><ul><li>1x Blue Resistance Band (Extra Heavy)</li><li>1x Black Resistance Band (Special Heavy)</li><li>Exercise guide</li></ul><h3>Perfect For</h3><ul><li>Beginners starting resistance training</li><li>Athletes and fitness enthusiasts</li><li>Physical therapy and rehabilitation</li><li>Home workouts and travel training</li></ul>`
-    },
-    {
-      id: 8,
-      title: "Total Body Band TheraBand",
-      price: 59.99,
-      image: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5qZThvEKaShbGrr6MAj0CaKF/user-3nJpcV0TSj7K31svTTR64Ccs/img-LXJotrgDDVbGeQfdG4LQPRHJ.png?st=2026-04-02T04%3A18%3A21Z&se=2026-04-02T06%3A18%3A21Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=8eb2c87c-0531-4dab-acb3-b5e2adddce6c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-04-01T09%3A01%3A16Z&ske=2026-04-02T09%3A01%3A16Z&sks=b&skv=2026-02-06&sig=fF3Wuf9hg6t7S3xzrxH8YFHW3oEH7rLwfsOEn4Akyy8%3D",
-      description: `<h3>Benefits</h3><ul><li>Full-body resistance training system</li><li>Secure ankle cuffs for lower-body exercises</li><li>Joint-friendly resistance for strength and mobility</li><li>Replaces bulky home gym equipment</li><li>Portable and easy to use anywhere</li></ul><h3>Specifications</h3><ul><li>Resistance Level: Light (5 lb per handle)</li><li>Design: Flat resistance band with ankle cuffs and handles</li><li>Material: Durable resistance band with comfort cuffs</li><li>Color: Gold/Light</li><li>Use: Strength training, mobility, functional fitness</li></ul><h3>Package Includes</h3><ul><li>1x Total Body Band with ankle cuffs and handles</li><li>Exercise guide</li></ul><h3>Perfect For</h3><ul><li>Home workout users and beginners</li><li>Strength training and functional fitness</li><li>Glute and lower-body training focus</li><li>Travelers seeking portable gym alternatives</li></ul>`
-    }
+    {id:1, title:"TheraBand CLX Resistance Band with Loops", price:7.99, image:"https://placehold.co/600x400/ff4500/white?text=Resistance+Band", desc:"<h3>Benefits</h3><ul><li>Lightweight and ultra-portable</li><li>Improves flexibility</li><li>Perfect for rehab</li></ul><h3>Specifications</h3><ul><li>Length: 5 feet</li><li>Material: Latex-free</li></ul><h3>Package Includes</h3><ul><li>1x Resistance Band</li></ul><h3>Perfect For</h3><ul><li>Physical therapy</li><li>Home workouts</li></ul>"},
+    {id:2, title:"TheraBand Foot Roller", price:14.99, image:"https://placehold.co/600x400/22c55e/white?text=Foot+Roller", desc:"<h3>Benefits</h3><ul><li>Soothes tired feet</li><li>Relieves plantar fascia pain</li></ul><h3>Specifications</h3><ul><li>Material: Natural rubber</li></ul><h3>Package Includes</h3><ul><li>1x Foot Roller</li></ul><h3>Perfect For</h3><ul><li>Runners</li><li>Athletes</li></ul>"},
+    {id:3, title:"TheraBand CLX Resistance Band 2-Pack", price:24.99, image:"https://placehold.co/600x400/3b82f6/white?text=2-Pack+Bands", desc:"<h3>Benefits</h3><ul><li>Two resistance levels</li><li>Progressive training</li></ul><h3>Specifications</h3><ul><li>2x Bands included</li></ul><h3>Package Includes</h3><ul><li>Blue + Black bands</li></ul><h3>Perfect For</h3><ul><li>Strength training</li></ul>"},
+    {id:4, title:"Modvel Ankle Brace", price:29.99, image:"https://placehold.co/600x400/8b5cf6/white?text=Ankle+Brace", desc:"<h3>Benefits</h3><ul><li>Compression support</li><li>Breathable fabric</li></ul><h3>Specifications</h3><ul><li>Color: Black</li></ul><h3>Package Includes</h3><ul><li>1x Ankle Brace</li></ul><h3>Perfect For</h3><ul><li>Recovery</li></ul>"},
+    {id:5, title:"TheraBand FlexBar 2-Pack", price:39.99, image:"https://placehold.co/600x400/ec4899/white?text=FlexBar", desc:"<h3>Benefits</h3><ul><li>Grip strength</li><li>Forearm conditioning</li></ul><h3>Specifications</h3><ul><li>Red + Green bars</li></ul><h3>Package Includes</h3><ul><li>2x FlexBars</li></ul><h3>Perfect For</h3><ul><li>Rehabilitation</li></ul>"},
+    {id:6, title:"Modvel Knee Brace", price:44.99, image:"https://placehold.co/600x400/f59e0b/white?text=Knee+Brace", desc:"<h3>Benefits</h3><ul><li>Knee support</li><li>All-day comfort</li></ul><h3>Specifications</h3><ul><li>Universal fit</li></ul><h3>Package Includes</h3><ul><li>1x Knee Brace</li></ul><h3>Perfect For</h3><ul><li>Athletes</li></ul>"},
+    {id:7, title:"TheraBand Latex Free Resistance Band Kit", price:49.99, image:"https://placehold.co/600x400/10b981/white?text=Band+Kit", desc:"<h3>Benefits</h3><ul><li>Latex-free</li><li>Full-body training</li></ul><h3>Specifications</h3><ul><li>Blue + Black</li></ul><h3>Package Includes</h3><ul><li>2x Bands</li></ul><h3>Perfect For</h3><ul><li>Home gym</li></ul>"},
+    {id:8, title:"Total Body Band TheraBand", price:59.99, image:"https://placehold.co/600x400/ef4444/white?text=Total+Body", desc:"<h3>Benefits</h3><ul><li>Full-body system</li><li>Ankle cuffs included</li></ul><h3>Specifications</h3><ul><li>Gold color</li></ul><h3>Package Includes</h3><ul><li>1x Total Body Band</li></ul><h3>Perfect For</h3><ul><li>Functional fitness</li></ul>"}
   ];
 
-  // 40+ Countries List
   const countries = [
-    {code: 'US', name: 'United States', states: ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming']},
-    {code: 'CA', name: 'Canada', states: ['Alberta','British Columbia','Manitoba','New Brunswick','Newfoundland and Labrador','Nova Scotia','Ontario','Prince Edward Island','Quebec','Saskatchewan']},
-    {code: 'GB', name: 'United Kingdom', states: null},
-    {code: 'AU', name: 'Australia', states: ['New South Wales','Queensland','South Australia','Tasmania','Victoria','Western Australia']},
-    {code: 'FR', name: 'France', states: null},
-    {code: 'DE', name: 'Germany', states: null},
-    {code: 'IT', name: 'Italy', states: null},
-    {code: 'ES', name: 'Spain', states: null},
-    {code: 'NL', name: 'Netherlands', states: null},
-    {code: 'BE', name: 'Belgium', states: null},
-    {code: 'CH', name: 'Switzerland', states: null},
-    {code: 'AT', name: 'Austria', states: null},
-    {code: 'DK', name: 'Denmark', states: null},
-    {code: 'SE', name: 'Sweden', states: null},
-    {code: 'NO', name: 'Norway', states: null},
-    {code: 'FI', name: 'Finland', states: null},
-    {code: 'PL', name: 'Poland', states: null},
-    {code: 'CZ', name: 'Czech Republic', states: null},
-    {code: 'PT', name: 'Portugal', states: null},
-    {code: 'GR', name: 'Greece', states: null},
-    {code: 'IE', name: 'Ireland', states: null},
-    {code: 'NZ', name: 'New Zealand', states: null},
-    {code: 'JP', name: 'Japan', states: null},
-    {code: 'KR', name: 'South Korea', states: null},
-    {code: 'SG', name: 'Singapore', states: null},
-    {code: 'HK', name: 'Hong Kong', states: null},
-    {code: 'IN', name: 'India', states: null},
-    {code: 'BR', name: 'Brazil', states: null},
-    {code: 'MX', name: 'Mexico', states: null},
-    {code: 'AR', name: 'Argentina', states: null},
-    {code: 'CL', name: 'Chile', states: null},
-    {code: 'ZA', name: 'South Africa', states: null},
-    {code: 'AE', name: 'United Arab Emirates', states: null},
-    {code: 'SA', name: 'Saudi Arabia', states: null},
-    {code: 'IL', name: 'Israel', states: null},
-    {code: 'TR', name: 'Turkey', states: null},
-    {code: 'TH', name: 'Thailand', states: null},
-    {code: 'MY', name: 'Malaysia', states: null},
-    {code: 'ID', name: 'Indonesia', states: null},
-    {code: 'PH', name: 'Philippines', states: null},
-    {code: 'VN', name: 'Vietnam', states: null}
+    {code:'US',name:'United States',states:['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming']},
+    {code:'CA',name:'Canada',states:['Alberta','British Columbia','Manitoba','New Brunswick','Newfoundland and Labrador','Nova Scotia','Ontario','Prince Edward Island','Quebec','Saskatchewan']},
+    {code:'GB',name:'United Kingdom',states:null},
+    {code:'AU',name:'Australia',states:['New South Wales','Queensland','South Australia','Tasmania','Victoria','Western Australia']},
+    {code:'FR',name:'France',states:null},
+    {code:'DE',name:'Germany',states:null},
+    {code:'IT',name:'Italy',states:null},
+    {code:'ES',name:'Spain',states:null},
+    {code:'NL',name:'Netherlands',states:null},
+    {code:'BE',name:'Belgium',states:null},
+    {code:'CH',name:'Switzerland',states:null},
+    {code:'AT',name:'Austria',states:null},
+    {code:'DK',name:'Denmark',states:null},
+    {code:'SE',name:'Sweden',states:null},
+    {code:'NO',name:'Norway',states:null},
+    {code:'FI',name:'Finland',states:null},
+    {code:'PL',name:'Poland',states:null},
+    {code:'CZ',name:'Czech Republic',states:null},
+    {code:'PT',name:'Portugal',states:null},
+    {code:'GR',name:'Greece',states:null},
+    {code:'IE',name:'Ireland',states:null},
+    {code:'NZ',name:'New Zealand',states:null},
+    {code:'JP',name:'Japan',states:null},
+    {code:'KR',name:'South Korea',states:null},
+    {code:'SG',name:'Singapore',states:null},
+    {code:'HK',name:'Hong Kong',states:null},
+    {code:'IN',name:'India',states:null},
+    {code:'BR',name:'Brazil',states:null},
+    {code:'MX',name:'Mexico',states:null},
+    {code:'AR',name:'Argentina',states:null},
+    {code:'CL',name:'Chile',states:null},
+    {code:'ZA',name:'South Africa',states:null},
+    {code:'AE',name:'United Arab Emirates',states:null},
+    {code:'SA',name:'Saudi Arabia',states:null},
+    {code:'IL',name:'Israel',states:null},
+    {code:'TR',name:'Turkey',states:null},
+    {code:'TH',name:'Thailand',states:null},
+    {code:'MY',name:'Malaysia',states:null},
+    {code:'ID',name:'Indonesia',states:null},
+    {code:'PH',name:'Philippines',states:null},
+    {code:'VN',name:'Vietnam',states:null}
   ];
 
-  // Cart State
   let cart = [];
 
-  // Initialize Countries Dropdown
-  function initCountries() {
-    const select = document.getElementById('billing-country');
-    if (!select) return;
-    
-    countries.forEach(country => {
-      const option = document.createElement('option');
-      option.value = country.code;
-      option.textContent = country.name;
-      if (country.code === 'US') option.selected = true;
-      select.appendChild(option);
-    });
-    
-    select.addEventListener('change', handleCountry);
-    handleCountry(); // Initialize with US
-  }
-
-  // Handle Country Change
-  function handleCountry() {
-    const countryCode = document.getElementById('billing-country').value;
-    const country = countries.find(c => c.code === countryCode);
-    const container = document.getElementById('state-container');
-    const label = document.getElementById('state-label');
-    
-    if (!country || !container || !label) return;
-    
-    if (country.states) {
-      label.textContent = countryCode === 'US' ? 'State *' : 'Province/State *';
-      const select = document.createElement('select');
-      select.id = 'billing-state';
-      select.required = true;
-      select.style.cssText = 'width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px;';
-      
-      country.states.forEach((state, i) => {
-        const option = document.createElement('option');
-        option.value = state;
-        option.textContent = state;
-        if (countryCode === 'US' && state === 'New Mexico') option.selected = true;
-        select.appendChild(option);
-      });
-      
-      container.innerHTML = '';
-      container.appendChild(select);
-    } else {
-      label.textContent = 'State/Province';
-      const input = document.createElement('input');
-      input.type = 'text';
-      input.id = 'billing-state';
-      input.style.cssText = 'width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px;';
-      container.innerHTML = '';
-      container.appendChild(input);
-    }
-  }
-
-  // Navigation with pushState
-  function navigate(page, updateHistory = true) {
+  function goTo(page) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    const pageEl = document.getElementById('page-' + page);
-    if (pageEl) pageEl.classList.add('active');
-    window.scrollTo(0, 0);
+    const el = document.getElementById('page-' + page);
+    if (el) el.classList.add('active');
+    window.scrollTo(0,0);
+    window.history.pushState({page:page}, '', '#' + page);
     
-    if (updateHistory) {
-      window.history.pushState({page: page}, '', '#' + page);
-    }
-    
-    if (page === 'shop') renderShop();
-    else if (page === 'home') renderFeatured();
+    if (page === 'shop') renderGrid('grid-shop', products);
+    else if (page === 'home') renderGrid('grid-home', products.slice(0,4));
     else if (page === 'cart') renderCart();
     else if (page === 'checkout') renderCheckout();
   }
 
-  // popstate handler
-  window.addEventListener('popstate', function(e) {
-    const page = e.state && e.state.page ? e.state.page : 'home';
-    navigate(page, false);
-  });
-
-  // Render Featured Products
-  function renderFeatured() {
-    const featured = products.slice(0, 4);
-    const html = featured.map(p => `
-      <div class="product-card" data-view-product="${p.id}">
+  function renderGrid(containerId, items) {
+    const el = document.getElementById(containerId);
+    if (!el) return;
+    el.innerHTML = items.map(p => `
+      <div class="product-card" onclick="showProduct(${p.id})">
         <img src="${p.image}" alt="${p.title}" class="product-image" loading="lazy">
         <div class="product-info">
           <div class="product-title">${p.title}</div>
           <div class="product-price">$${p.price.toFixed(2)} USD</div>
-          <button class="btn" data-add-to-cart="${p.id}">Add to Cart</button>
+          <button class="btn" onclick="event.stopPropagation(); addCart(${p.id})">Add to Cart</button>
         </div>
       </div>
     `).join('');
-    const el = document.getElementById('featured-products');
-    if (el) el.innerHTML = html;
   }
 
-  // Render Shop
-  function renderShop() {
-    const html = products.map(p => `
-      <div class="product-card" data-view-product="${p.id}">
-        <img src="${p.image}" alt="${p.title}" class="product-image" loading="lazy">
-        <div class="product-info">
-          <div class="product-title">${p.title}</div>
-          <div class="product-price">$${p.price.toFixed(2)} USD</div>
-          <button class="btn" data-add-to-cart="${p.id}">Add to Cart</button>
-        </div>
-      </div>
-    `).join('');
-    const el = document.getElementById('shop-products');
-    if (el) el.innerHTML = html;
-  }
-
-  // View Product Detail
-  function viewProduct(id) {
-    const product = products.find(p => p.id === id);
-    if (!product) return;
+  function showProduct(id) {
+    const p = products.find(x => x.id === id);
+    if (!p) return;
     
-    const breadcrumb = document.getElementById('product-breadcrumb');
-    if (breadcrumb) {
-      breadcrumb.innerHTML = `
-        <a href="#" data-navigate="home">Home</a> &gt; 
-        <a href="#" data-navigate="shop">Shop</a> &gt; 
-        ${product.title}
-      `;
-    }
+    const bc = document.getElementById('bc-product');
+    if (bc) bc.innerHTML = `<a onclick="goTo('home')">Home</a> &gt; <a onclick="goTo('shop')">Shop</a> &gt; ${p.title}`;
     
-    const content = document.getElementById('product-detail-content');
-    if (content) {
-      content.innerHTML = `
+    const pd = document.getElementById('product-detail');
+    if (pd) {
+      pd.innerHTML = `
         <div class="product-detail-grid">
+          <div><img src="${p.image}" class="product-detail-image" loading="lazy"></div>
           <div>
-            <img src="${product.image}" alt="${product.title}" class="product-detail-image" loading="lazy">
-          </div>
-          <div class="product-detail-info">
-            <h1>${product.title}</h1>
-            <div class="product-detail-price">$${product.price.toFixed(2)} USD</div>
+            <h1>${p.title}</h1>
+            <div class="product-detail-price">$${p.price.toFixed(2)} USD</div>
             <div class="quantity-selector">
-              <button data-quantity-change="-1">−</button>
-              <input type="number" id="product-quantity" value="1" min="1">
-              <button data-quantity-change="1">+</button>
+              <button onclick="changeQty(-1)">−</button>
+              <input type="number" id="pdqty" value="1" min="1">
+              <button onclick="changeQty(1)">+</button>
             </div>
-            <button class="btn" data-add-to-cart-detail="${id}" style="width: 100%; padding: 16px; font-size: 18px;">Add to Cart</button>
-            <p style="margin-top: 20px; color: var(--color-gray);">Shipping within 7 days with USPS.</p>
+            <button class="btn" onclick="addCartDetail(${id})" style="width:100%;padding:16px">Add to Cart</button>
+            <p style="margin-top:20px;color:#666">Shipping within 7 days with USPS.</p>
           </div>
         </div>
-        <div class="product-description">
-          ${product.description}
-        </div>
+        <div class="product-description">${p.desc}</div>
       `;
     }
-    
-    navigate('product');
+    goTo('product');
   }
 
-  // Change Quantity
-  function changeQuantity(delta) {
-    const input = document.getElementById('product-quantity');
-    if (!input) return;
-    const newValue = parseInt(input.value) + delta;
-    if (newValue >= 1) input.value = newValue;
-  }
-
-  // Add to Cart
-  function addToCart(id) {
-    const product = products.find(p => p.id === id);
-    if (!product) return;
-    cart.push({...product});
-    updateCartCount();
-    showToast('Product added to cart!');
-  }
-
-  // Add to Cart from Detail
-  function addToCartFromDetail(id) {
-    const input = document.getElementById('product-quantity');
-    const qty = input ? parseInt(input.value) : 1;
-    for (let i = 0; i < qty; i++) {
-      addToCart(id);
+  function changeQty(d) {
+    const inp = document.getElementById('pdqty');
+    if (inp) {
+      const v = parseInt(inp.value) + d;
+      if (v >= 1) inp.value = v;
     }
   }
 
-  // Update Cart Count
-  function updateCartCount() {
+  function addCart(id) {
+    const p = products.find(x => x.id === id);
+    if (p) {
+      cart.push({...p});
+      updateCart();
+      toast('Product added to cart!');
+    }
+  }
+
+  function addCartDetail(id) {
+    const inp = document.getElementById('pdqty');
+    const qty = inp ? parseInt(inp.value) : 1;
+    for (let i = 0; i < qty; i++) addCart(id);
+  }
+
+  function updateCart() {
     const el = document.getElementById('cart-count');
     if (el) el.textContent = cart.length;
   }
 
-  // Render Cart
   function renderCart() {
-    const content = document.getElementById('cart-content');
-    if (!content) return;
+    const el = document.getElementById('cart-content');
+    if (!el) return;
     
     if (cart.length === 0) {
-      content.innerHTML = `
-        <div class="cart-empty">
-          <h2>Your cart is currently empty.</h2>
-          <a href="#" data-navigate="shop" class="btn">Return to shop</a>
-        </div>
-      `;
+      el.innerHTML = '<div class="cart-empty"><h2>Your cart is currently empty.</h2><button class="btn" onclick="goTo(\'shop\')">Return to shop</button></div>';
       return;
     }
     
-    const grouped = cart.reduce((acc, item) => {
-      const existing = acc.find(i => i.id === item.id);
-      if (existing) {
-        existing.quantity++;
-      } else {
-        acc.push({...item, quantity: 1});
-      }
-      return acc;
+    const grouped = cart.reduce((a,i) => {
+      const e = a.find(x => x.id === i.id);
+      if (e) e.qty++;
+      else a.push({...i, qty:1});
+      return a;
     }, []);
     
-    const itemsHtml = grouped.map(item => `
+    const items = grouped.map(i => `
       <div class="cart-item">
-        <img src="${item.image}" alt="${item.title}" class="cart-item-image" loading="lazy">
-        <div class="cart-item-info">
-          <h3>${item.title}</h3>
-          <p>Quantity: ${item.quantity}</p>
-        </div>
-        <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
-        <button data-remove-from-cart="${item.id}" style="border: none; background: none; cursor: pointer; font-size: 20px;">🗑️</button>
+        <img src="${i.image}" class="cart-item-image" loading="lazy">
+        <div><h3>${i.title}</h3><p>Quantity: ${i.qty}</p></div>
+        <div class="product-price">$${(i.price * i.qty).toFixed(2)}</div>
+        <button onclick="removeCart(${i.id})" style="border:none;background:none;cursor:pointer;font-size:20px">🗑️</button>
       </div>
     `).join('');
     
-    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    const total = cart.reduce((s,i) => s + i.price, 0);
     
-    content.innerHTML = `
-      <div class="cart-items">${itemsHtml}</div>
+    el.innerHTML = `
+      ${items}
       <div class="cart-total">Total: $${total.toFixed(2)} USD</div>
-      <div style="text-align: right;">
-        <button class="btn" data-navigate="checkout" style="padding: 16px 40px; font-size: 18px;">Proceed to Checkout</button>
+      <div style="text-align:right">
+        <button class="btn" onclick="goTo('checkout')" style="padding:16px 40px;font-size:18px">Proceed to Checkout</button>
       </div>
     `;
   }
 
-  // Remove from Cart
-  function removeFromCart(id) {
-    const index = cart.findIndex(item => item.id === id);
-    if (index > -1) {
-      cart.splice(index, 1);
-      updateCartCount();
+  function removeCart(id) {
+    const idx = cart.findIndex(i => i.id === id);
+    if (idx > -1) {
+      cart.splice(idx, 1);
+      updateCart();
       renderCart();
-      showToast('Item removed from cart');
+      toast('Item removed');
     }
   }
 
-  // Render Checkout
   function renderCheckout() {
-    const grouped = cart.reduce((acc, item) => {
-      const existing = acc.find(i => i.id === item.id);
-      if (existing) {
-        existing.quantity++;
-      } else {
-        acc.push({...item, quantity: 1});
-      }
-      return acc;
+    const grouped = cart.reduce((a,i) => {
+      const e = a.find(x => x.id === i.id);
+      if (e) e.qty++;
+      else a.push({...i, qty:1});
+      return a;
     }, []);
     
-    const itemsHtml = grouped.map(item => `
-      <div class="summary-item">
-        <span>${item.title} × ${item.quantity}</span>
-        <span>$${(item.price * item.quantity).toFixed(2)}</span>
-      </div>
-    `).join('');
+    const items = grouped.map(i => `<div class="summary-item"><span>${i.title} × ${i.qty}</span><span>$${(i.price * i.qty).toFixed(2)}</span></div>`).join('');
+    const total = cart.reduce((s,i) => s + i.price, 0);
     
-    const total = cart.reduce((sum, item) => sum + item.price, 0);
-    
-    const summaryEl = document.getElementById('checkout-summary-items');
-    const totalEl = document.getElementById('checkout-total');
-    if (summaryEl) summaryEl.innerHTML = itemsHtml;
-    if (totalEl) totalEl.textContent = '$' + total.toFixed(2) + ' USD';
+    const si = document.getElementById('checkout-summary-items');
+    const ct = document.getElementById('checkout-total');
+    if (si) si.innerHTML = items;
+    if (ct) ct.textContent = '$' + total.toFixed(2) + ' USD';
   }
 
-  // Place Order with 2.8s animation
-  function placeOrder() {
-    const termsAccepted = document.getElementById('terms-accept').checked;
+  function initCountries() {
+    const sel = document.getElementById('billing-country');
+    if (!sel) return;
+    countries.forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = c.code;
+      opt.textContent = c.name;
+      if (c.code === 'US') opt.selected = true;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener('change', handleCountry);
+    handleCountry();
+  }
+
+  function handleCountry() {
+    const code = document.getElementById('billing-country').value;
+    const country = countries.find(c => c.code === code);
+    const cont = document.getElementById('state-container');
+    const lbl = document.getElementById('state-label');
+    if (!country || !cont || !lbl) return;
     
-    if (!termsAccepted) {
-      alert('You must accept the terms and conditions to place your order.');
+    if (country.states) {
+      lbl.textContent = code === 'US' ? 'State *' : 'Province/State *';
+      const sel = document.createElement('select');
+      sel.id = 'billing-state';
+      sel.required = true;
+      sel.style.cssText = 'width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:16px';
+      country.states.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s;
+        opt.textContent = s;
+        if (code === 'US' && s === 'New Mexico') opt.selected = true;
+        sel.appendChild(opt);
+      });
+      cont.innerHTML = '';
+      cont.appendChild(sel);
+    } else {
+      lbl.textContent = 'State/Province';
+      const inp = document.createElement('input');
+      inp.type = 'text';
+      inp.id = 'billing-state';
+      inp.style.cssText = 'width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:16px';
+      cont.innerHTML = '';
+      cont.appendChild(inp);
+    }
+  }
+
+  function placeOrder() {
+    const terms = document.getElementById('terms-accept').checked;
+    if (!terms) {
+      alert('You must accept the terms and conditions.');
       return;
     }
     
-    const firstName = document.getElementById('billing-firstname').value;
-    const lastName = document.getElementById('billing-lastname').value;
-    const email = document.getElementById('billing-email').value;
+    const fn = document.getElementById('billing-firstname').value;
+    const ln = document.getElementById('billing-lastname').value;
+    const em = document.getElementById('billing-email').value;
     
-    if (!firstName || !lastName || !email) {
+    if (!fn || !ln || !em) {
       alert('Please fill in all required fields.');
       return;
     }
@@ -1449,116 +1144,89 @@ footer {
     
     setTimeout(() => {
       cart = [];
-      updateCartCount();
-      alert('Thank you. Your order has been received.\\n\\nA confirmation has been sent to ' + email + '.\\n\\nShipping within 7 days with USPS.');
+      updateCart();
+      alert('Thank you. Your order has been received.\\n\\nA confirmation has been sent to ' + em + '.\\n\\nShipping within 7 days with USPS.');
       if (btn) {
         btn.disabled = false;
         btn.classList.remove('placing-order');
         btn.textContent = 'PLACE ORDER';
       }
-      navigate('home');
+      goTo('home');
     }, 2800);
   }
 
-  // Submit Contact Form
   function submitContact() {
-    const name = document.getElementById('contact-name').value;
-    const email = document.getElementById('contact-email').value;
-    const message = document.getElementById('contact-message').value;
-    
-    if (!name || !email || !message) {
+    const n = document.getElementById('contact-name').value;
+    const e = document.getElementById('contact-email').value;
+    const m = document.getElementById('contact-message').value;
+    if (!n || !e || !m) {
       alert('Please fill in all required fields.');
       return;
     }
-    
-    showToast('Message sent successfully!');
+    toast('Message sent successfully!');
     document.getElementById('contact-name').value = '';
     document.getElementById('contact-email').value = '';
     document.getElementById('contact-phone').value = '';
     document.getElementById('contact-message').value = '';
   }
 
-  // Show Toast
-  function showToast(message) {
-    const toast = document.getElementById('toast');
-    if (toast) {
-      toast.textContent = message;
-      toast.classList.add('show');
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 3000);
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    if (t) {
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3000);
     }
   }
 
-  // Event Delegation
-  document.addEventListener('click', function(e) {
-    // Navigation
-    if (e.target.hasAttribute('data-navigate')) {
-      e.preventDefault();
-      const page = e.target.getAttribute('data-navigate');
-      navigate(page);
-    }
+  function wire() {
+    document.getElementById('logo-home').onclick = () => goTo('home');
+    document.getElementById('nav-home').onclick = () => goTo('home');
+    document.getElementById('nav-shop').onclick = () => goTo('shop');
+    document.getElementById('nav-contact').onclick = () => goTo('contact');
+    document.getElementById('cart-icon').onclick = () => goTo('cart');
+    document.getElementById('hero-shop').onclick = () => goTo('shop');
     
-    // View Product
-    if (e.target.closest('[data-view-product]')) {
-      const card = e.target.closest('[data-view-product]');
-      if (e.target.hasAttribute('data-add-to-cart')) return; // Don't navigate if clicking add to cart
-      const id = parseInt(card.getAttribute('data-view-product'));
-      viewProduct(id);
-    }
+    document.getElementById('bc-home-shop').onclick = () => goTo('home');
+    document.getElementById('bc-home-cart').onclick = () => goTo('home');
+    document.getElementById('bc-cart-checkout').onclick = () => goTo('cart');
+    document.getElementById('bc-home-contact').onclick = () => goTo('home');
+    document.getElementById('bc-home-privacy').onclick = () => goTo('home');
+    document.getElementById('bc-home-terms').onclick = () => goTo('home');
     
-    // Add to Cart
-    if (e.target.hasAttribute('data-add-to-cart')) {
-      e.stopPropagation();
-      const id = parseInt(e.target.getAttribute('data-add-to-cart'));
-      addToCart(id);
-    }
+    document.getElementById('link-privacy-checkout').onclick = () => goTo('privacy');
+    document.getElementById('link-terms-checkout').onclick = () => goTo('terms');
     
-    // Add to Cart from Detail
-    if (e.target.hasAttribute('data-add-to-cart-detail')) {
-      const id = parseInt(e.target.getAttribute('data-add-to-cart-detail'));
-      addToCartFromDetail(id);
-    }
+    document.getElementById('place-order-btn').onclick = placeOrder;
+    document.getElementById('contact-submit').onclick = submitContact;
     
-    // Quantity Change
-    if (e.target.hasAttribute('data-quantity-change')) {
-      const delta = parseInt(e.target.getAttribute('data-quantity-change'));
-      changeQuantity(delta);
-    }
-    
-    // Remove from Cart
-    if (e.target.hasAttribute('data-remove-from-cart')) {
-      const id = parseInt(e.target.getAttribute('data-remove-from-cart'));
-      removeFromCart(id);
-    }
-    
-    // Place Order
-    if (e.target.id === 'place-order-btn') {
-      placeOrder();
-    }
-    
-    // Contact Submit
-    if (e.target.id === 'contact-submit-btn') {
-      submitContact();
-    }
+    document.getElementById('footer-privacy').onclick = () => goTo('privacy');
+    document.getElementById('footer-terms').onclick = () => goTo('terms');
+    document.getElementById('footer-contact').onclick = () => goTo('contact');
+    document.getElementById('footer-send').onclick = () => {
+      toast('Message sent successfully!');
+      document.getElementById('footer-email').value = '';
+      document.getElementById('footer-message').value = '';
+    };
+  }
+
+  window.addEventListener('popstate', e => {
+    const page = e.state && e.state.page ? e.state.page : 'home';
+    goTo(page);
   });
 
-  // Footer Contact Form
-  document.addEventListener('submit', function(e) {
-    if (e.target.id === 'footer-contact-form') {
-      e.preventDefault();
-      showToast('Message sent successfully!');
-      e.target.reset();
-    }
-  });
+  window.showProduct = showProduct;
+  window.addCart = addCart;
+  window.addCartDetail = addCartDetail;
+  window.removeCart = removeCart;
+  window.changeQty = changeQty;
+  window.goTo = goTo;
 
-  // Initialize
-  renderFeatured();
-  updateCartCount();
+  renderGrid('grid-home', products.slice(0,4));
+  updateCart();
   initCountries();
-  
-  // Initialize history state
-  window.history.replaceState({page: 'home'}, '', '#home');
+  wire();
+  window.history.replaceState({page:'home'}, '', '#home');
 })();
 </script>
 
